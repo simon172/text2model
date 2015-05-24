@@ -16,12 +16,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import nodes.ProcessNode;
+import models.ProcessModel;
 import processing.ProcessingUtils;
 import processing.WordNetWrapper;
-import Nodes.ProcessNode;
-import Models.ProcessModel;
-import BPMN.DataObject;
-import BPMN.SequenceFlow;
 
 
 
@@ -268,9 +266,6 @@ protected void addSpecifier(int level, StringBuilder _b, Specifier s,boolean com
 		_b.append(s.getName());
 	}
 }
-
-
-public abstract void layoutModel(ProcessModel _result);
 
 
 public abstract ProcessModel createProcessModel(WorldModel world);

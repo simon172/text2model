@@ -11,6 +11,8 @@ package transform;
 import java.util.HashMap;
 
 
+
+import nodes.ProcessNode;
 //import net.frapu.code.visualization.ProcessNode;
 import text.T2PSentence;
 import textModel.SentenceNode;
@@ -21,7 +23,6 @@ import textModel.WordNode;
 import worldModel.Action;
 import worldModel.ExtractedObject;
 import worldModel.SpecifiedElement;
-import Nodes.ProcessNode;
 
 /**
  * @author ff

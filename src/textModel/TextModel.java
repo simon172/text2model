@@ -3,10 +3,10 @@ package textModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import nodes.ProcessEdge;
+import nodes.ProcessNode;
+import models.ProcessModel;
 import processing.ProcessUtils;
-import Nodes.ProcessEdge;
-import Models.ProcessModel;
-import Nodes.ProcessNode;
 
 /**
  * @author ff

@@ -8,9 +8,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import nodes.Cluster;
+import nodes.FlowObject;
+import nodes.ProcessEdge;
+import nodes.ProcessNode;
+import models.EPCModel;
+import models.ProcessModel;
 import processing.WordNetWrapper;
 import processing.FrameNetWrapper.PhraseType;
-import sun.security.action.GetLongAction;
 import tools.Configuration;
 import worldModel.Action;
 import worldModel.Actor;
@@ -23,29 +28,18 @@ import worldModel.WorldModel;
 import worldModel.Flow.FlowDirection;
 import worldModel.Flow.FlowType;
 import worldModel.Specifier.SpecifierType;
-import BPMN.IntermediateEvent;
-import BPMN.MessageFlow;
-import BPMN.MessageIntermediateEvent;
-import BPMN.Pool;
-import BPMN.Task;
-import EPC.Association;
-import EPC.Connector;
-import EPC.ConnectorAND;
-import EPC.ConnectorOR;
-import EPC.ConnectorXOR;
-import EPC.Event;
-import EPC.File;
-import EPC.Function;
-import EPC.OrgCollection;
-import EPC.Organisation;
-import EPC.OrganisationCluster;
-import EPC.SequenceFlow;
-import Models.EPCModel;
-import Models.ProcessModel;
-import Nodes.Cluster;
-import Nodes.FlowObject;
-import Nodes.ProcessEdge;
-import Nodes.ProcessNode;
+import epc.Association;
+import epc.Connector;
+import epc.ConnectorAND;
+import epc.ConnectorOR;
+import epc.ConnectorXOR;
+import epc.Event;
+import epc.File;
+import epc.Function;
+import epc.OrgCollection;
+import epc.Organisation;
+import epc.OrganisationCluster;
+import epc.SequenceFlow;
 import etc.Constants;
 import etc.TextToProcess;
 
@@ -99,16 +93,12 @@ private Configuration f_config = Configuration.getInstance();
 		if(EVENTS_TO_LABELS) {
 			eventsToLabels();
 		}
-		processMetaActivities(world);		
-		buildBlackBoxOrgCollection(world);
+		processMetaActivities(world);
 		buildDataObjects(world);
 		
 		if(f_mainOrg.getProcessNodes().size() == 0) {
 			f_model.removeNode(f_mainOrg);
-		}		
-		
-		layoutModel(f_model);
-		layoutModel(f_model);
+		}
 		f_parent.setElementMapping(f_elementsMap);
 		return f_model;
 	}
@@ -241,12 +231,6 @@ private Configuration f_config = Configuration.getInstance();
 	
 	private String getName(ExtractedObject a,boolean addDet,int level) {
 		return getName(a, addDet, level, false);
-	}
-
-	@Override
-	public void layoutModel(ProcessModel _result) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -617,7 +601,7 @@ private Configuration f_config = Configuration.getInstance();
 		if(WordNetWrapper.isVerbOfType(a.getName(), "send") || WordNetWrapper.isVerbOfType(a.getName(), "receive") /*isInteractionVerb(a)*/) {
 			Event _mie = new Event();
 			if(WordNetWrapper.isVerbOfType(a.getName(),"send")) {
-				_mie.setProperty(MessageIntermediateEvent.PROP_EVENT_SUBTYPE, MessageIntermediateEvent.EVENT_SUBTYPE_THROWING);
+				//_mie.setProperty(MessageIntermediateEvent.PROP_EVENT_SUBTYPE, MessageIntermediateEvent.EVENT_SUBTYPE_THROWING);
 			}
 			return _mie;
 		}
@@ -801,93 +785,4 @@ private Configuration f_config = Configuration.getInstance();
 			}
 		}
 	}
-	
-	private void buildBlackBoxOrgCollection(WorldModel world) {
-		if(BUILD_BLACK_BOX_ORGCOLLECTION_COMMUNICATION) {
-			for(Action a:world.getActions()) {
-				if(WordNetWrapper.isInteractionVerb(a)){
-					checkForBBOrgCollections(a);	
-				}
-				if(a.getXcomp() != null && WordNetWrapper.isInteractionVerb(a.getXcomp())) {
-					checkForBBOrgCollections(a.getXcomp());
-				}
-			}	
-		}
-	}
-	
-	private void checkForBBOrgCollections(Action a) {
-		//candidate
-		Specifier _sender = containedSender(a.getSpecifiers(SpecifierType.PP));
-		Specifier _receiver = containedReceiver(a.getSpecifiers(SpecifierType.PP));
-		ExtractedObject _obj = a.getObject();
-		if(_obj != null && _obj.needsResolve() && _obj.getReference() instanceof ExtractedObject) {
-			_obj = (ExtractedObject) _obj.getReference();
-		}
-		if(_obj != null && !(_obj instanceof Actor)) {
-			//checking genetive 
-			for(Specifier spec:_obj.getSpecifiers(SpecifierType.PP)) {
-				if(spec.getPhraseType().equals(PhraseType.GENITIVE)) {
-					if(spec.getObject() instanceof Actor) {
-						_obj = spec.getObject();
-					}
-				}
-			}
-		}
-		if(_obj != null && _obj instanceof Actor && !((Actor)_obj).isMetaActor()) {
-			String _name = getName(_obj, false,0,true);
-			if(f_NameToOrgCollection.containsKey(_name)){
-				
-				f_CommLinks.put(f_elementsMap.get(a), _name);
-			}else {
-				OrgCollection _bbOC = getBBOrgCollection(_name);
-				ProcessNode _f = ((Function)f_elementsMap.get(a));
-				if(_f instanceof Function) {
-				 _f.setStereotype(Function.TYPE_SEND);
-				}
-//				MessageFlow _msf = new MessageFlow(_f,_bbOC);
-//				f_model.addEdge(_msf);
-			}
-		}else {
-			if(_sender != null && !f_NameToOrgCollection.containsKey(getName(_sender.getObject(), false))) {
-				String _name = getName(_sender.getObject(), false);
-				if(f_NameToOrgCollection.containsKey(_name)){
-					f_CommLinks.put(f_elementsMap.get(a), _name);
-				}else {
-					OrgCollection _bbOC = getBBOrgCollection(_name);
-					Function _f = ((Function)f_elementsMap.get(a));
-					_f.setStereotype(Function.TYPE_SEND);
-//					MessageFlow _msf = new MessageFlow(_f,_bbOC);
-//					f_model.addEdge(_msf);
-				}	
-			}else if(_receiver != null && !f_NameToOrgCollection.containsKey(getName(_receiver.getObject(), false))){
-				String _name = getName(_receiver.getObject(), false);
-				if(f_NameToOrgCollection.containsKey(_name)){
-					f_CommLinks.put(f_elementsMap.get(a), _name);
-				}else {
-					OrgCollection _bbOC = getBBOrgCollection(_name);
-					ProcessNode _rpn = f_elementsMap.get(a);
-					if(_rpn instanceof Task) {
-						Task _t = ((Task)_rpn);
-						_t.setStereotype(Task.TYPE_RECEIVE);
-					}
-//					MessageFlow _msf = new MessageFlow(_bbOC,_rpn);
-//					f_model.addEdge(_msf);
-				}
-			}
-		}
-	}
-	
-	private OrgCollection getBBOrgCollection(String name) {
-		if(f_bbOrgcache.containsKey(name)) {
-			return f_bbOrgcache.get(name);
-		}else {
-			OrgCollection _result = new OrgCollection(0,-100,name);
-			_result.setProperty(Pool.PROP_BLACKBOX_POOL, "TRUE");
-			f_bbOrgcache.put(name, _result);
-			f_model.addNode(_result);
-			return _result;
-		}		 
-	}
-	
-
 }

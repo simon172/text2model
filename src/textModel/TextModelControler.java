@@ -10,11 +10,11 @@ package textModel;
 import java.util.ArrayList;
 import java.util.List;
 
-import Models.ProcessModel;
-import Nodes.Cluster;
-import Nodes.ProcessEdge;
-import Nodes.ProcessNode;
-import Nodes.ProcessObject;
+import nodes.Cluster;
+import nodes.ProcessEdge;
+import nodes.ProcessNode;
+import nodes.ProcessObject;
+import models.ProcessModel;
 import processing.ProcessUtils;
 import etc.SentenceWordID;
 import etc.TextToProcess;
@@ -320,7 +320,7 @@ public class TextModelControler extends ProcessUtils {
 				}
 			}
 		}
-		f_processor.analyzeText(true, bpmn); //rebuild process model
+		f_processor.analyzeText(true); //rebuild process model
 	}
 
 	/**

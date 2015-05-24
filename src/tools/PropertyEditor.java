@@ -1,7 +1,7 @@
 package tools;
 
 
-import Nodes.ProcessObject;
+import nodes.ProcessObject;
 
 public abstract class PropertyEditor {
     protected ProcessObject po = null;

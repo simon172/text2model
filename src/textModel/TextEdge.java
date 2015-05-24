@@ -7,7 +7,7 @@
  */
 package textModel;
 
-import Nodes.ProcessEdge;
+import nodes.ProcessEdge;
 
 
 /**

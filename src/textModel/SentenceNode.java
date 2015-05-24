@@ -9,8 +9,9 @@ package textModel;
 
 import java.util.ArrayList;
 
-import Nodes.Cluster;
-import Nodes.ProcessNode;
+import epc.SequenceFlow;
+import nodes.Cluster;
+import nodes.ProcessNode;
 
 
 /**
@@ -52,6 +53,18 @@ public class SentenceNode extends Cluster {
 	@Override
 	public void removeProcessNode(ProcessNode n) {
 		//not possible its a build only model
+	}
+
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

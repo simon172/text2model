@@ -7,7 +7,8 @@
  */
 package textModel;
 
-import Nodes.ProcessNode;
+import epc.SequenceFlow;
+import nodes.ProcessNode;
 
 
 /**
@@ -43,5 +44,17 @@ public class WordNode extends ProcessNode {
 	@Override
 	public String toString() {
 		return "WordNode ("+getText()+")";
+	}
+
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -6,15 +6,15 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
+import models.ProcessModel;
+import nodes.Cluster;
+import nodes.ProcessEdge;
+import nodes.ProcessNode;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import Models.ProcessModel;
-import Nodes.Cluster;
-import Nodes.ProcessEdge;
-import Nodes.ProcessNode;
 
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;

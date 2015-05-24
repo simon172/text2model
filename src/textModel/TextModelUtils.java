@@ -8,8 +8,8 @@
 package textModel;
 
 
-import Nodes.ProcessEdge;
-import Nodes.ProcessNode;
+import nodes.ProcessEdge;
+import nodes.ProcessNode;
 import processing.ProcessUtils;
 
 public class TextModelUtils extends ProcessUtils {
