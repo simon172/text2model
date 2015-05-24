@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="2028577056">
+<name>send a mortgage offer to the customer</name>
+<relation from ="2028577056" to ="843865938"/>
+</function>
+<function id="127473818">
+<name>wait for a reply</name>
+<relation from ="127473818" to ="843865938"/>
+</function>
+<function id="1924056571">
+<name>write back to decline the mortgage</name>
+<relation from ="1924056571" to ="189242166"/>
+</function>
+<function id="513092849">
+<name>update the case details</name>
+<relation from ="513092849" to ="189242166"/>
+</function>
+<function id="222219027">
+<name>archive the work</name>
+<relation from ="222219027" to ="189242166"/>
+</function>
+<function id="434286412">
+<name>attach prerequisite documents</name>
+<relation from ="434286412" to ="189242166"/>
+</function>
+<function id="171795081">
+<name>move the case to administration</name>
+<relation from ="171795081" to ="189242166"/>
+</function>
+<function id="759422763">
+<name>generate a message to request outstanding documents to the customer</name>
+<relation from ="759422763" to ="189242166"/>
+</function>
+<function id="208770388">
+<name>update the case details</name>
+<relation from ="208770388" to ="189242166"/>
+</function>
+<participant id="843865938">
+<name>customer service representative</name>
+</participant>
+<participant id="189242166">
+<name>customer</name>
+</participant>
+<event id="569053050">
+<name>the customer calls the mortgage </name>
+</event>
+<event id="2011961979">
+<name>the customer sends the completed offer documents </name>
+</event>
+<event id="269687515">
+<name>does not provide  pre-requisite documents </name>
+</event>
+<event id="300453313">
+<name>receives no answer after 2 weeks</name>
+</event>
+<xor id="955309867"/>
+<xor id="1272609234"/>
+<xor id="771362675"/>
+<arc id="388795580">
+<flow source="2028577056" target="127473818"/>
+</arc>
+<arc id="114810057">
+<flow source="955309867" target="569053050"/>
+</arc>
+<arc id="1978526147">
+<flow source="955309867" target="1924056571"/>
+</arc>
+<arc id="942351956">
+<flow source="127473818" target="955309867"/>
+</arc>
+<arc id="304832354">
+<flow source="569053050" target="1272609234"/>
+</arc>
+<arc id="135401237">
+<flow source="1924056571" target="1272609234"/>
+</arc>
+<arc id="706936699">
+<flow source="1272609234" target="513092849"/>
+</arc>
+<arc id="270459692">
+<flow source="513092849" target="222219027"/>
+</arc>
+<arc id="2098222335">
+<flow source="771362675" target="2011961979"/>
+</arc>
+<arc id="443600882">
+<flow source="771362675" target="269687515"/>
+</arc>
+<arc id="1737280088">
+<flow source="771362675" target="300453313"/>
+</arc>
+<arc id="1700955617">
+<flow source="222219027" target="771362675"/>
+</arc>
+<arc id="372250309">
+<flow source="2011961979" target="434286412"/>
+</arc>
+<arc id="1777864528">
+<flow source="434286412" target="171795081"/>
+</arc>
+<arc id="1978356418">
+<flow source="269687515" target="759422763"/>
+</arc>
+<arc id="1957988397">
+<flow source="300453313" target="208770388"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>
