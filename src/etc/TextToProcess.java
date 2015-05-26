@@ -20,6 +20,7 @@ import nodes.ProcessNode;
 import nodes.ProcessObject;
 import models.EPCModel;
 import build.EPCExporter;
+import build.Repairer;
 import processing.T2PStanfordWrapper;
 import text.T2PSentence;
 import text.Text;
@@ -32,6 +33,10 @@ import transform.TextModelBuilder;
 import worldModel.Action;
 import worldModel.SpecifiedElement;
 import edu.stanford.nlp.trees.TypedDependency;
+import epc.Connector;
+import epc.ConnectorAND;
+import epc.ConnectorOR;
+import epc.ConnectorXOR;
 import epc.Function;
 import epc.Organisation;
 import epc.SequenceFlow;
@@ -58,12 +63,6 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
     
 	private HashMap<Action, FlowObject> f_elementsMap = new HashMap<Action, FlowObject>();
 	private HashMap<FlowObject, Action> f_elementsMapInv = new HashMap<FlowObject, Action>();
-	
-	//for EPC export
-	private ArrayList<Function> f_functions = new ArrayList<Function>();
-	private ArrayList<SequenceFlow> f_flows = new ArrayList<SequenceFlow>();
-	private ArrayList<epc.Event> f_events = new ArrayList<epc.Event>();
-	private ArrayList<Organisation> f_orgs = new ArrayList<Organisation>();
 	
 	
 	/**
@@ -94,39 +93,27 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
 			TextModel _model = f_builder.createModel(f_analyzer);	
 			if(f_textModelControler != null)
 				f_textModelControler.setModels(this, f_analyzer,f_builder,_model);
-        }
-        	
-        	EPCModelBuilder _builder = new EPCModelBuilder(this);
-        	f_generatedModelEPC = (EPCModel) _builder.createProcessModel(f_analyzer.getWorld());
-        	for (Cluster c : new ArrayList<Cluster>(f_generatedModelEPC.getClusters())){
-        		if (c instanceof Organisation){
-        			Organisation org = (Organisation) c;
-        			f_orgs.add(org);
-        		}
-        	}
-        	EPCExporter exp = new EPCExporter(f_generatedModelEPC);
-        	for (ProcessNode a : new ArrayList<ProcessNode>(f_generatedModelEPC.getFlowObjects())){
-        		if (a instanceof Function){
-        			Function f = (Function) a;
-        			f_functions.add(f);
-        		}
-        	}
-        	f_events = f_generatedModelEPC.getEvents();
-        	f_generatedModelEPC.extractConnectors();
-        	for (ProcessEdge a : new ArrayList<ProcessEdge>(f_generatedModelEPC.getFlows())){
-        		if (a instanceof epc.SequenceFlow){
-        			SequenceFlow f = (epc.SequenceFlow) a;
-        			f_flows.add(f);
-        		}
-        	}
-        	exp.addFunctions(f_functions);
-        	exp.addOrgs(f_orgs);
-        	exp.addEvents(f_events);
-        	exp.addConnectors(f_generatedModelEPC.getConnectorAND(), f_generatedModelEPC.getConnectorOR(), f_generatedModelEPC.getConnectorXOR());
-        	exp.addFlows(f_flows);
-        	exp.end();
-        	exp.export();
-        
+        }	
+        EPCModelBuilder _builder = new EPCModelBuilder(this);
+        f_generatedModelEPC = (EPCModel) _builder.createProcessModel(f_analyzer.getWorld());
+        Repairer rep = new Repairer(f_generatedModelEPC);
+        rep.repairModel();
+        EPCExporter exp = new EPCExporter(f_generatedModelEPC);
+        exp.addFunctions(rep.getFunctions());
+        exp.addEvents(rep.getEvents());
+        ArrayList<ConnectorAND> and = new ArrayList<ConnectorAND>();
+        ArrayList<ConnectorOR> or = new ArrayList<ConnectorOR>();
+        ArrayList<ConnectorXOR> xor = new ArrayList<ConnectorXOR>();
+        and.addAll(rep.getAndJoins());
+        and.addAll(rep.getAndSplits());
+        or.addAll(rep.getOrJoins());
+        or.addAll(rep.getOrSplits());
+        xor.addAll(rep.getXorJoins());
+        xor.addAll(rep.getXorSplits());
+        exp.addConnectors(and, or, xor);
+        exp.addFlows(rep.getFlows());
+        exp.end();
+        exp.export();
 	}
 	
 	public void parseText(File file, boolean bpmn) {

@@ -38,15 +38,6 @@
 <name>update the case details</name>
 <relation from ="208770388" to ="189242166"/>
 </function>
-<participant id="843865938">
-<name>customer service representative</name>
-</participant>
-<participant id="189242166">
-<name>customer</name>
-</participant>
-<event id="569053050">
-<name>the customer calls the mortgage </name>
-</event>
 <event id="2011961979">
 <name>the customer sends the completed offer documents </name>
 </event>
@@ -56,32 +47,56 @@
 <event id="300453313">
 <name>receives no answer after 2 weeks</name>
 </event>
-<xor id="955309867"/>
+<event id="2064702006">
+<name>start</name>
+</event>
+<event id="300996587">
+<name>to label</name>
+</event>
+<event id="1416632139">
+<name>to label</name>
+</event>
+<event id="1697245154">
+<name>to label</name>
+</event>
+<event id="2105452424">
+<name>to label</name>
+</event>
+<event id="746983236">
+<name>to label</name>
+</event>
+<event id="213505442">
+<name>end</name>
+</event>
+<event id="1095109810">
+<name>end</name>
+</event>
+<event id="478042003">
+<name>end</name>
+</event>
 <xor id="1272609234"/>
+<xor id="955309867"/>
 <xor id="771362675"/>
 <arc id="388795580">
-<flow source="2028577056" target="127473818"/>
+<flow source="300996587" target="127473818"/>
 </arc>
 <arc id="114810057">
-<flow source="955309867" target="569053050"/>
+<flow source="955309867" target="1272609234"/>
 </arc>
 <arc id="1978526147">
-<flow source="955309867" target="1924056571"/>
+<flow source="1416632139" target="1924056571"/>
 </arc>
 <arc id="942351956">
 <flow source="127473818" target="955309867"/>
-</arc>
-<arc id="304832354">
-<flow source="569053050" target="1272609234"/>
 </arc>
 <arc id="135401237">
 <flow source="1924056571" target="1272609234"/>
 </arc>
 <arc id="706936699">
-<flow source="1272609234" target="513092849"/>
+<flow source="1697245154" target="513092849"/>
 </arc>
 <arc id="270459692">
-<flow source="513092849" target="222219027"/>
+<flow source="2105452424" target="222219027"/>
 </arc>
 <arc id="2098222335">
 <flow source="771362675" target="2011961979"/>
@@ -99,13 +114,40 @@
 <flow source="2011961979" target="434286412"/>
 </arc>
 <arc id="1777864528">
-<flow source="434286412" target="171795081"/>
+<flow source="746983236" target="171795081"/>
 </arc>
 <arc id="1978356418">
 <flow source="269687515" target="759422763"/>
 </arc>
 <arc id="1957988397">
 <flow source="300453313" target="208770388"/>
+</arc>
+<arc id="1497359134">
+<flow source="2064702006" target="2028577056"/>
+</arc>
+<arc id="701282606">
+<flow source="2028577056" target="300996587"/>
+</arc>
+<arc id="1920018888">
+<flow source="955309867" target="1416632139"/>
+</arc>
+<arc id="694167456">
+<flow source="1272609234" target="1697245154"/>
+</arc>
+<arc id="112914054">
+<flow source="513092849" target="2105452424"/>
+</arc>
+<arc id="83062867">
+<flow source="434286412" target="746983236"/>
+</arc>
+<arc id="1571210349">
+<flow source="171795081" target="213505442"/>
+</arc>
+<arc id="1588104481">
+<flow source="759422763" target="1095109810"/>
+</arc>
+<arc id="1997565405">
+<flow source="208770388" target="478042003"/>
 </arc>
 </epc>
 </directory>

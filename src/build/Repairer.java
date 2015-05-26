@@ -45,12 +45,102 @@ public class Repairer {
 		this.checkFunctions();
 	}
 	
+	public ArrayList<Organisation> getOrgs() {
+		return orgs;
+	}
+
+	public ArrayList<Function> getFunctions() {
+		return functions;
+	}
+
+	public ArrayList<Event> getEvents() {
+		return events;
+	}
+
+	public ArrayList<Connector> getConnBuffer() {
+		return connBuffer;
+	}
+
+	public ArrayList<SequenceFlow> getFlows() {
+		return flows;
+	}
+
+	public ArrayList<ConnectorAND> getAndSplits() {
+		return andSplits;
+	}
+
+	public ArrayList<ConnectorAND> getAndJoins() {
+		return andJoins;
+	}
+
+	public ArrayList<ConnectorOR> getOrSplits() {
+		return orSplits;
+	}
+
+	public ArrayList<ConnectorOR> getOrJoins() {
+		return orJoins;
+	}
+
+	public ArrayList<ConnectorXOR> getXorSplits() {
+		return xorSplits;
+	}
+
+	public ArrayList<ConnectorXOR> getXorJoins() {
+		return xorJoins;
+	}
+
+	public void setOrgs(ArrayList<Organisation> orgs) {
+		this.orgs = orgs;
+	}
+
+	public void setFunctions(ArrayList<Function> functions) {
+		this.functions = functions;
+	}
+
+	public void setEvents(ArrayList<Event> events) {
+		this.events = events;
+	}
+
+	public void setConnBuffer(ArrayList<Connector> connBuffer) {
+		this.connBuffer = connBuffer;
+	}
+
+	public void setFlows(ArrayList<SequenceFlow> flows) {
+		this.flows = flows;
+	}
+
+	public void setAndSplits(ArrayList<ConnectorAND> andSplits) {
+		this.andSplits = andSplits;
+	}
+
+	public void setAndJoins(ArrayList<ConnectorAND> andJoins) {
+		this.andJoins = andJoins;
+	}
+
+	public void setOrSplits(ArrayList<ConnectorOR> orSplits) {
+		this.orSplits = orSplits;
+	}
+
+	public void setOrJoins(ArrayList<ConnectorOR> orJoins) {
+		this.orJoins = orJoins;
+	}
+
+	public void setXorSplits(ArrayList<ConnectorXOR> xorSplits) {
+		this.xorSplits = xorSplits;
+	}
+
+	public void setXorJoins(ArrayList<ConnectorXOR> xorJoins) {
+		this.xorJoins = xorJoins;
+	}
+
 	private void getIncomingOutgoingFlows(){
 		for (ProcessEdge a : new ArrayList<ProcessEdge>(model.getFlows())){
 			if (a instanceof SequenceFlow){
-				SequenceFlow f = (SequenceFlow) a;
-				a.getSource().setOutgoing(f);
-				a.getTarget().setIncoming(f);
+				if (a.getSource()!=null && a.getTarget()!=null){
+					SequenceFlow f = (SequenceFlow) a;
+					a.getSource().setOutgoing(f);
+					a.getTarget().setIncoming(f);
+				}
 			}
 		}
 	}
@@ -152,47 +242,53 @@ public class Repairer {
 					allEvents=false;
 				}
 			}
-			if (allEvents){
+			if (allEvents && c.getIncoming().get(0).getSource() instanceof Event){
 				Function func = new Function("make decision");
 				c.getIncoming().get(0).setTarget(func);
 				SequenceFlow sf = new SequenceFlow(func,c);
 				functions.add(func);
 				flows.add(sf);
 			} else {
-				Event toMove = (Event) c.getIncoming().get(0).getSource();
-				if (allFunctions){
-					ArrayList<SequenceFlow> flowBuffer = new ArrayList<SequenceFlow>();
-					for (SequenceFlow sf:c.getOutgoing()){
-						Event e = (Event) toMove.clone();
-						e.setId("" + e.hashCode());
-						sf.setSource(e);
-						SequenceFlow toAdd = new SequenceFlow(c,e);
-						events.add(e);
-						flows.add(toAdd);
-						flowBuffer.add(toAdd);
-					}
-					c.overrideOutgoing(flowBuffer);
-					c.getIncoming().get(0).setSource(toMove.getIncoming().getSource());
-					flows.remove(toMove.getIncoming());
-					events.remove(toMove);
-				} else {
-					ArrayList<SequenceFlow> flowBuffer = new ArrayList<SequenceFlow>();
-					for (SequenceFlow sf:c.getOutgoing()){
-						if (sf.getTarget() instanceof Function){
+				if (c.getIncoming().get(0).getSource() instanceof Event){
+					Event toMove = (Event) c.getIncoming().get(0).getSource();
+					if (allFunctions){
+						ArrayList<SequenceFlow> flowBuffer = new ArrayList<SequenceFlow>();
+						for (SequenceFlow sf:c.getOutgoing()){
 							Event e = (Event) toMove.clone();
 							e.setId("" + e.hashCode());
 							sf.setSource(e);
 							SequenceFlow toAdd = new SequenceFlow(c,e);
+							toAdd.setSource(c);
+							toAdd.setTarget(e);
 							events.add(e);
 							flows.add(toAdd);
 							flowBuffer.add(toAdd);
-						} else {
-							flowBuffer.add(sf);
 						}
 						c.overrideOutgoing(flowBuffer);
 						c.getIncoming().get(0).setSource(toMove.getIncoming().getSource());
 						flows.remove(toMove.getIncoming());
 						events.remove(toMove);
+					} else {
+						ArrayList<SequenceFlow> flowBuffer = new ArrayList<SequenceFlow>();
+						for (SequenceFlow sf:c.getOutgoing()){
+							if (sf.getTarget() instanceof Function){
+								Event e = (Event) toMove.clone();
+								e.setId("" + e.hashCode());
+								sf.setSource(e);
+								SequenceFlow toAdd = new SequenceFlow(c,e);
+								toAdd.setSource(c);
+								toAdd.setTarget(e);
+								events.add(e);
+								flows.add(toAdd);
+								flowBuffer.add(toAdd);
+							} else {
+								flowBuffer.add(sf);
+							}
+							c.overrideOutgoing(flowBuffer);
+							c.getIncoming().get(0).setSource(toMove.getIncoming().getSource());
+							flows.remove(toMove.getIncoming());
+							events.remove(toMove);
+						}
 					}
 				}
 			}
@@ -204,12 +300,16 @@ public class Repairer {
 			if (f.getIncoming()==null){
 				Event e = new Event("start");
 				SequenceFlow sf = new SequenceFlow(e,f);
+				sf.setSource(e);
+				sf.setTarget(f);
 				events.add(e);
 				flows.add(sf);
 			}
 			if (f.getOutgoing()==null){
 				Event e = new Event("end");
 				SequenceFlow sf = new SequenceFlow(f,e);
+				sf.setSource(f);
+				sf.setTarget(e);
 				events.add(e);
 				flows.add(sf);
 			} else {
@@ -217,6 +317,8 @@ public class Repairer {
 					Event e = new Event("to label");
 					f.getOutgoing().setSource(e);
 					SequenceFlow sf = new SequenceFlow(f,e);
+					sf.setSource(f);
+					sf.setTarget(e);
 					events.add(e);
 					flows.add(sf);
 				} else {
@@ -227,6 +329,8 @@ public class Repairer {
 								Event e = new Event("to label");
 								sf.setSource(e);
 								SequenceFlow seq = new SequenceFlow(c,e);
+								seq.setSource(c);
+								seq.setTarget(e);
 								events.add(e);
 								flows.add(seq);
 							}
@@ -238,12 +342,13 @@ public class Repairer {
 	}
 	
 	private void checkEvents(){
+		ArrayList<Event> toDelete = new ArrayList<Event>();
 		for (Event e:events){
 			if (e.getOutgoing() != null){
 				if (e.getOutgoing().getTarget() instanceof Event){
 					e.getIncoming().setTarget(e.getOutgoing().getTarget());
 					flows.remove(e.getOutgoing());
-					events.remove(e);
+					toDelete.add(e);
 				} else {
 					if (e.getOutgoing().getTarget() instanceof Connector){
 						Connector c = (Connector) e.getOutgoing().getTarget();
@@ -251,11 +356,12 @@ public class Repairer {
 						c.getIncoming().remove(e.getOutgoing());
 						c.setIncoming(e.getIncoming());
 						flows.remove(e.getOutgoing());
-						events.remove(e);
+						toDelete.add(e);
 					}
 				}
 			}
 		}
+		events.removeAll(toDelete);
 	}
 
 }

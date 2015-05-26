@@ -22,9 +22,6 @@ import epc.SequenceFlow;
 public class EPCModel extends ProcessModel {
 	
 	private ArrayList<Event> events = new ArrayList<Event>();
-	private ArrayList<ConnectorAND> connsAND = new ArrayList<ConnectorAND>();
-	private ArrayList<ConnectorOR> connsOR = new ArrayList<ConnectorOR>();
-	private ArrayList<ConnectorXOR> connsXOR = new ArrayList<ConnectorXOR>();
 	
 	public enum conType {
 		AND, OR, XOR
@@ -120,36 +117,6 @@ public class EPCModel extends ProcessModel {
 	public ArrayList<Event> getEvents (){
 		return events;
 	}
-	
-	public void extractConnectors(){
-		for (ProcessNode pn:super.getNodes()){
-			if (pn instanceof ConnectorAND){
-				ConnectorAND ca = (ConnectorAND) pn;
-				connsAND.add(ca);
-			}
-			if (pn instanceof ConnectorOR){
-				ConnectorOR co = (ConnectorOR) pn;
-				connsOR.add(co);
-			}
-			if (pn instanceof ConnectorXOR){
-				ConnectorXOR cx = (ConnectorXOR) pn;
-				connsXOR.add(cx);
-			}
-		}
-	}
-	
-	public ArrayList<ConnectorAND> getConnectorAND(){
-		return connsAND;
-	}
-	
-	public ArrayList<ConnectorOR> getConnectorOR(){
-		return connsOR;
-	}
-	
-	public ArrayList<ConnectorXOR> getConnectorXOR(){
-		return connsXOR;
-	}
-	
 	
 
 }
