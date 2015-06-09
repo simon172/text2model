@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package transform;
 
@@ -32,10 +28,6 @@ import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.trees.TreeGraphNode;
 import edu.stanford.nlp.trees.TypedDependency;
 
-/**
- * @author ff
- *
- */
 public class AnalyzedSentence {
 		
 	private T2PSentence f_sentence;

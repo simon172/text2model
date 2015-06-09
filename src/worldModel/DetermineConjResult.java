@@ -1,18 +1,10 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package worldModel;
 
 import transform.ConjunctionElement.ConjunctionType;
 
-/**
- * @author ff
- *
- */
 public class DetermineConjResult {
 	
 	private ConjunctionType f_type;

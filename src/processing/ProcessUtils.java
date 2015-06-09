@@ -1,3 +1,6 @@
+/**
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
+ */
 package processing;
 
 import java.util.ArrayList;
@@ -23,7 +26,6 @@ import javax.xml.xpath.XPathConstants;
  * 
  * This class provides static methods for drawing process elements.
  * 
- * @author frank
  */
 public abstract class ProcessUtils {
 

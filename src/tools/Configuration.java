@@ -101,14 +101,4 @@ public class Configuration {
             //storeConfig();
         }
     }
-
-    /**
-     * Writes the configuration to a file.
-     */
-    /*private void storeConfig() {
-        try {
-            props.storeToXML(new FileOutputStream(System.getProperty("user.home")+File.separator+CONFIGFILE), new Date().toString());
-        } catch (Exception ex) {
-        }
-    }*/
 }

@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package worldModel;
 
@@ -12,10 +8,6 @@ import java.util.List;
 
 import text.T2PSentence;
 
-/**
- * @author ff
- *
- */
 public class Flow extends OriginatedElement{
 	
 	private List<Action> f_multiples = new ArrayList<Action>();

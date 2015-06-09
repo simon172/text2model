@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package processing;
 
@@ -15,10 +11,6 @@ import worldModel.ExtractedObject;
 import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.trees.TreeGraphNode;
 
-/**
- * @author ff
- *
- */
 public class ProcessingUtils {
 	
 	private static String[] f_beForms = {"be", "am", "are", "is",

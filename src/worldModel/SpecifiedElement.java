@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package worldModel;
 
@@ -13,10 +9,6 @@ import java.util.List;
 import text.T2PSentence;
 import worldModel.Specifier.SpecifierType;
 
-/**
- * @author ff
- *
- */
 public abstract class SpecifiedElement extends OriginatedElement implements Comparable<SpecifiedElement>{
 
 	private int f_wordIndex = -1;

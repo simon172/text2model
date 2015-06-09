@@ -2,8 +2,6 @@ package transform;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -22,7 +20,6 @@ import worldModel.Actor;
 import worldModel.ExtractedObject;
 import worldModel.Flow;
 import worldModel.Resource;
-import worldModel.SpecifiedElement;
 import worldModel.Specifier;
 import worldModel.WorldModel;
 import worldModel.Flow.FlowDirection;
@@ -55,7 +52,6 @@ private Configuration f_config = Configuration.getInstance();
 	private final boolean ADD_UNKNOWN_PHRASETYPES = "1".equals(f_config.getProperty(Constants.CONF_GENERATE_ADD_UNKNOWN_PT));
 	private final int MAX_NAME_DEPTH = 3;
 	//Model in General
-	private final boolean BUILD_BLACK_BOX_ORGCOLLECTION_COMMUNICATION = "1".equals(f_config.getProperty(Constants.CONF_GENERATE_BB_POOLS));
 	private final boolean BUILD_DATA_OBJECTS = "1".equals(f_config.getProperty(Constants.CONF_GENERATE_DATA_OBJECTS));
 	
 	private TextToProcess f_parent;
@@ -72,8 +68,6 @@ private Configuration f_config = Configuration.getInstance();
 	private Organisation f_lastOrg = null;
 	private OrganisationCluster f_mainOrg;
 	private ArrayList<Event> f_events = new ArrayList<Event>();
-	
-	//for black box pools
 	private HashMap<ProcessNode,String> f_CommLinks = new HashMap<ProcessNode, String>();
 	private HashMap<String, OrgCollection> f_bbOrgcache = new HashMap<String, OrgCollection>();
 
@@ -257,20 +251,10 @@ private Configuration f_config = Configuration.getInstance();
 						removeNode(a);
 						if(a.getName().equals("terminate") && _succs.size()==1) {
 							Event _ee = (Event) _succs.get(0);
-//							try {
-//								ProcessUtils.refactorNode(f_model, _ee, TerminateEndEvent.class);
-//							}catch(Exception ex) {
-//								ex.printStackTrace();
-//							}
 						}
 //					}					
 				}else if(WordNetWrapper.isVerbOfType(a.getName(),"start")) {
 					ProcessNode _pnode = f_elementsMap.get(a);
-					List<ProcessNode> _preds = f_model.getPredecessors(_pnode);
-//					if(_preds.size() == 1 && _preds.get(0) instanceof StartEvent) {
-//						//we do not need this node
-//						removeNode(a);
-//					}
 				}
 			}
 		}

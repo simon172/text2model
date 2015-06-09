@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package worldModel;
 
@@ -14,7 +10,6 @@ import worldModel.Specifier.SpecifierType;
 
 /**
  * data object or object of an action, the outcome
- * @author ff
  *
  */
 public class Resource extends ExtractedObject {

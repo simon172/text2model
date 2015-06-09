@@ -4,7 +4,6 @@ import java.util.LinkedList;
 
 import nodes.Linkable;
 import epc.Artifact;
-import tools.ReferenceChooserRestriction;
 
 public class File extends Artifact implements Linkable {
 
@@ -20,8 +19,6 @@ public class File extends Artifact implements Linkable {
     public final static String DATA_INPUT = "INPUT";
     /** DataObject type is Output */
     public final static String DATA_OUTPUT = "OUTPUT";
-
-    public static ReferenceChooserRestriction restrictions;
     
     public File() {
         super();
@@ -53,15 +50,5 @@ public class File extends Artifact implements Linkable {
     public String toString() {
         return "EPC File ("+getText()+")";
     }
-
-    public ReferenceChooserRestriction getReferenceRestrictions() {
-        if (restrictions == null) {
-            LinkedList<Class> classes = new LinkedList<Class>();
-//            classes.add(DomainClass.class);
-            restrictions = new ReferenceChooserRestriction(null, classes);
-        }
-        return restrictions;
-    }
-
 	
 }

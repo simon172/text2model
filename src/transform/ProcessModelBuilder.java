@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package transform;
 
@@ -34,10 +30,6 @@ import worldModel.Specifier;
 import worldModel.WorldModel;
 import worldModel.Specifier.SpecifierType;
 
-/**
- * @author ff
- *
- */
 public abstract class ProcessModelBuilder {
 	
 /**

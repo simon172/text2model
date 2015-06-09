@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package transform;
 
@@ -15,12 +11,6 @@ import worldModel.Action;
 import edu.stanford.nlp.process.PTBTokenizer;
 import edu.stanford.nlp.trees.Tree;
 
-/**
- * 
- * provides utilities for textual output
- * @author ff
- *
- */
 public class PrintUtils {
 	
 	/**

@@ -314,7 +314,8 @@ public class Repairer {
 				flows.add(sf);
 			} else {
 				if (f.getOutgoing().getTarget() instanceof Function){
-					Event e = new Event("to label");
+					String text= f.getName()+" is done";
+					Event e = new Event(text);
 					f.getOutgoing().setSource(e);
 					SequenceFlow sf = new SequenceFlow(f,e);
 					sf.setSource(f);
@@ -326,7 +327,8 @@ public class Repairer {
 						Connector c = (Connector) f.getOutgoing().getTarget();
 						for (SequenceFlow sf:c.getOutgoing()){
 							if (sf.getTarget() instanceof Function){
-								Event e = new Event("to label");
+								String text= f.getName()+" is done";
+								Event e = new Event(text);
 								sf.setSource(e);
 								SequenceFlow seq = new SequenceFlow(c,e);
 								seq.setSource(c);

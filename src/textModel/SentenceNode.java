@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package textModel;
 
@@ -14,10 +10,7 @@ import nodes.Cluster;
 import nodes.ProcessNode;
 
 
-/**
- * @author ff
- *
- */
+
 public class SentenceNode extends Cluster {
 	
 	private ArrayList<WordNode> f_wordNodes = new ArrayList<WordNode>();

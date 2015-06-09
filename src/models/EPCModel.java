@@ -1,7 +1,6 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,13 +9,9 @@ import nodes.ProcessEdge;
 import nodes.ProcessNode;
 import epc.Association;
 import epc.Connector;
-import epc.ConnectorAND;
-import epc.ConnectorOR;
-import epc.ConnectorXOR;
 import epc.Event;
 import epc.Function;
 import epc.InformationObject;
-import epc.Organisation;
 import epc.SequenceFlow;
 
 public class EPCModel extends ProcessModel {

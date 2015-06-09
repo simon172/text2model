@@ -1,3 +1,6 @@
+/**
+ * modified taken from https://github.com/frapu78/processeditor
+ */
 package nodes;
 
 import models.ProcessModel;

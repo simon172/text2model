@@ -11,7 +11,6 @@ import edu.stanford.nlp.trees.Tree;
 /**
  * Simple Data structure, based on the Stanford sentence.
  * Adds a unique ID to enable tracing
- * @author ff
  *
  */
 public class T2PSentence extends Sentence<Word> {

@@ -1,18 +1,10 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package transform;
 
 import worldModel.SpecifiedElement;
 
-/**
- * @author ff
- *
- */
 public class ConjunctionElement {
 	
 	public enum ConjunctionType {

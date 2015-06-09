@@ -1,3 +1,6 @@
+/**
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
+ */
 package processing;
 
 import java.io.BufferedInputStream;
@@ -24,8 +27,7 @@ import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.trees.TreebankLanguagePack;
 
 /**
- * A Wrapper for the calls to the stanford API 
- * @author ff
+ * A Wrapper for the calls to the stanford API
  *
  */
 public class T2PStanfordWrapper {

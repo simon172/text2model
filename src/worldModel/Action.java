@@ -1,18 +1,11 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package worldModel;
 
 import processing.WordNetWrapper;
 import text.T2PSentence;
 
-/**
- * @author ff
- */
 public class Action extends SpecifiedElement{
 	
 	private String f_baseForm;

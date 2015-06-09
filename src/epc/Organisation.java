@@ -3,13 +3,10 @@ package epc;
 import java.util.LinkedList;
 
 import nodes.Linkable;
-import tools.ReferenceChooserRestriction;
 
 public class Organisation extends OrganisationCluster implements Linkable{
 
 	private OrganisationCluster parent;
-
-    private static ReferenceChooserRestriction restrictions;
 
     /**
      * needed for deserialization
@@ -55,19 +52,6 @@ public class Organisation extends OrganisationCluster implements Linkable{
      */
     public void setParent(OrganisationCluster parent) {
         this.parent = parent;
-    }
-    
-    @Override
-    public ReferenceChooserRestriction getReferenceRestrictions() {
-        if ( restrictions == null ) {
-            LinkedList<Class> classes = new LinkedList<Class>();
-//            classes.add(Role.class);
-//            classes.add(ManagerialRole.class);
-//            classes.add(Person.class);
-            restrictions = new ReferenceChooserRestriction(null, classes);
-        }
-
-        return restrictions;
     }
 	
 }

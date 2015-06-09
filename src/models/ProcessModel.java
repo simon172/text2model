@@ -1,3 +1,7 @@
+/**
+ * modified taken from https://github.com/frapu78/processeditor
+ */
+
 package models;
 
 import java.text.DateFormat;
@@ -13,7 +17,6 @@ import java.util.logging.Logger;
 import nodes.AttachedNode;
 import nodes.Cluster;
 import nodes.EdgeDocker;
-import nodes.FlowObject;
 import nodes.ProcessEdge;
 import nodes.ProcessNode;
 import nodes.ProcessObject;
@@ -57,10 +60,6 @@ public abstract class ProcessModel implements Cloneable {
     /** This color will be used to fill the whole background of the model prior to painting (not serialized) */
     /** A cache for the incoming edges of a node */
     protected Map<ProcessNode, List<ProcessEdge>> precEdgeCache = new HashMap<ProcessNode, List<ProcessEdge>>();
-    //ff added to find the corresponding nodes from outside the class after cloning
-//    protected Map<String, String> idMap;
-//    protected Map<ProcessEdge, ProcessEdge> edgeMap;
-    // The id of this process model
     protected String id;
     /** The name of the ProcessModel */
     public final static String PROP_PROCESS_NAME = "name";
@@ -185,118 +184,9 @@ public abstract class ProcessModel implements Cloneable {
             for (ProcessEdge edge : processEdges) {
                 newModel.addEdge(edge.clone());
                 ProcessEdge newEdge = ((ProcessEdge) newModel.getObjectById(edge.getId()));
-//                newEdge.addListener(newModel);
                 newEdge.setSource((ProcessNode) newModel.getObjectById(edge.getSource().getId()));
                 newEdge.setTarget((ProcessNode) newModel.getObjectById(edge.getTarget().getId()));
             }
-            
-            /*
-             * TODO Be aware that the method comment explicitly states that listeners are NOT copied.
-             * This is, partly, due to the fact the listener instances hold a reference to the process
-             * model they are registered for, which is not equal to the new model.
-             * 
-             * Therefore, I commented this line out! (fel)
-             */
-            
-            //newModel.listeners = new HashSet<ProcessModelListener>(listeners);
-
-            /*
-            // Stores the relations between (org_id, new_id)
-            Map<String, String> localIdMap = new HashMap<String, String>();
-            Map<ProcessEdge, ProcessEdge> localEdgeMap = new HashMap<ProcessEdge, ProcessEdge>();
-            // Stores the relations between (new_id, ProcessNode)
-            Map<String, ProcessNode> nodeMap = new HashMap<String, ProcessNode>();
-            
-            // Nodes, Edges, Name, Utils
-            newModel.setProcessName(getProcessName());
-            newModel.setUtils(getUtils());
-            newModel.setProcessModelURI(getProcessModelURI());
-            // Clone all nodes
-            for (ProcessNode node : new ArrayList<ProcessNode>(getNodes())) {
-            ProcessNode newNode = node.clone();
-            newNode.handleCloning(localIdMap);
-            localIdMap.put(node.getProperty(ProcessNode.PROP_ID),
-            newNode.getProperty(ProcessNode.PROP_ID));
-            nodeMap.put(newNode.getProperty(ProcessNode.PROP_ID), newNode);
-            newModel.addNode(newNode);
-            }
-            // Check if node is Cluster, if so copy containments
-            for (ProcessNode node : getNodes()) {
-            if (node instanceof Cluster) {
-            // Copy containments
-            Cluster c = (Cluster) node;
-            Cluster newC = (Cluster) nodeMap.get(localIdMap.get(c.getProperty(ProcessNode.PROP_ID)));
-            for (ProcessNode subNode : c.getProcessNodes()) {
-            newC.addProcessNode(nodeMap.get(localIdMap.get(subNode.getProperty(ProcessNode.PROP_ID))));
-            }
-            //correcting Lane Positions
-            if (c instanceof LaneableCluster) {
-            LaneableCluster lc = (LaneableCluster) c;
-            LaneableCluster nlc = (LaneableCluster) newC;
-            for (Lane l : new LinkedList<Lane>(lc.getLanes())) {
-            nlc.removeLane((Lane) nodeMap.get(localIdMap.get(l.getProperty(ProcessNode.PROP_ID))));
-            }
-            for (Lane l : new LinkedList<Lane>(lc.getLanes())) {
-            nlc.addLane((Lane) nodeMap.get(localIdMap.get(l.getProperty(ProcessNode.PROP_ID))));
-            }
-            }
-            }
-            }
-            
-            // Clone all edges
-            for (ProcessEdge edge : getEdges()) {
-            ProcessEdge newEdge = edge.getClass().newInstance();
-            
-            //copy properties
-            newEdge = edge.clone();
-            
-            // Get new source id
-            String newSourceId = localIdMap.get(edge.getSource().getProperty(ProcessNode.PROP_ID));
-            String newTargetId = localIdMap.get(edge.getTarget().getProperty(ProcessNode.PROP_ID));
-            ProcessNode src = nodeMap.get(newSourceId);
-            ProcessNode tgt = nodeMap.get(newTargetId);
-            if (src == null || tgt == null) {
-            System.out.println("Warning!");
-            }
-            newEdge.setSource(src);
-            newEdge.setTarget(tgt);
-            
-            newModel.addEdge(newEdge);
-            localEdgeMap.put(edge, newEdge);
-            }
-            
-            //update docked edges for edge docker
-            for (ProcessNode node : getNodes()) {
-            if (node instanceof EdgeDocker) {
-            String newId = localIdMap.get(node.getId());
-            EdgeDocker oldDocker = (EdgeDocker) node;
-            EdgeDocker newDocker = (EdgeDocker) nodeMap.get(newId);
-            newDocker.setDockedEdge(localEdgeMap.get(oldDocker.getDockedEdge()));
-            }
-            }
-            
-            // clone properties
-            for (String key : this.getPropertyKeys()) {
-            if (key == null ? ProcessModel.ATTR_ID == null : key.equals(ProcessModel.ATTR_ID)) {
-            continue;
-            }
-            newModel.setProperty(key, this.getProperty(key));
-            }
-            
-            // clone references to transient properties
-            for (String key : this.getTransientPropertyKeys()) {
-            newModel.setTransientProperty(key, this.transientProperties.get(key));
-            }
-            
-            
-            //ff added to find the corresponding nodes from outside the class after cloning
-            newModel.idMap = localIdMap;
-            newModel.edgeMap = localEdgeMap;
-            } catch (Exception ex) {
-            ex.printStackTrace();
-            }
-             */
-
             return newModel;
         } catch (CloneNotSupportedException ex) {
             Logger.getLogger(ProcessModel.class.getName()).log(Level.SEVERE, null, ex);
@@ -448,7 +338,6 @@ public abstract class ProcessModel implements Cloneable {
             return;
         }
         processNodes.remove(node);
-        // Remove listener
         // Mark as dirty
         markAsDirty(true);
 
@@ -640,37 +529,8 @@ public abstract class ProcessModel implements Cloneable {
         processNodes.remove(n);
         int basePos = processNodes.indexOf(baseNode);
         processNodes.add(basePos + 1, n);
-
-        //moveAfter(n, baseNode, new LinkedList<ProcessNode>());
     }
-
-    /*private void moveAfter(ProcessNode n, ProcessNode baseNode, List<ProcessNode> processed) {
-    if (n == null | baseNode == null) {
-    return;
-    }
-    // Check if already processed
-    if (processed.contains(n)) {
-    return;
-    }
-    // Check if n and baseNode is contained
-    if (!processNodes.contains(n) | !processNodes.contains(baseNode)) {
-    return;
-    }
-    processNodes.remove(n);
-    int basePos = processNodes.indexOf(baseNode);
-    if (basePos < processNodes.size()) {
-    processNodes.add(basePos + 1, n);
-    } else {
-    processNodes.add(n);
-    }
-    if (n instanceof Cluster) {
-    processed.add(n);
-    // Process childs recursivly
-    for (ProcessNode child : ((Cluster) n).getProcessNodes()) {
-    moveAfter(child, n, processed);
-    }
-    }
-    }*/
+    
     /**
      * Moves the given ProcessNode to the start of the NodeList; i.e. it 
      * should be drawn first.

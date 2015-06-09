@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package etc;
 
@@ -13,10 +9,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
-import nodes.Cluster;
 import nodes.FlowObject;
-import nodes.ProcessEdge;
-import nodes.ProcessNode;
 import nodes.ProcessObject;
 import models.EPCModel;
 import build.EPCExporter;
@@ -33,23 +26,10 @@ import transform.TextModelBuilder;
 import worldModel.Action;
 import worldModel.SpecifiedElement;
 import edu.stanford.nlp.trees.TypedDependency;
-import epc.Connector;
 import epc.ConnectorAND;
 import epc.ConnectorOR;
 import epc.ConnectorXOR;
-import epc.Function;
-import epc.Organisation;
-import epc.SequenceFlow;
 
-/**
- * wraps all of the functionality to create processes from text.
- * Load and analyze a text using "parseText".
- * To reanalyze a text simple use "analyzeText".
- * All information (created Text Model after parsing or generated BPMN model) is
- * returned to the TextToProcessListener.
- * @author ff
- *
- */
 public class TextToProcess {
 	
 private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
@@ -78,10 +58,6 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
 	public TextToProcess(TextModelControler tmControler) {
 		 f_textModelControler = tmControler;
 	}
-	
-	/*public void setLaneSplitOffContoler(LaneSplitOffControler lsoControler) {
-		f_lsoControler = lsoControler;
-	}*/
 	
 	
 	 /**
@@ -130,7 +106,6 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
 	public void setElementMapping(HashMap<Action, FlowObject> map) {
 		f_elementsMap = map;
 		for(Entry<Action, FlowObject> e:f_elementsMap.entrySet()) {
-			//building inverted list
 			f_elementsMapInv.put(e.getValue(), e.getKey());			
 		}
 	}

@@ -1,12 +1,10 @@
+/**
+ * modified taken from https://github.com/frapu78/processeditor
+ */
 package nodes;
 
-import tools.ReferenceChooserRestriction;
 
 public interface Linkable {
 	
-	 /**
-     * @return a {@link ReferenceChooserRestriction}.
-     */
-    public ReferenceChooserRestriction getReferenceRestrictions();
 
 }

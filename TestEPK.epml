@@ -51,19 +51,19 @@
 <name>start</name>
 </event>
 <event id="300996587">
-<name>to label</name>
+<name>send a mortgage offer to the customer is done</name>
 </event>
 <event id="1416632139">
-<name>to label</name>
+<name>wait for a reply is done</name>
 </event>
 <event id="1697245154">
-<name>to label</name>
+<name>write back to decline the mortgage is done</name>
 </event>
 <event id="2105452424">
-<name>to label</name>
+<name>update the case details is done</name>
 </event>
 <event id="746983236">
-<name>to label</name>
+<name>attach prerequisite documents is done</name>
 </event>
 <event id="213505442">
 <name>end</name>
