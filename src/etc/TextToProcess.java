@@ -92,7 +92,7 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
         exp.export();
 	}
 	
-	public void parseText(File file, boolean bpmn) {
+	public void parseText(File file) {
 		f_text = f_stanford.createText(file);
 		f_analyzer.clear();
 		analyzeText(true);

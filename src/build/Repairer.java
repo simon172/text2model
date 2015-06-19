@@ -40,7 +40,7 @@ public class Repairer {
 		this.extractElements();
 		this.checkConnectorIO();
 		this.specifyConnectors();
-		this.connectorsCannotDecide();
+		this.eventsCannotDecide();
 		this.checkEvents();
 		this.checkFunctions();
 	}
@@ -227,7 +227,7 @@ public class Repairer {
 		}
 	}
 	
-	private void connectorsCannotDecide(){
+	private void eventsCannotDecide(){
 		ArrayList<Connector> buffer = new ArrayList<Connector>();
 		buffer.addAll(orSplits);
 		buffer.addAll(xorSplits);

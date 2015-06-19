@@ -26,15 +26,21 @@ public class EPCExporter extends Exporter{
 	
 	private EPCModel model = null;
 	
-	private File file = new File("TestEPK.epml");
+	public String filename = "EPK.epml";
+	
+	private File file = new File(filename);
 	
 	public EPCExporter (EPCModel epcm){
 		model = epcm;
-		init(model);
+		init();
 	}
 	
-	private void init (EPCModel epcm){
-		String name = epcm.getProcessName();
+	public void setName(String name){
+		filename=name;
+	}
+	
+	public void init (){
+		String name = model.getProcessName();
 		epml.append("\n<directory name=\"Root\">"
 				+ "\n<epc epcId=\"1\" name=\"" + name + "\">");
 	}
