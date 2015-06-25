@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="2106081156">
+<name>use the sales and distribution module to verify if customer master data is available</name>
+<relation from ="2106081156" to ="2052839459"/>
+</function>
+<function id="268576938">
+<name>is asked to create </name>
+<relation from ="268576938" to ="2052839459"/>
+</function>
+<function id="1555461135">
+<name>create the customer master data</name>
+<relation from ="1555461135" to ="2052839459"/>
+</function>
+<function id="2124167242">
+<name>systems used for that purpose be AR</name>
+<relation from ="2124167242" to ="2052839459"/>
+</function>
+<function id="687715337">
+<name>capture the order in sd</name>
+<relation from ="687715337" to ="2052839459"/>
+</function>
+<function id="1061385885">
+<name>perform a credit limit check</name>
+<relation from ="1061385885" to ="2052839459"/>
+</function>
+<function id="701481861">
+<name>complete the order</name>
+<relation from ="701481861" to ="2052839459"/>
+</function>
+<function id="2034438076">
+<name>complete the process</name>
+<relation from ="2034438076" to ="2052839459"/>
+</function>
+<function id="662649248">
+<name>put the order</name>
+<relation from ="662649248" to ="2052839459"/>
+</function>
+<function id="272610018">
+<name>inquire the reasons for the hold</name>
+<relation from ="272610018" to ="949029323"/>
+</function>
+<function id="1439962265">
+<name>ask customer service to cancel the order</name>
+<relation from ="1439962265" to ="949029323"/>
+</function>
+<function id="1292098204">
+<name>cancel the order</name>
+<relation from ="1292098204" to ="949029323"/>
+</function>
+<function id="16779756">
+<name>complete process in case</name>
+<relation from ="16779756" to ="949029323"/>
+</function>
+<function id="1008187513">
+<name>check regularly the order</name>
+<relation from ="1008187513" to ="949029323"/>
+</function>
+<function id="1222163346">
+<name>release the order</name>
+<relation from ="1222163346" to ="949029323"/>
+</function>
+<function id="2134437100">
+<name>service then the order</name>
+<relation from ="2134437100" to ="805136518"/>
+</function>
+<function id="1418232111">
+<name>keep the order to check process starts again</name>
+<relation from ="1418232111" to ="805136518"/>
+</function>
+<event id="1455511937">
+<name>this be a new customer </name>
+</event>
+<event id="690152674">
+<name>does not exceed  customer service posts </name>
+</event>
+<event id="1189768305">
+<name>exceeds the credit limit </name>
+</event>
+<event id="1681777152">
+<name>the reasons be permanent </name>
+</event>
+<event id="33133237">
+<name>the reasons for the credit hold be temporary </name>
+</event>
+<event id="955233089">
+<name>the credit is within the limit </name>
+</event>
+<event id="396013081">
+<name>exceeds the credit limit </name>
+</event>
+<event id="2131968100">
+<name>use the sales and distribution module to verify if customer master data is available is done</name>
+</event>
+<event id="920967818">
+<name>create the customer master data is done</name>
+</event>
+<event id="1673183600">
+<name>systems used for that purpose be AR is done</name>
+</event>
+<event id="2099933324">
+<name>capture the order in sd is done</name>
+</event>
+<event id="865571902">
+<name>complete the order is done</name>
+</event>
+<event id="647967057">
+<name>complete the process is done</name>
+</event>
+<event id="881740287">
+<name>inquire the reasons for the hold is done</name>
+</event>
+<event id="534342708">
+<name>cancel the order is done</name>
+</event>
+<event id="1519180119">
+<name>check regularly the order is done</name>
+</event>
+<event id="1349212936">
+<name>end</name>
+</event>
+<event id="755974639">
+<name>end</name>
+</event>
+<event id="444022027">
+<name>end</name>
+</event>
+<xor id="1235535300"/>
+<xor id="90801986"/>
+<xor id="1841064098"/>
+<xor id="1859795617"/>
+<xor id="1354407636"/>
+<xor id="1368844455"/>
+<arc id="1185039125">
+<flow source="1841064098" target="2106081156"/>
+</arc>
+<arc id="170756431">
+<flow source="1841064098" target="1455511937"/>
+</arc>
+<arc id="709689328">
+<flow source="504745176" target="1841064098"/>
+</arc>
+<arc id="81402320">
+<flow source="1455511937" target="268576938"/>
+</arc>
+<arc id="2076903449">
+<flow source="268576938" target="1235535300"/>
+</arc>
+<arc id="797678121">
+<flow source="2106081156" target="1235535300"/>
+</arc>
+<arc id="491429134">
+<flow source="2131968100" target="899250710"/>
+</arc>
+<arc id="1081008377">
+<flow source="899250710" target="1555461135"/>
+</arc>
+<arc id="159758103">
+<flow source="920967818" target="2124167242"/>
+</arc>
+<arc id="716041726">
+<flow source="1673183600" target="687715337"/>
+</arc>
+<arc id="1493459024">
+<flow source="2099933324" target="1061385885"/>
+</arc>
+<arc id="264553417">
+<flow source="1859795617" target="690152674"/>
+</arc>
+<arc id="1966617729">
+<flow source="1859795617" target="1189768305"/>
+</arc>
+<arc id="1245906274">
+<flow source="1061385885" target="1859795617"/>
+</arc>
+<arc id="1250428853">
+<flow source="690152674" target="701481861"/>
+</arc>
+<arc id="405955475">
+<flow source="865571902" target="2034438076"/>
+</arc>
+<arc id="826356183">
+<flow source="1189768305" target="662649248"/>
+</arc>
+<arc id="83057015">
+<flow source="662649248" target="90801986"/>
+</arc>
+<arc id="1015291831">
+<flow source="2034438076" target="90801986"/>
+</arc>
+<arc id="257334773">
+<flow source="647967057" target="949654279"/>
+</arc>
+<arc id="1973341426">
+<flow source="949654279" target="272610018"/>
+</arc>
+<arc id="1310482049">
+<flow source="881740287" target="1439962265"/>
+</arc>
+<arc id="1336276726">
+<flow source="1354407636" target="1681777152"/>
+</arc>
+<arc id="1281313491">
+<flow source="1439962265" target="1354407636"/>
+</arc>
+<arc id="1667322325">
+<flow source="1681777152" target="1292098204"/>
+</arc>
+<arc id="1739145043">
+<flow source="534342708" target="16779756"/>
+</arc>
+<arc id="1482864165">
+<flow source="1368844455" target="33133237"/>
+</arc>
+<arc id="1981762013">
+<flow source="1368844455" target="955233089"/>
+</arc>
+<arc id="828683813">
+<flow source="16779756" target="1368844455"/>
+</arc>
+<arc id="271205481">
+<flow source="33133237" target="1008187513"/>
+</arc>
+<arc id="74128855">
+<flow source="1519180119" target="1222163346"/>
+</arc>
+<arc id="1240813793">
+<flow source="955233089" target="2134437100"/>
+</arc>
+<arc id="1160292771">
+<flow source="1189768305" target="1418232111"/>
+</arc>
+<arc id="2090750990">
+<flow source="1235535300" target="2131968100"/>
+</arc>
+<arc id="105882045">
+<flow source="1555461135" target="920967818"/>
+</arc>
+<arc id="1829426989">
+<flow source="2124167242" target="1673183600"/>
+</arc>
+<arc id="110322909">
+<flow source="687715337" target="2099933324"/>
+</arc>
+<arc id="144674526">
+<flow source="701481861" target="865571902"/>
+</arc>
+<arc id="1001856211">
+<flow source="90801986" target="647967057"/>
+</arc>
+<arc id="1083431118">
+<flow source="272610018" target="881740287"/>
+</arc>
+<arc id="470526616">
+<flow source="1292098204" target="534342708"/>
+</arc>
+<arc id="75968352">
+<flow source="1008187513" target="1519180119"/>
+</arc>
+<arc id="292906231">
+<flow source="1222163346" target="1349212936"/>
+</arc>
+<arc id="281974529">
+<flow source="2134437100" target="755974639"/>
+</arc>
+<arc id="547336302">
+<flow source="1418232111" target="444022027"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

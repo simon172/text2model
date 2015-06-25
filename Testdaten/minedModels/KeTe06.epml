@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="1071601041">
+<name>execute </name>
+<relation from ="1071601041" to ="2038171878"/>
+</function>
+<function id="503507324">
+<name>specify the plant using the production planning system</name>
+<relation from ="503507324" to ="2038171878"/>
+</function>
+<function id="1891387324">
+<name>specify the mrp parameters</name>
+<relation from ="1891387324" to ="2038171878"/>
+</function>
+<function id="870229315">
+<name>specify the parameters</name>
+<relation from ="870229315" to ="2038171878"/>
+</function>
+<function id="416695779">
+<name>launch the mrp run</name>
+<relation from ="416695779" to ="2038171878"/>
+</function>
+<function id="290047001">
+<name>lead to the creation of a combination of the following events</name>
+<relation from ="290047001" to ="2038171878"/>
+</function>
+<event id="447853211">
+<name>execute  is done</name>
+</event>
+<event id="815264854">
+<name>specify the plant using the production planning system is done</name>
+</event>
+<event id="221521121">
+<name>specify the mrp parameters is done</name>
+</event>
+<event id="1202491467">
+<name>specify the parameters is done</name>
+</event>
+<event id="1115555475">
+<name>launch the mrp run is done</name>
+</event>
+<event id="509123470">
+<name>end</name>
+</event>
+<arc id="575496223">
+<flow source="1983090876" target="1071601041"/>
+</arc>
+<arc id="2139891591">
+<flow source="447853211" target="503507324"/>
+</arc>
+<arc id="366018234">
+<flow source="815264854" target="1891387324"/>
+</arc>
+<arc id="819683335">
+<flow source="221521121" target="870229315"/>
+</arc>
+<arc id="2044703643">
+<flow source="1202491467" target="416695779"/>
+</arc>
+<arc id="1743852344">
+<flow source="1115555475" target="290047001"/>
+</arc>
+<arc id="1974864422">
+<flow source="1071601041" target="447853211"/>
+</arc>
+<arc id="445016128">
+<flow source="503507324" target="815264854"/>
+</arc>
+<arc id="1209460827">
+<flow source="1891387324" target="221521121"/>
+</arc>
+<arc id="1849762966">
+<flow source="870229315" target="1202491467"/>
+</arc>
+<arc id="1037400759">
+<flow source="416695779" target="1115555475"/>
+</arc>
+<arc id="2044361031">
+<flow source="290047001" target="509123470"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

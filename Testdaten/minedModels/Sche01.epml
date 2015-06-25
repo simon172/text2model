@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="1429457242">
+<name>is complete </name>
+<relation from ="1429457242" to ="91519258"/>
+</function>
+<function id="1414421984">
+<name>take </name>
+<relation from ="1414421984" to ="91519258"/>
+</function>
+<function id="80436527">
+<name>perform a quality inspection</name>
+<relation from ="80436527" to ="91519258"/>
+</function>
+<function id="1535671998">
+<name>perform an inspection plan</name>
+<relation from ="1535671998" to ="91519258"/>
+</function>
+<function id="1121324503">
+<name>perform the product</name>
+<relation from ="1121324503" to ="91519258"/>
+</function>
+<function id="2083127191">
+<name>need data</name>
+<relation from ="2083127191" to ="91519258"/>
+</function>
+<function id="55255122">
+<name>proceed </name>
+<relation from ="55255122" to ="91519258"/>
+</function>
+<function id="563018881">
+<name>proceed </name>
+<relation from ="563018881" to ="91519258"/>
+</function>
+<function id="1666774622">
+<name>need to correct the production process to rework</name>
+<relation from ="1666774622" to ="343266595"/>
+</function>
+<function id="2073785910">
+<name>rework the defective parts</name>
+<relation from ="2073785910" to ="343266595"/>
+</function>
+<function id="1529454433">
+<name>report finally to manufacturing control</name>
+<relation from ="1529454433" to ="343266595"/>
+</function>
+<event id="887394261">
+<name>the results be satisfactory </name>
+</event>
+<event id="650709970">
+<name>the results  </name>
+</event>
+<event id="741361230">
+<name>is complete  is done</name>
+</event>
+<event id="1669899685">
+<name>take  is done</name>
+</event>
+<event id="601441102">
+<name>perform a quality inspection is done</name>
+</event>
+<event id="1882067834">
+<name>perform an inspection plan is done</name>
+</event>
+<event id="1071874149">
+<name>perform the product is done</name>
+</event>
+<event id="4774193">
+<name>proceed  is done</name>
+</event>
+<event id="1040842735">
+<name>end</name>
+</event>
+<event id="354559026">
+<name>need to correct the production process to rework is done</name>
+</event>
+<event id="746806825">
+<name>rework the defective parts is done</name>
+</event>
+<event id="1416428690">
+<name>end</name>
+</event>
+<xor id="1886810017"/>
+<arc id="1678148753">
+<flow source="1103459635" target="1429457242"/>
+</arc>
+<arc id="2046541118">
+<flow source="741361230" target="1414421984"/>
+</arc>
+<arc id="326968287">
+<flow source="1669899685" target="80436527"/>
+</arc>
+<arc id="2116791560">
+<flow source="601441102" target="1535671998"/>
+</arc>
+<arc id="786009168">
+<flow source="1882067834" target="1121324503"/>
+</arc>
+<arc id="183486200">
+<flow source="1071874149" target="2083127191"/>
+</arc>
+<arc id="835678836">
+<flow source="1886810017" target="887394261"/>
+</arc>
+<arc id="1394003786">
+<flow source="2083127191" target="1886810017"/>
+</arc>
+<arc id="1172548275">
+<flow source="887394261" target="55255122"/>
+</arc>
+<arc id="103538377">
+<flow source="4774193" target="563018881"/>
+</arc>
+<arc id="1671572953">
+<flow source="887394261" target="1666774622"/>
+</arc>
+<arc id="699711243">
+<flow source="354559026" target="2073785910"/>
+</arc>
+<arc id="1910124220">
+<flow source="746806825" target="1529454433"/>
+</arc>
+<arc id="796614485">
+<flow source="1429457242" target="741361230"/>
+</arc>
+<arc id="234190472">
+<flow source="1414421984" target="1669899685"/>
+</arc>
+<arc id="1445802391">
+<flow source="80436527" target="601441102"/>
+</arc>
+<arc id="1456044737">
+<flow source="1535671998" target="1882067834"/>
+</arc>
+<arc id="8241031">
+<flow source="1121324503" target="1071874149"/>
+</arc>
+<arc id="491435147">
+<flow source="55255122" target="4774193"/>
+</arc>
+<arc id="1407577646">
+<flow source="563018881" target="1040842735"/>
+</arc>
+<arc id="1568945393">
+<flow source="1666774622" target="354559026"/>
+</arc>
+<arc id="1357598985">
+<flow source="2073785910" target="746806825"/>
+</arc>
+<arc id="682846546">
+<flow source="1529454433" target="1416428690"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

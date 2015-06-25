@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="547486310">
+<name>specify the account group using the system materials management</name>
+<relation from ="547486310" to ="751072593"/>
+</function>
+<function id="60414053">
+<name>determine the assignment type</name>
+<relation from ="60414053" to ="751072593"/>
+</function>
+<function id="1115484241">
+<name>make </name>
+<relation from ="1115484241" to ="751072593"/>
+</function>
+<function id="84258389">
+<name>an external assignment </name>
+<relation from ="84258389" to ="751072593"/>
+</function>
+<function id="1970555222">
+<name>to be make </name>
+<relation from ="1970555222" to ="751072593"/>
+</function>
+<function id="1278569415">
+<name>determine </name>
+<relation from ="1278569415" to ="751072593"/>
+</function>
+<function id="807992969">
+<name>determine the purchasing organization</name>
+<relation from ="807992969" to ="751072593"/>
+</function>
+<function id="1366170982">
+<name>enter the purchasing data</name>
+<relation from ="1366170982" to ="751072593"/>
+</function>
+<function id="317141195">
+<name>save the created vendor</name>
+<relation from ="317141195" to ="751072593"/>
+</function>
+<event id="1244471774">
+<name>specify the account group using the system materials management is done</name>
+</event>
+<event id="1992120311">
+<name>determine the assignment type is done</name>
+</event>
+<event id="1734246368">
+<name>make  is done</name>
+</event>
+<event id="1306140228">
+<name>an external assignment  is done</name>
+</event>
+<event id="1764361858">
+<name>to be make  is done</name>
+</event>
+<event id="48679050">
+<name>determine  is done</name>
+</event>
+<event id="954258803">
+<name>determine the purchasing organization is done</name>
+</event>
+<event id="223136065">
+<name>enter the purchasing data is done</name>
+</event>
+<event id="204457191">
+<name>end</name>
+</event>
+<arc id="663639549">
+<flow source="23539267" target="547486310"/>
+</arc>
+<arc id="467734686">
+<flow source="1244471774" target="60414053"/>
+</arc>
+<arc id="600580247">
+<flow source="1992120311" target="1115484241"/>
+</arc>
+<arc id="222880709">
+<flow source="1734246368" target="84258389"/>
+</arc>
+<arc id="1480359468">
+<flow source="1306140228" target="1970555222"/>
+</arc>
+<arc id="1271590997">
+<flow source="1764361858" target="1278569415"/>
+</arc>
+<arc id="163625251">
+<flow source="48679050" target="807992969"/>
+</arc>
+<arc id="1138500885">
+<flow source="954258803" target="1366170982"/>
+</arc>
+<arc id="2024472156">
+<flow source="223136065" target="317141195"/>
+</arc>
+<arc id="1708818137">
+<flow source="547486310" target="1244471774"/>
+</arc>
+<arc id="1155433844">
+<flow source="60414053" target="1992120311"/>
+</arc>
+<arc id="1371863396">
+<flow source="1115484241" target="1734246368"/>
+</arc>
+<arc id="2107623342">
+<flow source="84258389" target="1306140228"/>
+</arc>
+<arc id="525585690">
+<flow source="1970555222" target="1764361858"/>
+</arc>
+<arc id="21487055">
+<flow source="1278569415" target="48679050"/>
+</arc>
+<arc id="970646632">
+<flow source="807992969" target="954258803"/>
+</arc>
+<arc id="853202050">
+<flow source="1366170982" target="223136065"/>
+</arc>
+<arc id="1656264878">
+<flow source="317141195" target="204457191"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

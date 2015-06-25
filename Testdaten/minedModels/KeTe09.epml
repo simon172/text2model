@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="1932245526">
+<name>create a production order</name>
+<relation from ="1932245526" to ="949408756"/>
+</function>
+<function id="381892090">
+<name>convert a planned order</name>
+<relation from ="381892090" to ="949408756"/>
+</function>
+<function id="2058509646">
+<name>create the production order manually</name>
+<relation from ="2058509646" to ="949408756"/>
+</function>
+<function id="2077667094">
+<name>enter basic data manually in case</name>
+<relation from ="2077667094" to ="949408756"/>
+</function>
+<function id="268676792">
+<name>try to determine the system to route automatically</name>
+<relation from ="268676792" to ="949408756"/>
+</function>
+<function id="1496740072">
+<name>transfer operation data</name>
+<relation from ="1496740072" to ="949408756"/>
+</function>
+<function id="486516914">
+<name>capture operation data manually</name>
+<relation from ="486516914" to ="949408756"/>
+</function>
+<function id="272892877">
+<name>determine the bom</name>
+<relation from ="272892877" to ="949408756"/>
+</function>
+<function id="693078968">
+<name>transfer the components to the production order</name>
+<relation from ="693078968" to ="949408756"/>
+</function>
+<function id="1794066279">
+<name>enter the components manually</name>
+<relation from ="1794066279" to ="949408756"/>
+</function>
+<function id="368798555">
+<name>transfer the components</name>
+<relation from ="368798555" to ="949408756"/>
+</function>
+<function id="889387895">
+<name>enter the components</name>
+<relation from ="889387895" to ="949408756"/>
+</function>
+<function id="11415139">
+<name>review production order data</name>
+<relation from ="11415139" to ="949408756"/>
+</function>
+<function id="1466808661">
+<name>save the production order</name>
+<relation from ="1466808661" to ="949408756"/>
+</function>
+<event id="1706826835">
+<name>routing the  </name>
+</event>
+<event id="653409754">
+<name>routing the does not exist   </name>
+</event>
+<event id="202666368">
+<name>the bom  </name>
+</event>
+<event id="626385409">
+<name>create a production order is done</name>
+</event>
+<event id="807745165">
+<name>convert a planned order is done</name>
+</event>
+<event id="1494375036">
+<name>create the production order manually is done</name>
+</event>
+<event id="188560801">
+<name>enter basic data manually in case is done</name>
+</event>
+<event id="2083120135">
+<name>transfer operation data is done</name>
+</event>
+<event id="596832862">
+<name>determine the bom is done</name>
+</event>
+<event id="1005156713">
+<name>transfer the components to the production order is done</name>
+</event>
+<event id="1287752591">
+<name>transfer the components is done</name>
+</event>
+<event id="699980215">
+<name>enter the components is done</name>
+</event>
+<event id="1039270138">
+<name>review production order data is done</name>
+</event>
+<event id="1560486082">
+<name>end</name>
+</event>
+<xor id="518415924"/>
+<xor id="1438235794"/>
+<xor id="639154389"/>
+<xor id="1427408842"/>
+<arc id="1519113644">
+<flow source="1192267028" target="1932245526"/>
+</arc>
+<arc id="313010840">
+<flow source="626385409" target="381892090"/>
+</arc>
+<arc id="1137579079">
+<flow source="807745165" target="2058509646"/>
+</arc>
+<arc id="1897217338">
+<flow source="1494375036" target="2077667094"/>
+</arc>
+<arc id="1966579713">
+<flow source="188560801" target="268676792"/>
+</arc>
+<arc id="1306787602">
+<flow source="639154389" target="1706826835"/>
+</arc>
+<arc id="85752071">
+<flow source="639154389" target="653409754"/>
+</arc>
+<arc id="365423741">
+<flow source="268676792" target="639154389"/>
+</arc>
+<arc id="1721874273">
+<flow source="1706826835" target="1496740072"/>
+</arc>
+<arc id="1278155724">
+<flow source="653409754" target="486516914"/>
+</arc>
+<arc id="329599594">
+<flow source="486516914" target="518415924"/>
+</arc>
+<arc id="660652713">
+<flow source="1496740072" target="518415924"/>
+</arc>
+<arc id="2027217070">
+<flow source="2083120135" target="1656415712"/>
+</arc>
+<arc id="169531319">
+<flow source="1656415712" target="272892877"/>
+</arc>
+<arc id="1301255072">
+<flow source="1427408842" target="202666368"/>
+</arc>
+<arc id="292836041">
+<flow source="1427408842" target="1438235794"/>
+</arc>
+<arc id="1622126074">
+<flow source="596832862" target="1794066279"/>
+</arc>
+<arc id="1472971606">
+<flow source="1427408842" target="1438235794"/>
+</arc>
+<arc id="1826316568">
+<flow source="272892877" target="1427408842"/>
+</arc>
+<arc id="1726498972">
+<flow source="202666368" target="693078968"/>
+</arc>
+<arc id="1706343560">
+<flow source="693078968" target="1438235794"/>
+</arc>
+<arc id="362871959">
+<flow source="1794066279" target="1438235794"/>
+</arc>
+<arc id="1222908834">
+<flow source="1005156713" target="229348241"/>
+</arc>
+<arc id="834416336">
+<flow source="229348241" target="368798555"/>
+</arc>
+<arc id="1898747027">
+<flow source="1287752591" target="889387895"/>
+</arc>
+<arc id="35825399">
+<flow source="699980215" target="11415139"/>
+</arc>
+<arc id="276084320">
+<flow source="1039270138" target="1466808661"/>
+</arc>
+<arc id="1182907823">
+<flow source="1932245526" target="626385409"/>
+</arc>
+<arc id="1398669308">
+<flow source="381892090" target="807745165"/>
+</arc>
+<arc id="305526836">
+<flow source="2058509646" target="1494375036"/>
+</arc>
+<arc id="925079845">
+<flow source="2077667094" target="188560801"/>
+</arc>
+<arc id="1096833006">
+<flow source="518415924" target="2083120135"/>
+</arc>
+<arc id="139701688">
+<flow source="1427408842" target="596832862"/>
+</arc>
+<arc id="2020972253">
+<flow source="1438235794" target="1005156713"/>
+</arc>
+<arc id="1500172738">
+<flow source="368798555" target="1287752591"/>
+</arc>
+<arc id="2100257059">
+<flow source="889387895" target="699980215"/>
+</arc>
+<arc id="848896583">
+<flow source="11415139" target="1039270138"/>
+</arc>
+<arc id="1529050168">
+<flow source="1466808661" target="1560486082"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

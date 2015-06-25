@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="1102138555">
+<name>create a cost center</name>
+<relation from ="1102138555" to ="764863718"/>
+</function>
+<function id="901063129">
+<name>specify the validity period of the cost center</name>
+<relation from ="901063129" to ="764863718"/>
+</function>
+<function id="833725284">
+<name>assign the validity period of the cost center to a cost center group</name>
+<relation from ="833725284" to ="764863718"/>
+</function>
+<function id="13185367">
+<name>assign the cost centres to the standard hierarchy</name>
+<relation from ="13185367" to ="764863718"/>
+</function>
+<function id="645168855">
+<name>determine the basic data of the cost center</name>
+<relation from ="645168855" to ="764863718"/>
+</function>
+<function id="823188884">
+<name>assign the organizational units to the cost centres</name>
+<relation from ="823188884" to ="764863718"/>
+</function>
+<function id="338621014">
+<name>assign the organizational units</name>
+<relation from ="338621014" to ="764863718"/>
+</function>
+<function id="1405059446">
+<name>determine the control indicators</name>
+<relation from ="1405059446" to ="764863718"/>
+</function>
+<function id="2013224444">
+<name>save the captured data</name>
+<relation from ="2013224444" to ="764863718"/>
+</function>
+<function id="1145794344">
+<name>create the cost center</name>
+<relation from ="1145794344" to ="764863718"/>
+</function>
+<event id="1062026425">
+<name>create a cost center is done</name>
+</event>
+<event id="2056879253">
+<name>specify the validity period of the cost center is done</name>
+</event>
+<event id="280724540">
+<name>assign the validity period of the cost center to a cost center group is done</name>
+</event>
+<event id="773722934">
+<name>assign the cost centres to the standard hierarchy is done</name>
+</event>
+<event id="182466650">
+<name>determine the basic data of the cost center is done</name>
+</event>
+<event id="1588445761">
+<name>assign the organizational units to the cost centres is done</name>
+</event>
+<event id="624212175">
+<name>assign the organizational units is done</name>
+</event>
+<event id="853421508">
+<name>determine the control indicators is done</name>
+</event>
+<event id="2001313870">
+<name>save the captured data is done</name>
+</event>
+<event id="1017343457">
+<name>end</name>
+</event>
+<arc id="840762095">
+<flow source="939422568" target="1102138555"/>
+</arc>
+<arc id="1306779526">
+<flow source="1062026425" target="901063129"/>
+</arc>
+<arc id="163741793">
+<flow source="2056879253" target="833725284"/>
+</arc>
+<arc id="613259629">
+<flow source="280724540" target="13185367"/>
+</arc>
+<arc id="2128473449">
+<flow source="773722934" target="645168855"/>
+</arc>
+<arc id="764482267">
+<flow source="182466650" target="823188884"/>
+</arc>
+<arc id="810376832">
+<flow source="1588445761" target="338621014"/>
+</arc>
+<arc id="2017718037">
+<flow source="624212175" target="1405059446"/>
+</arc>
+<arc id="1768223697">
+<flow source="853421508" target="2013224444"/>
+</arc>
+<arc id="1288053740">
+<flow source="2001313870" target="1145794344"/>
+</arc>
+<arc id="1122611711">
+<flow source="1102138555" target="1062026425"/>
+</arc>
+<arc id="1187369129">
+<flow source="901063129" target="2056879253"/>
+</arc>
+<arc id="525515165">
+<flow source="833725284" target="280724540"/>
+</arc>
+<arc id="1177996996">
+<flow source="13185367" target="773722934"/>
+</arc>
+<arc id="16053962">
+<flow source="645168855" target="182466650"/>
+</arc>
+<arc id="773679038">
+<flow source="823188884" target="1588445761"/>
+</arc>
+<arc id="38881285">
+<flow source="338621014" target="624212175"/>
+</arc>
+<arc id="2008779958">
+<flow source="1405059446" target="853421508"/>
+</arc>
+<arc id="2136002498">
+<flow source="2013224444" target="2001313870"/>
+</arc>
+<arc id="391551231">
+<flow source="1145794344" target="1017343457"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

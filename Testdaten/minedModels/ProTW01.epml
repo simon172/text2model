@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="308839852">
+<name>make the o er using the sales and distribution system</name>
+<relation from ="308839852" to ="2078330239"/>
+</function>
+<function id="770929226">
+<name>send the o er using the sales and distribution system</name>
+<relation from ="770929226" to ="2078330239"/>
+</function>
+<function id="218867894">
+<name>send the o er</name>
+<relation from ="218867894" to ="2078330239"/>
+</function>
+<function id="1177176634">
+<name>follow up with the customer</name>
+<relation from ="1177176634" to ="2078330239"/>
+</function>
+<function id="2010200028">
+<name>receive the customer order</name>
+<relation from ="2010200028" to ="2078330239"/>
+</function>
+<function id="2078404037">
+<name>capture the o er in the sales and distribution system</name>
+<relation from ="2078404037" to ="1179822179"/>
+</function>
+<function id="849996457">
+<name>perform an availability check</name>
+<relation from ="849996457" to ="1179822179"/>
+</function>
+<function id="1093417640">
+<name>products be available</name>
+<relation from ="1093417640" to ="1179822179"/>
+</function>
+<function id="1869602568">
+<name>assign available products to the order</name>
+<relation from ="1869602568" to ="1179822179"/>
+</function>
+<function id="59415492">
+<name>create schedule lines for future goods</name>
+<relation from ="59415492" to ="1179822179"/>
+</function>
+<function id="1956518060">
+<name>agent the order</name>
+<relation from ="1956518060" to ="1179822179"/>
+</function>
+<function id="1036980212">
+<name>confirm future goods</name>
+<relation from ="1036980212" to ="1179822179"/>
+</function>
+<function id="1546738358">
+<name>confirm the intended delivery date to the customer</name>
+<relation from ="1546738358" to ="216933921"/>
+</function>
+<function id="927983365">
+<name>confirm the order</name>
+<relation from ="927983365" to ="216933921"/>
+</function>
+<event id="116683116">
+<name>start</name>
+</event>
+<event id="1741244588">
+<name>make the o er using the sales and distribution system is done</name>
+</event>
+<event id="1756547485">
+<name>send the o er using the sales and distribution system is done</name>
+</event>
+<event id="1929917764">
+<name>send the o er is done</name>
+</event>
+<event id="93992817">
+<name>follow up with the customer is done</name>
+</event>
+<event id="635521370">
+<name>receive the customer order is done</name>
+</event>
+<event id="1562374700">
+<name>capture the o er in the sales and distribution system is done</name>
+</event>
+<event id="1788186975">
+<name>perform an availability check is done</name>
+</event>
+<event id="308746080">
+<name>products be available is done</name>
+</event>
+<event id="473852835">
+<name>products be available is done</name>
+</event>
+<event id="1577401663">
+<name>assign available products to the order is done</name>
+</event>
+<event id="1404743342">
+<name>agent the order is done</name>
+</event>
+<event id="1333749665">
+<name>confirm future goods is done</name>
+</event>
+<event id="1086777342">
+<name>confirm the intended delivery date to the customer is done</name>
+</event>
+<event id="1854150352">
+<name>end</name>
+</event>
+<xor id="2047968704"/>
+<xor id="812713406"/>
+<arc id="873430134">
+<flow source="1741244588" target="770929226"/>
+</arc>
+<arc id="373790748">
+<flow source="1756547485" target="218867894"/>
+</arc>
+<arc id="1321324344">
+<flow source="1929917764" target="1177176634"/>
+</arc>
+<arc id="877831361">
+<flow source="93992817" target="2010200028"/>
+</arc>
+<arc id="2079425265">
+<flow source="635521370" target="2078404037"/>
+</arc>
+<arc id="1373401835">
+<flow source="1562374700" target="849996457"/>
+</arc>
+<arc id="296017895">
+<flow source="1788186975" target="1093417640"/>
+</arc>
+<arc id="1964611174">
+<flow source="308746080" target="1869602568"/>
+</arc>
+<arc id="1114973381">
+<flow source="473852835" target="59415492"/>
+</arc>
+<arc id="1197539147">
+<flow source="1093417640" target="812713406"/>
+</arc>
+<arc id="64535799">
+<flow source="1869602568" target="2047968704"/>
+</arc>
+<arc id="1751184197">
+<flow source="59415492" target="2047968704"/>
+</arc>
+<arc id="986429294">
+<flow source="1577401663" target="1908745079"/>
+</arc>
+<arc id="514409484">
+<flow source="1908745079" target="1956518060"/>
+</arc>
+<arc id="2042552432">
+<flow source="1404743342" target="1036980212"/>
+</arc>
+<arc id="1070056628">
+<flow source="1333749665" target="1546738358"/>
+</arc>
+<arc id="1347613394">
+<flow source="1086777342" target="1524382176"/>
+</arc>
+<arc id="68109808">
+<flow source="1524382176" target="927983365"/>
+</arc>
+<arc id="653401069">
+<flow source="116683116" target="308839852"/>
+</arc>
+<arc id="1298705997">
+<flow source="308839852" target="1741244588"/>
+</arc>
+<arc id="1588169237">
+<flow source="770929226" target="1756547485"/>
+</arc>
+<arc id="2065364910">
+<flow source="218867894" target="1929917764"/>
+</arc>
+<arc id="401734901">
+<flow source="1177176634" target="93992817"/>
+</arc>
+<arc id="157973967">
+<flow source="2010200028" target="635521370"/>
+</arc>
+<arc id="1167174446">
+<flow source="2078404037" target="1562374700"/>
+</arc>
+<arc id="818613703">
+<flow source="849996457" target="1788186975"/>
+</arc>
+<arc id="1516701401">
+<flow source="812713406" target="308746080"/>
+</arc>
+<arc id="1962141910">
+<flow source="812713406" target="473852835"/>
+</arc>
+<arc id="1018608104">
+<flow source="2047968704" target="1577401663"/>
+</arc>
+<arc id="946096471">
+<flow source="1956518060" target="1404743342"/>
+</arc>
+<arc id="1183841887">
+<flow source="1036980212" target="1333749665"/>
+</arc>
+<arc id="1525817408">
+<flow source="1546738358" target="1086777342"/>
+</arc>
+<arc id="1472229465">
+<flow source="927983365" target="1854150352"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="1468369324">
+<name>create a work center</name>
+<relation from ="1468369324" to ="1017634801"/>
+</function>
+<function id="897503336">
+<name>specify the plant</name>
+<relation from ="897503336" to ="1017634801"/>
+</function>
+<function id="2140779933">
+<name>specify the work center category</name>
+<relation from ="2140779933" to ="1017634801"/>
+</function>
+<function id="499509011">
+<name>specify the basic data of the work center</name>
+<relation from ="499509011" to ="1017634801"/>
+</function>
+<function id="571984048">
+<name>enter responsible\/usage</name>
+<relation from ="571984048" to ="1017634801"/>
+</function>
+<function id="1887406091">
+<name>enter key</name>
+<relation from ="1887406091" to ="1017634801"/>
+</function>
+<function id="88176259">
+<name>specify e ciency rate</name>
+<relation from ="88176259" to ="1017634801"/>
+</function>
+<function id="1527513399">
+<name>specify rules for maintenance</name>
+<relation from ="1527513399" to ="1017634801"/>
+</function>
+<function id="929094893">
+<name>edit the capacity data in the next step</name>
+<relation from ="929094893" to ="1017634801"/>
+</function>
+<function id="619304642">
+<name>specify the formula in one step</name>
+<relation from ="619304642" to ="1017634801"/>
+</function>
+<function id="1385719476">
+<name>specify distribution keys in one step</name>
+<relation from ="1385719476" to ="1017634801"/>
+</function>
+<function id="2147436402">
+<name>save the work center</name>
+<relation from ="2147436402" to ="2117071770"/>
+</function>
+<function id="2079260666">
+<name>create the work center</name>
+<relation from ="2079260666" to ="2117071770"/>
+</function>
+<event id="81155803">
+<name>create a work center is done</name>
+</event>
+<event id="375256671">
+<name>specify the plant is done</name>
+</event>
+<event id="1208422117">
+<name>specify the work center category is done</name>
+</event>
+<event id="747708544">
+<name>specify the basic data of the work center is done</name>
+</event>
+<event id="759856445">
+<name>enter responsible\/usage is done</name>
+</event>
+<event id="1666046537">
+<name>enter key is done</name>
+</event>
+<event id="299122086">
+<name>specify e ciency rate is done</name>
+</event>
+<event id="825177649">
+<name>specify rules for maintenance is done</name>
+</event>
+<event id="650069736">
+<name>edit the capacity data in the next step is done</name>
+</event>
+<event id="996308591">
+<name>specify the formula in one step is done</name>
+</event>
+<event id="1109493486">
+<name>specify distribution keys in one step is done</name>
+</event>
+<event id="997841733">
+<name>save the work center is done</name>
+</event>
+<event id="1136459051">
+<name>end</name>
+</event>
+<arc id="74228506">
+<flow source="163781968" target="1468369324"/>
+</arc>
+<arc id="458729985">
+<flow source="81155803" target="897503336"/>
+</arc>
+<arc id="183442854">
+<flow source="375256671" target="2140779933"/>
+</arc>
+<arc id="243011390">
+<flow source="1208422117" target="499509011"/>
+</arc>
+<arc id="1877543320">
+<flow source="747708544" target="571984048"/>
+</arc>
+<arc id="1229500870">
+<flow source="759856445" target="1887406091"/>
+</arc>
+<arc id="1001953124">
+<flow source="1666046537" target="88176259"/>
+</arc>
+<arc id="1431534290">
+<flow source="299122086" target="1527513399"/>
+</arc>
+<arc id="1917918249">
+<flow source="825177649" target="929094893"/>
+</arc>
+<arc id="2124104996">
+<flow source="650069736" target="619304642"/>
+</arc>
+<arc id="31976996">
+<flow source="996308591" target="1385719476"/>
+</arc>
+<arc id="1336709408">
+<flow source="1109493486" target="2147436402"/>
+</arc>
+<arc id="895909032">
+<flow source="997841733" target="2079260666"/>
+</arc>
+<arc id="39057877">
+<flow source="1468369324" target="81155803"/>
+</arc>
+<arc id="2119298938">
+<flow source="897503336" target="375256671"/>
+</arc>
+<arc id="1434962785">
+<flow source="2140779933" target="1208422117"/>
+</arc>
+<arc id="1565139031">
+<flow source="499509011" target="747708544"/>
+</arc>
+<arc id="1191012150">
+<flow source="571984048" target="759856445"/>
+</arc>
+<arc id="1862862575">
+<flow source="1887406091" target="1666046537"/>
+</arc>
+<arc id="1019030653">
+<flow source="88176259" target="299122086"/>
+</arc>
+<arc id="372662405">
+<flow source="1527513399" target="825177649"/>
+</arc>
+<arc id="1932810374">
+<flow source="929094893" target="650069736"/>
+</arc>
+<arc id="510991310">
+<flow source="619304642" target="996308591"/>
+</arc>
+<arc id="318772804">
+<flow source="1385719476" target="1109493486"/>
+</arc>
+<arc id="233053327">
+<flow source="2147436402" target="997841733"/>
+</arc>
+<arc id="1352495406">
+<flow source="2079260666" target="1136459051"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

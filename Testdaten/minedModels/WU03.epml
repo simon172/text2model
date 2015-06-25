@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="1480569067">
+<name>use the sales information system</name>
+</function>
+<function id="674542540">
+<name>o er can be with or without reference to an inquiry</name>
+</function>
+<event id="91312932">
+<name>start</name>
+</event>
+<event id="1171670075">
+<name>end</name>
+</event>
+<event id="276046126">
+<name>start</name>
+</event>
+<event id="2102783670">
+<name>end</name>
+</event>
+<arc id="1603839095">
+<flow source="91312932" target="1480569067"/>
+</arc>
+<arc id="529770891">
+<flow source="1480569067" target="1171670075"/>
+</arc>
+<arc id="181769291">
+<flow source="276046126" target="674542540"/>
+</arc>
+<arc id="2139676518">
+<flow source="674542540" target="2102783670"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

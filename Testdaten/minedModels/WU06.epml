@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="696564239">
+<name>call </name>
+<relation from ="696564239" to ="721542014"/>
+</function>
+<function id="668555475">
+<name>determine the call reason</name>
+<relation from ="668555475" to ="53904991"/>
+</function>
+<function id="1858357546">
+<name>want to place a new order</name>
+<relation from ="1858357546" to ="721542014"/>
+</function>
+<function id="1531470116">
+<name>regard an order</name>
+<relation from ="1531470116" to ="721542014"/>
+</function>
+<function id="1667370844">
+<name>points be exclusive</name>
+<relation from ="1667370844" to ="721542014"/>
+</function>
+<function id="15636176">
+<name>put the customer</name>
+<relation from ="15636176" to ="53904991"/>
+</function>
+<function id="2034595186">
+<name>transfer the call to a technical support agent</name>
+<relation from ="2034595186" to ="53904991"/>
+</function>
+<function id="1401177501">
+<name>transfer the call to customer service</name>
+<relation from ="1401177501" to ="53904991"/>
+</function>
+<function id="1169251605">
+<name>engage the line</name>
+<relation from ="1169251605" to ="53904991"/>
+</function>
+<function id="1112529238">
+<name>need to wait until the customer service agent becomes available</name>
+<relation from ="1112529238" to ="721542014"/>
+</function>
+<function id="2004558410">
+<name>process request</name>
+<relation from ="2004558410" to ="2123447393"/>
+</function>
+<function id="1911126612">
+<name>consult the supervisor</name>
+<relation from ="1911126612" to ="2123447393"/>
+</function>
+<function id="1766984236">
+<name>complete the request</name>
+<relation from ="1766984236" to ="878795072"/>
+</function>
+<function id="1552096705">
+<name>the supervisor is unable</name>
+<relation from ="1552096705" to ="878795072"/>
+</function>
+<function id="468484428">
+<name>decline the request</name>
+<relation from ="468484428" to ="1225153828"/>
+</function>
+<function id="916411305">
+<name>inform the customer</name>
+<relation from ="916411305" to ="1225153828"/>
+</function>
+<function id="967277278">
+<name>the process be after that</name>
+<relation from ="967277278" to ="1225153828"/>
+</function>
+<event id="601191685">
+<name>the customer wants  </name>
+</event>
+<event id="369711403">
+<name>request is not  possible </name>
+</event>
+<event id="1517347803">
+<name>the supervisor can help  </name>
+</event>
+<event id="328684593">
+<name>call  is done</name>
+</event>
+<event id="2068963639">
+<name>determine the call reason is done</name>
+</event>
+<event id="1354146894">
+<name>want to place a new order is done</name>
+</event>
+<event id="1421936805">
+<name>regard an order is done</name>
+</event>
+<event id="44472890">
+<name>put the customer is done</name>
+</event>
+<event id="372607325">
+<name>transfer the call to a technical support agent is done</name>
+</event>
+<event id="2043170006">
+<name>transfer the call to customer service is done</name>
+</event>
+<event id="1625789214">
+<name>engage the line is done</name>
+</event>
+<event id="1597852330">
+<name>need to wait until the customer service agent becomes available is done</name>
+</event>
+<event id="1296136412">
+<name>consult the supervisor is done</name>
+</event>
+<event id="1555086016">
+<name>the supervisor is unable is done</name>
+</event>
+<event id="405142861">
+<name>decline the request is done</name>
+</event>
+<event id="1180322607">
+<name>inform the customer is done</name>
+</event>
+<event id="141686105">
+<name>end</name>
+</event>
+<xor id="787809685"/>
+<xor id="236962563"/>
+<xor id="1320292258"/>
+<arc id="264789927">
+<flow source="251526727" target="696564239"/>
+</arc>
+<arc id="146831435">
+<flow source="328684593" target="668555475"/>
+</arc>
+<arc id="315447847">
+<flow source="2068963639" target="1858357546"/>
+</arc>
+<arc id="1215216135">
+<flow source="1354146894" target="1531470116"/>
+</arc>
+<arc id="85389770">
+<flow source="1421936805" target="1667370844"/>
+</arc>
+<arc id="1266192079">
+<flow source="236962563" target="601191685"/>
+</arc>
+<arc id="1987816581">
+<flow source="1667370844" target="236962563"/>
+</arc>
+<arc id="2043854539">
+<flow source="601191685" target="15636176"/>
+</arc>
+<arc id="161836329">
+<flow source="44472890" target="2034595186"/>
+</arc>
+<arc id="579991324">
+<flow source="372607325" target="1401177501"/>
+</arc>
+<arc id="756026231">
+<flow source="2043170006" target="1169251605"/>
+</arc>
+<arc id="1104731384">
+<flow source="1625789214" target="1112529238"/>
+</arc>
+<arc id="1664499151">
+<flow source="1597852330" target="2004558410"/>
+</arc>
+<arc id="1684853038">
+<flow source="1320292258" target="369711403"/>
+</arc>
+<arc id="912670761">
+<flow source="1320292258" target="1517347803"/>
+</arc>
+<arc id="1674899120">
+<flow source="2004558410" target="1320292258"/>
+</arc>
+<arc id="1761052248">
+<flow source="369711403" target="1911126612"/>
+</arc>
+<arc id="739398808">
+<flow source="1517347803" target="1766984236"/>
+</arc>
+<arc id="2122840374">
+<flow source="1766984236" target="787809685"/>
+</arc>
+<arc id="1074779370">
+<flow source="1911126612" target="787809685"/>
+</arc>
+<arc id="706117482">
+<flow source="1296136412" target="867513408"/>
+</arc>
+<arc id="1188079827">
+<flow source="867513408" target="1552096705"/>
+</arc>
+<arc id="1604608588">
+<flow source="1555086016" target="468484428"/>
+</arc>
+<arc id="514555591">
+<flow source="405142861" target="916411305"/>
+</arc>
+<arc id="540885372">
+<flow source="1180322607" target="967277278"/>
+</arc>
+<arc id="225425558">
+<flow source="696564239" target="328684593"/>
+</arc>
+<arc id="2041139606">
+<flow source="668555475" target="2068963639"/>
+</arc>
+<arc id="544021958">
+<flow source="1858357546" target="1354146894"/>
+</arc>
+<arc id="1733805642">
+<flow source="1531470116" target="1421936805"/>
+</arc>
+<arc id="1257055365">
+<flow source="15636176" target="44472890"/>
+</arc>
+<arc id="1326020679">
+<flow source="2034595186" target="372607325"/>
+</arc>
+<arc id="1512216166">
+<flow source="1401177501" target="2043170006"/>
+</arc>
+<arc id="1680348165">
+<flow source="1169251605" target="1625789214"/>
+</arc>
+<arc id="291661453">
+<flow source="1112529238" target="1597852330"/>
+</arc>
+<arc id="1777190221">
+<flow source="787809685" target="1296136412"/>
+</arc>
+<arc id="1592060373">
+<flow source="1552096705" target="1555086016"/>
+</arc>
+<arc id="535139497">
+<flow source="468484428" target="405142861"/>
+</arc>
+<arc id="1065990256">
+<flow source="916411305" target="1180322607"/>
+</arc>
+<arc id="990017570">
+<flow source="967277278" target="141686105"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="2110008793">
+<name>a business trip is necessary</name>
+<relation from ="2110008793" to ="206665174"/>
+</function>
+<function id="1092377244">
+<name>make an application for a business trip</name>
+<relation from ="1092377244" to ="206665174"/>
+</function>
+<function id="800724602">
+<name>hand in which</name>
+<relation from ="800724602" to ="206665174"/>
+</function>
+<function id="1184282045">
+<name>approve application</name>
+<relation from ="1184282045" to ="1199113310"/>
+</function>
+<function id="884046417">
+<name>come application again to post box</name>
+<relation from ="884046417" to ="1199113310"/>
+</function>
+<function id="174037247">
+<name>ask </name>
+<relation from ="174037247" to ="206665174"/>
+</function>
+<function id="1334667830">
+<name>book the company car</name>
+<relation from ="1334667830" to ="206665174"/>
+</function>
+<function id="902049023">
+<name>order a rental car</name>
+<relation from ="902049023" to ="206665174"/>
+</function>
+<function id="1391781850">
+<name>realize the company car</name>
+<relation from ="1391781850" to ="206665174"/>
+</function>
+<function id="921321400">
+<name>take place</name>
+<relation from ="921321400" to ="206665174"/>
+</function>
+<function id="1046411449">
+<name>Is not approve </name>
+<relation from ="1046411449" to ="206665174"/>
+</function>
+<function id="56815610">
+<name>check </name>
+<relation from ="56815610" to ="206665174"/>
+</function>
+<function id="903284745">
+<name>go particular</name>
+<relation from ="903284745" to ="206665174"/>
+</function>
+<function id="1751655483">
+<name>hand particular once</name>
+<relation from ="1751655483" to ="206665174"/>
+</function>
+<function id="1894812162">
+<name>check at first</name>
+<relation from ="1894812162" to ="296991141"/>
+</function>
+<function id="1709670667">
+<name>the business trip is in accordance with the requirements for business trips of mylibro plc.</name>
+<relation from ="1709670667" to ="296991141"/>
+</function>
+<function id="699374643">
+<name>hand </name>
+<relation from ="699374643" to ="296991141"/>
+</function>
+<function id="847633284">
+<name>accept the business trip</name>
+<relation from ="847633284" to ="296991141"/>
+</function>
+<function id="691835332">
+<name>make a note of the employee of the business trip into the presence file</name>
+<relation from ="691835332" to ="296991141"/>
+</function>
+<function id="10800703">
+<name>put the request approved or re-jected, into the pigeon hole of the employee</name>
+<relation from ="10800703" to ="296991141"/>
+</function>
+<event id="1900396834">
+<name>post box is available </name>
+</event>
+<event id="1970549678">
+<name>an employee places a request for a business trip </name>
+</event>
+<event id="1976178954">
+<name>a business trip is necessary is done</name>
+</event>
+<event id="1010401023">
+<name>make an application for a business trip is done</name>
+</event>
+<event id="699323360">
+<name>hand in which is done</name>
+</event>
+<event id="1881231468">
+<name>hand in which is done</name>
+</event>
+<event id="1867510756">
+<name>approve application is done</name>
+</event>
+<event id="1385139861">
+<name>come application again to post box is done</name>
+</event>
+<event id="2053642874">
+<name>book the company car is done</name>
+</event>
+<event id="1152667018">
+<name>order a rental car is done</name>
+</event>
+<event id="1410852274">
+<name>realize the company car is done</name>
+</event>
+<event id="1413813032">
+<name>take place is done</name>
+</event>
+<event id="1695942262">
+<name>Is not approve  is done</name>
+</event>
+<event id="1973860415">
+<name>check  is done</name>
+</event>
+<event id="350628112">
+<name>go particular is done</name>
+</event>
+<event id="1816963596">
+<name>hand particular once is done</name>
+</event>
+<event id="1035112699">
+<name>check at first is done</name>
+</event>
+<event id="1157307568">
+<name>the business trip is in accordance with the requirements for business trips of mylibro plc. is done</name>
+</event>
+<event id="958946419">
+<name>hand  is done</name>
+</event>
+<event id="509719158">
+<name>accept the business trip is done</name>
+</event>
+<event id="1422529207">
+<name>make a note of the employee of the business trip into the presence file is done</name>
+</event>
+<event id="1557365418">
+<name>end</name>
+</event>
+<xor id="1456134573"/>
+<xor id="1845610404"/>
+<xor id="1260972142"/>
+<xor id="1879363926"/>
+<xor id="802162093"/>
+<xor id="2087708305"/>
+<arc id="1360487414">
+<flow source="2092109305" target="2110008793"/>
+</arc>
+<arc id="134561936">
+<flow source="1976178954" target="1092377244"/>
+</arc>
+<arc id="2104013047">
+<flow source="1010401023" target="800724602"/>
+</arc>
+<arc id="944096879">
+<flow source="699323360" target="1184282045"/>
+</arc>
+<arc id="1189528">
+<flow source="1881231468" target="884046417"/>
+</arc>
+<arc id="442893427">
+<flow source="800724602" target="1879363926"/>
+</arc>
+<arc id="1791348190">
+<flow source="1184282045" target="1456134573"/>
+</arc>
+<arc id="2079461624">
+<flow source="884046417" target="1456134573"/>
+</arc>
+<arc id="2091195035">
+<flow source="1385139861" target="1239606861"/>
+</arc>
+<arc id="2071312794">
+<flow source="1239606861" target="174037247"/>
+</arc>
+<arc id="10563307">
+<flow source="802162093" target="1845610404"/>
+</arc>
+<arc id="1456406028">
+<flow source="802162093" target="1900396834"/>
+</arc>
+<arc id="1807713972">
+<flow source="174037247" target="802162093"/>
+</arc>
+<arc id="2031907861">
+<flow source="1900396834" target="1334667830"/>
+</arc>
+<arc id="1178715792">
+<flow source="1334667830" target="1845610404"/>
+</arc>
+<arc id="1742629625">
+<flow source="2053642874" target="1992840904"/>
+</arc>
+<arc id="1018920526">
+<flow source="1992840904" target="902049023"/>
+</arc>
+<arc id="681984642">
+<flow source="1152667018" target="1391781850"/>
+</arc>
+<arc id="1612411968">
+<flow source="1410852274" target="921321400"/>
+</arc>
+<arc id="32067044">
+<flow source="1413813032" target="1046411449"/>
+</arc>
+<arc id="1724320409">
+<flow source="1695942262" target="56815610"/>
+</arc>
+<arc id="203474780">
+<flow source="2087708305" target="1260972142"/>
+</arc>
+<arc id="1391302531">
+<flow source="1973860415" target="903284745"/>
+</arc>
+<arc id="1370859553">
+<flow source="2087708305" target="1970549678"/>
+</arc>
+<arc id="1206723624">
+<flow source="56815610" target="2087708305"/>
+</arc>
+<arc id="2136410715">
+<flow source="350628112" target="1751655483"/>
+</arc>
+<arc id="1967601866">
+<flow source="1970549678" target="1894812162"/>
+</arc>
+<arc id="1893889255">
+<flow source="1894812162" target="1260972142"/>
+</arc>
+<arc id="810051370">
+<flow source="1751655483" target="1260972142"/>
+</arc>
+<arc id="924890506">
+<flow source="1035112699" target="1968183566"/>
+</arc>
+<arc id="41289804">
+<flow source="1968183566" target="1709670667"/>
+</arc>
+<arc id="1632637353">
+<flow source="1157307568" target="699374643"/>
+</arc>
+<arc id="564519809">
+<flow source="958946419" target="847633284"/>
+</arc>
+<arc id="1386721704">
+<flow source="509719158" target="691835332"/>
+</arc>
+<arc id="1621227480">
+<flow source="1422529207" target="10800703"/>
+</arc>
+<arc id="1374682853">
+<flow source="2110008793" target="1976178954"/>
+</arc>
+<arc id="201955618">
+<flow source="1092377244" target="1010401023"/>
+</arc>
+<arc id="127404262">
+<flow source="1879363926" target="699323360"/>
+</arc>
+<arc id="815859651">
+<flow source="1879363926" target="1881231468"/>
+</arc>
+<arc id="685185491">
+<flow source="1456134573" target="1867510756"/>
+</arc>
+<arc id="1789400088">
+<flow source="1456134573" target="1385139861"/>
+</arc>
+<arc id="1793166693">
+<flow source="1845610404" target="2053642874"/>
+</arc>
+<arc id="1855363536">
+<flow source="902049023" target="1152667018"/>
+</arc>
+<arc id="846971120">
+<flow source="1391781850" target="1410852274"/>
+</arc>
+<arc id="247945321">
+<flow source="921321400" target="1413813032"/>
+</arc>
+<arc id="151402084">
+<flow source="1046411449" target="1695942262"/>
+</arc>
+<arc id="1092002546">
+<flow source="2087708305" target="1973860415"/>
+</arc>
+<arc id="745244926">
+<flow source="903284745" target="350628112"/>
+</arc>
+<arc id="406426693">
+<flow source="1260972142" target="1816963596"/>
+</arc>
+<arc id="1307493323">
+<flow source="1260972142" target="1035112699"/>
+</arc>
+<arc id="280245206">
+<flow source="1709670667" target="1157307568"/>
+</arc>
+<arc id="48443398">
+<flow source="699374643" target="958946419"/>
+</arc>
+<arc id="796526831">
+<flow source="847633284" target="509719158"/>
+</arc>
+<arc id="1337092904">
+<flow source="691835332" target="1422529207"/>
+</arc>
+<arc id="596755631">
+<flow source="10800703" target="1557365418"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

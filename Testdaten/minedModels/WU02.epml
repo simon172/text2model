@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="1009212062">
+<name>deliver an order</name>
+<relation from ="1009212062" to ="1794868653"/>
+</function>
+<function id="482986579">
+<name>specify the shipping point</name>
+<relation from ="482986579" to ="1794868653"/>
+</function>
+<function id="951206387">
+<name>specify the order number in the sales</name>
+<relation from ="951206387" to ="1794868653"/>
+</function>
+<function id="141112725">
+<name>post the goods issue</name>
+<relation from ="141112725" to ="1794868653"/>
+</function>
+<function id="2060384134">
+<name>perform an availability check</name>
+<relation from ="2060384134" to ="1794868653"/>
+</function>
+<function id="1219727222">
+<name>abandon the delivery process</name>
+<relation from ="1219727222" to ="1794868653"/>
+</function>
+<function id="725499613">
+<name>systems used be the sales</name>
+<relation from ="725499613" to ="1794868653"/>
+</function>
+<function id="1532942295">
+<name>create delivery</name>
+<relation from ="1532942295" to ="1794868653"/>
+</function>
+<function id="1215994346">
+<name>reduce the stock quantity of the delivered items accordingly</name>
+<relation from ="1215994346" to ="1794868653"/>
+</function>
+<function id="2078330239">
+<name>debit the customer order</name>
+<relation from ="2078330239" to ="1794868653"/>
+</function>
+<event id="345930803">
+<name>the products be available </name>
+</event>
+<event id="1808511275">
+<name>the products be not  available </name>
+</event>
+<event id="882544600">
+<name>deliver an order is done</name>
+</event>
+<event id="1524382176">
+<name>specify the shipping point is done</name>
+</event>
+<event id="927983365">
+<name>post the goods issue is done</name>
+</event>
+<event id="1908745079">
+<name>abandon the delivery process is done</name>
+</event>
+<event id="873430134">
+<name>systems used be the sales is done</name>
+</event>
+<event id="1321324344">
+<name>create delivery is done</name>
+</event>
+<event id="2079425265">
+<name>reduce the stock quantity of the delivered items accordingly is done</name>
+</event>
+<event id="296017895">
+<name>end</name>
+</event>
+<xor id="2010200028"/>
+<xor id="1179822179"/>
+<arc id="1887246173">
+<flow source="827988951" target="1009212062"/>
+</arc>
+<arc id="1177176634">
+<flow source="882544600" target="482986579"/>
+</arc>
+<arc id="667907467">
+<flow source="1524382176" target="951206387"/>
+</arc>
+<arc id="2078404037">
+<flow source="2010200028" target="345930803"/>
+</arc>
+<arc id="1863192964">
+<flow source="951206387" target="2010200028"/>
+</arc>
+<arc id="660515871">
+<flow source="345930803" target="141112725"/>
+</arc>
+<arc id="1498349823">
+<flow source="927983365" target="2060384134"/>
+</arc>
+<arc id="1623557815">
+<flow source="1179822179" target="1808511275"/>
+</arc>
+<arc id="849996457">
+<flow source="2060384134" target="1179822179"/>
+</arc>
+<arc id="1093417640">
+<flow source="1808511275" target="1219727222"/>
+</arc>
+<arc id="317621086">
+<flow source="1908745079" target="725499613"/>
+</arc>
+<arc id="1869602568">
+<flow source="873430134" target="1532942295"/>
+</arc>
+<arc id="601037932">
+<flow source="1321324344" target="1215994346"/>
+</arc>
+<arc id="59415492">
+<flow source="2079425265" target="2078330239"/>
+</arc>
+<arc id="216933921">
+<flow source="1009212062" target="882544600"/>
+</arc>
+<arc id="1472939627">
+<flow source="482986579" target="1524382176"/>
+</arc>
+<arc id="1248661731">
+<flow source="141112725" target="927983365"/>
+</arc>
+<arc id="2083572538">
+<flow source="1219727222" target="1908745079"/>
+</arc>
+<arc id="373790748">
+<flow source="725499613" target="873430134"/>
+</arc>
+<arc id="877831361">
+<flow source="1532942295" target="1321324344"/>
+</arc>
+<arc id="1373401835">
+<flow source="1215994346" target="2079425265"/>
+</arc>
+<arc id="812713406">
+<flow source="2078330239" target="296017895"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

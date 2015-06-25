@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="1059448555">
+<name>create a new bom</name>
+<relation from ="1059448555" to ="1033721265"/>
+</function>
+<function id="757071447">
+<name>specify the material number</name>
+<relation from ="757071447" to ="1033721265"/>
+</function>
+<function id="789413347">
+<name>enter the bom components</name>
+<relation from ="789413347" to ="1033721265"/>
+</function>
+<function id="725874662">
+<name>give an item number</name>
+<relation from ="725874662" to ="1033721265"/>
+</function>
+<function id="1124654207">
+<name>give a component number</name>
+<relation from ="1124654207" to ="1033721265"/>
+</function>
+<function id="1948092518">
+<name>give a quantity</name>
+<relation from ="1948092518" to ="1033721265"/>
+</function>
+<function id="905623441">
+<name>give a validity date</name>
+<relation from ="905623441" to ="1033721265"/>
+</function>
+<function id="1088295037">
+<name>assign components to the bom</name>
+<relation from ="1088295037" to ="1033721265"/>
+</function>
+<function id="856270667">
+<name>is assign </name>
+<relation from ="856270667" to ="1033721265"/>
+</function>
+<function id="479107566">
+<name>enter the object dependencies</name>
+<relation from ="479107566" to ="1033721265"/>
+</function>
+<function id="1332023098">
+<name>is classify </name>
+<relation from ="1332023098" to ="1033721265"/>
+</function>
+<function id="315985144">
+<name>assignments </name>
+<relation from ="315985144" to ="1033721265"/>
+</function>
+<function id="39606613">
+<name>maintain the assignment for the bom items</name>
+<relation from ="39606613" to ="1033721265"/>
+</function>
+<function id="669695645">
+<name>enter the bom header data</name>
+<relation from ="669695645" to ="889677062"/>
+</function>
+<function id="1198205805">
+<name>save the bom</name>
+<relation from ="1198205805" to ="889677062"/>
+</function>
+<function id="344816929">
+<name>process the bom</name>
+<relation from ="344816929" to ="889677062"/>
+</function>
+<event id="1179393316">
+<name>create a new bom is done</name>
+</event>
+<event id="1828329347">
+<name>specify the material number is done</name>
+</event>
+<event id="207504915">
+<name>enter the bom components is done</name>
+</event>
+<event id="1504046516">
+<name>give an item number is done</name>
+</event>
+<event id="1677070691">
+<name>give a component number is done</name>
+</event>
+<event id="231419065">
+<name>give a quantity is done</name>
+</event>
+<event id="1992006120">
+<name>give a validity date is done</name>
+</event>
+<event id="1960008479">
+<name>assign components to the bom is done</name>
+</event>
+<event id="1423692461">
+<name>is assign  is done</name>
+</event>
+<event id="1381325302">
+<name>enter the object dependencies is done</name>
+</event>
+<event id="230928535">
+<name>is classify  is done</name>
+</event>
+<event id="1318896693">
+<name>assignments  is done</name>
+</event>
+<event id="1674734781">
+<name>maintain the assignment for the bom items is done</name>
+</event>
+<event id="150326782">
+<name>enter the bom header data is done</name>
+</event>
+<event id="579282926">
+<name>save the bom is done</name>
+</event>
+<event id="616489286">
+<name>end</name>
+</event>
+<arc id="470257640">
+<flow source="75658648" target="1059448555"/>
+</arc>
+<arc id="1727959686">
+<flow source="1179393316" target="757071447"/>
+</arc>
+<arc id="1900479860">
+<flow source="1828329347" target="789413347"/>
+</arc>
+<arc id="1993014137">
+<flow source="207504915" target="725874662"/>
+</arc>
+<arc id="1444037255">
+<flow source="1504046516" target="1124654207"/>
+</arc>
+<arc id="1156223073">
+<flow source="1677070691" target="1948092518"/>
+</arc>
+<arc id="223301933">
+<flow source="231419065" target="905623441"/>
+</arc>
+<arc id="746545870">
+<flow source="1992006120" target="1088295037"/>
+</arc>
+<arc id="1748831164">
+<flow source="1960008479" target="856270667"/>
+</arc>
+<arc id="2017781570">
+<flow source="1423692461" target="479107566"/>
+</arc>
+<arc id="259327838">
+<flow source="1381325302" target="1332023098"/>
+</arc>
+<arc id="1481342316">
+<flow source="230928535" target="315985144"/>
+</arc>
+<arc id="1479277874">
+<flow source="1318896693" target="39606613"/>
+</arc>
+<arc id="126517122">
+<flow source="1674734781" target="669695645"/>
+</arc>
+<arc id="543348698">
+<flow source="150326782" target="1198205805"/>
+</arc>
+<arc id="599879335">
+<flow source="579282926" target="344816929"/>
+</arc>
+<arc id="1859184412">
+<flow source="1059448555" target="1179393316"/>
+</arc>
+<arc id="710794049">
+<flow source="757071447" target="1828329347"/>
+</arc>
+<arc id="1709160579">
+<flow source="789413347" target="207504915"/>
+</arc>
+<arc id="501654034">
+<flow source="725874662" target="1504046516"/>
+</arc>
+<arc id="2079696446">
+<flow source="1124654207" target="1677070691"/>
+</arc>
+<arc id="622197024">
+<flow source="1948092518" target="231419065"/>
+</arc>
+<arc id="547947863">
+<flow source="905623441" target="1992006120"/>
+</arc>
+<arc id="2114285660">
+<flow source="1088295037" target="1960008479"/>
+</arc>
+<arc id="1018230492">
+<flow source="856270667" target="1423692461"/>
+</arc>
+<arc id="126309488">
+<flow source="479107566" target="1381325302"/>
+</arc>
+<arc id="914272741">
+<flow source="1332023098" target="230928535"/>
+</arc>
+<arc id="1929723202">
+<flow source="315985144" target="1318896693"/>
+</arc>
+<arc id="551553211">
+<flow source="39606613" target="1674734781"/>
+</arc>
+<arc id="1388318351">
+<flow source="669695645" target="150326782"/>
+</arc>
+<arc id="42096341">
+<flow source="1198205805" target="579282926"/>
+</arc>
+<arc id="1993877288">
+<flow source="344816929" target="616489286"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

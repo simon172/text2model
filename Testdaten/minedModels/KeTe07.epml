@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="1066378863">
+<name>create planned order automatically</name>
+<relation from ="1066378863" to ="937466663"/>
+</function>
+<function id="436018589">
+<name>combination of automatic and manual creation is likely</name>
+<relation from ="436018589" to ="937466663"/>
+</function>
+<function id="308880658">
+<name>trigger whole process only in the case</name>
+<relation from ="308880658" to ="937466663"/>
+</function>
+<function id="1255403391">
+<name>achieves this</name>
+<relation from ="1255403391" to ="937466663"/>
+</function>
+<function id="2069477758">
+<name>determine the planned order type</name>
+<relation from ="2069477758" to ="937466663"/>
+</function>
+<function id="29644524">
+<name>specify the planned order position</name>
+<relation from ="29644524" to ="937466663"/>
+</function>
+<function id="178800779">
+<name> eitherconvert into a production order</name>
+<relation from ="178800779" to ="937466663"/>
+</function>
+<function id="954112141">
+<name> eitherconvert into a production order</name>
+<relation from ="954112141" to ="937466663"/>
+</function>
+<function id="428562730">
+<name> eitherconvert into a production order</name>
+<relation from ="428562730" to ="937466663"/>
+</function>
+<function id="369265476">
+<name>need to specify the production order type may be </name>
+<relation from ="369265476" to ="937466663"/>
+</function>
+<function id="233190600">
+<name>need to specify the procurement type may be </name>
+<relation from ="233190600" to ="299740317"/>
+</function>
+<function id="1251837842">
+<name>need to specify the process order type may be </name>
+<relation from ="1251837842" to ="937466663"/>
+</function>
+<event id="1619316834">
+<name>start</name>
+</event>
+<event id="116609108">
+<name>end</name>
+</event>
+<event id="185758671">
+<name>start</name>
+</event>
+<event id="1983080747">
+<name>end</name>
+</event>
+<event id="1045089440">
+<name>start</name>
+</event>
+<event id="1320198550">
+<name>end</name>
+</event>
+<event id="1912655084">
+<name>start</name>
+</event>
+<event id="633052324">
+<name>end</name>
+</event>
+<event id="1915395632">
+<name>start</name>
+</event>
+<event id="78199370">
+<name>end</name>
+</event>
+<event id="1846320949">
+<name>start</name>
+</event>
+<event id="671117662">
+<name>end</name>
+</event>
+<event id="1624521191">
+<name>start</name>
+</event>
+<event id="502518940">
+<name>end</name>
+</event>
+<event id="1770168473">
+<name>start</name>
+</event>
+<event id="1256740926">
+<name>end</name>
+</event>
+<event id="1532794653">
+<name>start</name>
+</event>
+<event id="2080116736">
+<name>end</name>
+</event>
+<event id="1358789196">
+<name>start</name>
+</event>
+<event id="1411862689">
+<name>end</name>
+</event>
+<event id="925569554">
+<name>start</name>
+</event>
+<event id="390330011">
+<name>end</name>
+</event>
+<event id="233531097">
+<name>start</name>
+</event>
+<event id="75542934">
+<name>end</name>
+</event>
+<arc id="951792339">
+<flow source="1619316834" target="1066378863"/>
+</arc>
+<arc id="1297333703">
+<flow source="1066378863" target="116609108"/>
+</arc>
+<arc id="1792996820">
+<flow source="185758671" target="436018589"/>
+</arc>
+<arc id="643719087">
+<flow source="436018589" target="1983080747"/>
+</arc>
+<arc id="589819624">
+<flow source="1045089440" target="308880658"/>
+</arc>
+<arc id="440876232">
+<flow source="308880658" target="1320198550"/>
+</arc>
+<arc id="1850485994">
+<flow source="1912655084" target="1255403391"/>
+</arc>
+<arc id="112809383">
+<flow source="1255403391" target="633052324"/>
+</arc>
+<arc id="2106513379">
+<flow source="1915395632" target="2069477758"/>
+</arc>
+<arc id="1215382293">
+<flow source="2069477758" target="78199370"/>
+</arc>
+<arc id="1698065624">
+<flow source="1846320949" target="29644524"/>
+</arc>
+<arc id="1781266080">
+<flow source="29644524" target="671117662"/>
+</arc>
+<arc id="911395209">
+<flow source="1624521191" target="178800779"/>
+</arc>
+<arc id="676900724">
+<flow source="178800779" target="502518940"/>
+</arc>
+<arc id="1237070497">
+<flow source="1770168473" target="954112141"/>
+</arc>
+<arc id="665222424">
+<flow source="954112141" target="1256740926"/>
+</arc>
+<arc id="1943900141">
+<flow source="1532794653" target="428562730"/>
+</arc>
+<arc id="1873214682">
+<flow source="428562730" target="2080116736"/>
+</arc>
+<arc id="1329608025">
+<flow source="1358789196" target="369265476"/>
+</arc>
+<arc id="213858003">
+<flow source="369265476" target="1411862689"/>
+</arc>
+<arc id="2039415635">
+<flow source="925569554" target="233190600"/>
+</arc>
+<arc id="1648317198">
+<flow source="233190600" target="390330011"/>
+</arc>
+<arc id="209676716">
+<flow source="233531097" target="1251837842"/>
+</arc>
+<arc id="482293035">
+<flow source="1251837842" target="75542934"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

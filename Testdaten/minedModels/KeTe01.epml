@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="433153112">
+<name>conclude contract</name>
+</function>
+<function id="512099173">
+<name>need to valid </name>
+</function>
+<function id="1596121508">
+<name>refer to a quotation</name>
+</function>
+<function id="1214836132">
+<name>open the contract from quotation</name>
+</function>
+<function id="569635378">
+<name>determine in the parallel contract customer</name>
+</function>
+<function id="1442015256">
+<name>determine the validity period of the contract</name>
+</function>
+<function id="578410430">
+<name>determine the contract prices</name>
+</function>
+<function id="2075338125">
+<name>save the contract</name>
+</function>
+<event id="1979402797">
+<name>conclude contract is done</name>
+</event>
+<event id="1600015459">
+<name>need to valid  is done</name>
+</event>
+<event id="869505245">
+<name>refer to a quotation is done</name>
+</event>
+<event id="2126938215">
+<name>open the contract from quotation is done</name>
+</event>
+<event id="2099048397">
+<name>determine in the parallel contract customer is done</name>
+</event>
+<event id="1396208286">
+<name>determine the validity period of the contract is done</name>
+</event>
+<event id="788634632">
+<name>determine the contract prices is done</name>
+</event>
+<event id="508086009">
+<name>end</name>
+</event>
+<arc id="52202217">
+<flow source="623886892" target="433153112"/>
+</arc>
+<arc id="1940867343">
+<flow source="1979402797" target="512099173"/>
+</arc>
+<arc id="684383220">
+<flow source="1600015459" target="1596121508"/>
+</arc>
+<arc id="1130427268">
+<flow source="869505245" target="1214836132"/>
+</arc>
+<arc id="617374403">
+<flow source="2126938215" target="569635378"/>
+</arc>
+<arc id="757248100">
+<flow source="2099048397" target="1442015256"/>
+</arc>
+<arc id="1397349199">
+<flow source="1396208286" target="578410430"/>
+</arc>
+<arc id="393346673">
+<flow source="788634632" target="2075338125"/>
+</arc>
+<arc id="1835114645">
+<flow source="433153112" target="1979402797"/>
+</arc>
+<arc id="475403096">
+<flow source="512099173" target="1600015459"/>
+</arc>
+<arc id="1398207290">
+<flow source="1596121508" target="869505245"/>
+</arc>
+<arc id="1386647604">
+<flow source="1214836132" target="2126938215"/>
+</arc>
+<arc id="431426679">
+<flow source="569635378" target="2099048397"/>
+</arc>
+<arc id="905539581">
+<flow source="1442015256" target="1396208286"/>
+</arc>
+<arc id="242546987">
+<flow source="578410430" target="788634632"/>
+</arc>
+<arc id="1622197322">
+<flow source="2075338125" target="508086009"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

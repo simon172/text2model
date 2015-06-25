@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="293842583">
+<name>process </name>
+<relation from ="293842583" to ="1524346108"/>
+</function>
+<function id="1899537613">
+<name>enter the restaurant</name>
+<relation from ="1899537613" to ="1524346108"/>
+</function>
+<function id="1852929446">
+<name>ask for an existing reservation</name>
+<relation from ="1852929446" to ="981309903"/>
+</function>
+<function id="1107306592">
+<name>check the reservation entries using the reservation system</name>
+<relation from ="1107306592" to ="1524346108"/>
+</function>
+<function id="1810202878">
+<name>found a reservation entry in the system</name>
+<relation from ="1810202878" to ="1524346108"/>
+</function>
+<function id="383392368">
+<name>hostess the customer in the case to table</name>
+<relation from ="383392368" to ="1524346108"/>
+</function>
+<function id="12169598">
+<name>search </name>
+<relation from ="12169598" to ="981309903"/>
+</function>
+<function id="944835560">
+<name>guide the customer to the system</name>
+<relation from ="944835560" to ="1385855308"/>
+</function>
+<function id="1120593241">
+<name>ask to wait </name>
+<relation from ="1120593241" to ="1385855308"/>
+</function>
+<function id="741997957">
+<name>wait </name>
+<relation from ="741997957" to ="1385855308"/>
+</function>
+<function id="1856648028">
+<name>search again</name>
+<relation from ="1856648028" to ="981309903"/>
+</function>
+<function id="1026095864">
+<name>the customer is unwilling</name>
+<relation from ="1026095864" to ="981309903"/>
+</function>
+<function id="145617607">
+<name>leave the restaurant</name>
+<relation from ="145617607" to ="1524346108"/>
+</function>
+<function id="725832397">
+<name>the process </name>
+<relation from ="725832397" to ="1524346108"/>
+</function>
+<function id="1987345361">
+<name>the customer is at the table</name>
+<relation from ="1987345361" to ="1524346108"/>
+</function>
+<function id="584749597">
+<name>bring the menu</name>
+<relation from ="584749597" to ="580906657"/>
+</function>
+<function id="1111338984">
+<name>ask for orders</name>
+<relation from ="1111338984" to ="580906657"/>
+</function>
+<function id="1180232694">
+<name>want </name>
+<relation from ="1180232694" to ="1524346108"/>
+</function>
+<function id="201699231">
+<name>want to order</name>
+<relation from ="201699231" to ="1524346108"/>
+</function>
+<function id="1777551431">
+<name>take the order using the ordering system</name>
+<relation from ="1777551431" to ="580906657"/>
+</function>
+<function id="1845995931">
+<name>want something to drink</name>
+<relation from ="1845995931" to ="1524346108"/>
+</function>
+<function id="264347180">
+<name>to eat </name>
+<relation from ="264347180" to ="1524346108"/>
+</function>
+<function id="1874875987">
+<name>pass the order</name>
+<relation from ="1874875987" to ="580906657"/>
+</function>
+<function id="177347550">
+<name>the drinks be ready</name>
+<relation from ="177347550" to ="580906657"/>
+</function>
+<function id="418595445">
+<name>serve the waitress</name>
+<relation from ="418595445" to ="580906657"/>
+</function>
+<function id="86176140">
+<name>apply to the meals</name>
+<relation from ="86176140" to ="580906657"/>
+</function>
+<function id="364662721">
+<name>serve the order</name>
+<relation from ="364662721" to ="580906657"/>
+</function>
+<function id="979588170">
+<name>wait </name>
+<relation from ="979588170" to ="580906657"/>
+</function>
+<function id="2066671470">
+<name>finish meal</name>
+<relation from ="2066671470" to ="1524346108"/>
+</function>
+<function id="5385180">
+<name>finish </name>
+<relation from ="5385180" to ="776734950"/>
+</function>
+<function id="679329946">
+<name>ask again for orders</name>
+<relation from ="679329946" to ="776734950"/>
+</function>
+<function id="1748223552">
+<name>does not want to order</name>
+<relation from ="1748223552" to ="776734950"/>
+</function>
+<function id="1623823836">
+<name>determine the reason</name>
+<relation from ="1623823836" to ="580906657"/>
+</function>
+<function id="1045478573">
+<name>does not customer does not have more orders</name>
+<relation from ="1045478573" to ="580906657"/>
+</function>
+<function id="1822098063">
+<name>does not customer does not have alternative</name>
+<relation from ="1822098063" to ="580906657"/>
+</function>
+<function id="1632613109">
+<name>not a customer is not ready</name>
+<relation from ="1632613109" to ="580906657"/>
+</function>
+<function id="1392080189">
+<name>wait </name>
+<relation from ="1392080189" to ="580906657"/>
+</function>
+<function id="449190740">
+<name>call the waitress</name>
+<relation from ="449190740" to ="1524346108"/>
+</function>
+<function id="1196935138">
+<name>leave appropriate time</name>
+<relation from ="1196935138" to ="1524346108"/>
+</function>
+<function id="272560722">
+<name>ask again for orders</name>
+<relation from ="272560722" to ="580906657"/>
+</function>
+<function id="33879007">
+<name>bring the bill</name>
+<relation from ="33879007" to ="580906657"/>
+</function>
+<function id="529868053">
+<name>need the order</name>
+<relation from ="529868053" to ="580906657"/>
+</function>
+<function id="380787971">
+<name>need billing data</name>
+<relation from ="380787971" to ="580906657"/>
+</function>
+<function id="1342553191">
+<name>the bill is at the table</name>
+<relation from ="1342553191" to ="580906657"/>
+</function>
+<function id="992449234">
+<name>determine the payment method</name>
+<relation from ="992449234" to ="580906657"/>
+</function>
+<function id="662204305">
+<name>want to pay cash</name>
+<relation from ="662204305" to ="114140543"/>
+</function>
+<function id="1647138512">
+<name>want to pay with credit card</name>
+<relation from ="1647138512" to ="114140543"/>
+</function>
+<function id="1296913845">
+<name>to pay credit card</name>
+<relation from ="1296913845" to ="114140543"/>
+</function>
+<function id="1993458771">
+<name>bring the mobile pos in the second case</name>
+<relation from ="1993458771" to ="114140543"/>
+</function>
+<function id="1889918320">
+<name>pay </name>
+<relation from ="1889918320" to ="1524346108"/>
+</function>
+<function id="2092444303">
+<name>settle the bill</name>
+<relation from ="2092444303" to ="1524346108"/>
+</function>
+<function id="1371077987">
+<name>leave the restaurant</name>
+<relation from ="1371077987" to ="1524346108"/>
+</function>
+<function id="1494269875">
+<name>the process </name>
+<relation from ="1494269875" to ="1524346108"/>
+</function>
+<event id="1606682467">
+<name>the customer says that he has a reservation </name>
+</event>
+<event id="1857382427">
+<name>the customer says that he does not have a reservation or a reservation entry cannot be found </name>
+</event>
+<event id="2131438158">
+<name>founds a table </name>
+</event>
+<event id="443466484">
+<name>the customer is not  ready </name>
+</event>
+<event id="1269967777">
+<name>the customer does not want   </name>
+</event>
+<event id="880678510">
+<name>process  is done</name>
+</event>
+<event id="833021841">
+<name>enter the restaurant is done</name>
+</event>
+<event id="2027614248">
+<name>check the reservation entries using the reservation system is done</name>
+</event>
+<event id="892215633">
+<name>found a reservation entry in the system is done</name>
+</event>
+<event id="1011541053">
+<name>end</name>
+</event>
+<event id="1571505078">
+<name>guide the customer to the system is done</name>
+</event>
+<event id="1427666350">
+<name>guide the customer to the system is done</name>
+</event>
+<event id="357494037">
+<name>ask to wait  is done</name>
+</event>
+<event id="2107737422">
+<name>search again is done</name>
+</event>
+<event id="1889895979">
+<name>the customer is unwilling is done</name>
+</event>
+<event id="2078482898">
+<name>leave the restaurant is done</name>
+</event>
+<event id="988704615">
+<name>the process  is done</name>
+</event>
+<event id="407489957">
+<name>the customer is at the table is done</name>
+</event>
+<event id="103706797">
+<name>bring the menu is done</name>
+</event>
+<event id="505472082">
+<name>ask for orders is done</name>
+</event>
+<event id="822986489">
+<name>want  is done</name>
+</event>
+<event id="1904080262">
+<name>want to order is done</name>
+</event>
+<event id="1903864326">
+<name>take the order using the ordering system is done</name>
+</event>
+<event id="863651982">
+<name>want something to drink is done</name>
+</event>
+<event id="1172320105">
+<name>to eat  is done</name>
+</event>
+<event id="600229466">
+<name>pass the order is done</name>
+</event>
+<event id="1920768867">
+<name>the drinks be ready is done</name>
+</event>
+<event id="1808630826">
+<name>serve the waitress is done</name>
+</event>
+<event id="1350542058">
+<name>apply to the meals is done</name>
+</event>
+<event id="1256753513">
+<name>serve the order is done</name>
+</event>
+<event id="1437055973">
+<name>wait  is done</name>
+</event>
+<event id="194515304">
+<name>finish meal is done</name>
+</event>
+<event id="175391846">
+<name>finish  is done</name>
+</event>
+<event id="1865186986">
+<name>ask again for orders is done</name>
+</event>
+<event id="7006416">
+<name>does not want to order is done</name>
+</event>
+<event id="160328511">
+<name>determine the reason is done</name>
+</event>
+<event id="1485836997">
+<name>determine the reason is done</name>
+</event>
+<event id="2078239321">
+<name>determine the reason is done</name>
+</event>
+<event id="1988353217">
+<name>does not customer does not have more orders is done</name>
+</event>
+<event id="1721406357">
+<name>not a customer is not ready is done</name>
+</event>
+<event id="1327793566">
+<name>wait  is done</name>
+</event>
+<event id="643391925">
+<name>ask again for orders is done</name>
+</event>
+<event id="603913000">
+<name>bring the bill is done</name>
+</event>
+<event id="807444064">
+<name>need the order is done</name>
+</event>
+<event id="1083505188">
+<name>need billing data is done</name>
+</event>
+<event id="1639582124">
+<name>the bill is at the table is done</name>
+</event>
+<event id="703687096">
+<name>determine the payment method is done</name>
+</event>
+<event id="664980576">
+<name>determine the payment method is done</name>
+</event>
+<event id="1413673805">
+<name>want to pay cash is done</name>
+</event>
+<event id="1373734810">
+<name>to pay credit card is done</name>
+</event>
+<event id="66264618">
+<name>bring the mobile pos in the second case is done</name>
+</event>
+<event id="851414892">
+<name>pay  is done</name>
+</event>
+<event id="736352764">
+<name>settle the bill is done</name>
+</event>
+<event id="1912841724">
+<name>leave the restaurant is done</name>
+</event>
+<event id="597188997">
+<name>end</name>
+</event>
+<and id="623550008"/>
+<and id="1040415715"/>
+<xor id="860521752"/>
+<xor id="2131543321"/>
+<xor id="131118935"/>
+<xor id="1115288999"/>
+<xor id="1703731507"/>
+<xor id="694058837"/>
+<xor id="977356097"/>
+<xor id="1534090017"/>
+<xor id="1879517274"/>
+<xor id="1224700776"/>
+<xor id="437538871"/>
+<xor id="42770783"/>
+<xor id="425609693"/>
+<xor id="1641954044"/>
+<arc id="1380128724">
+<flow source="280675051" target="293842583"/>
+</arc>
+<arc id="949167999">
+<flow source="880678510" target="1899537613"/>
+</arc>
+<arc id="183309770">
+<flow source="833021841" target="1852929446"/>
+</arc>
+<arc id="1121999824">
+<flow source="694058837" target="1606682467"/>
+</arc>
+<arc id="1667833885">
+<flow source="1852929446" target="694058837"/>
+</arc>
+<arc id="549541123">
+<flow source="1606682467" target="1107306592"/>
+</arc>
+<arc id="2050957977">
+<flow source="2027614248" target="1810202878"/>
+</arc>
+<arc id="1350339595">
+<flow source="892215633" target="383392368"/>
+</arc>
+<arc id="268591887">
+<flow source="1606682467" target="1349907350"/>
+</arc>
+<arc id="222387352">
+<flow source="977356097" target="2131438158"/>
+</arc>
+<arc id="971604858">
+<flow source="12169598" target="977356097"/>
+</arc>
+<arc id="240671780">
+<flow source="2131438158" target="944835560"/>
+</arc>
+<arc id="1286012270">
+<flow source="1571505078" target="1120593241"/>
+</arc>
+<arc id="13836706">
+<flow source="1427666350" target="741997957"/>
+</arc>
+<arc id="1258609930">
+<flow source="944835560" target="1040415715"/>
+</arc>
+<arc id="865936124">
+<flow source="1120593241" target="623550008"/>
+</arc>
+<arc id="718981916">
+<flow source="741997957" target="623550008"/>
+</arc>
+<arc id="1210841882">
+<flow source="357494037" target="594805458"/>
+</arc>
+<arc id="373610946">
+<flow source="1534090017" target="1856648028"/>
+</arc>
+<arc id="1790599741">
+<flow source="1534090017" target="45958906"/>
+</arc>
+<arc id="1276418174">
+<flow source="594805458" target="1534090017"/>
+</arc>
+<arc id="1800365058">
+<flow source="1349907350" target="860521752"/>
+</arc>
+<arc id="1390237916">
+<flow source="1856648028" target="860521752"/>
+</arc>
+<arc id="1534405735">
+<flow source="2107737422" target="12169598"/>
+</arc>
+<arc id="894985690">
+<flow source="45958906" target="1026095864"/>
+</arc>
+<arc id="1203527938">
+<flow source="1889895979" target="145617607"/>
+</arc>
+<arc id="1464033923">
+<flow source="2078482898" target="725832397"/>
+</arc>
+<arc id="1868614415">
+<flow source="988704615" target="1987345361"/>
+</arc>
+<arc id="434111884">
+<flow source="407489957" target="584749597"/>
+</arc>
+<arc id="1030804419">
+<flow source="103706797" target="2070738899"/>
+</arc>
+<arc id="1902897556">
+<flow source="505472082" target="1180232694"/>
+</arc>
+<arc id="406486021">
+<flow source="822986489" target="201699231"/>
+</arc>
+<arc id="24102635">
+<flow source="1904080262" target="1777551431"/>
+</arc>
+<arc id="985326542">
+<flow source="1903864326" target="1845995931"/>
+</arc>
+<arc id="338922052">
+<flow source="863651982" target="264347180"/>
+</arc>
+<arc id="1604458131">
+<flow source="1172320105" target="1874875987"/>
+</arc>
+<arc id="545639186">
+<flow source="600229466" target="177347550"/>
+</arc>
+<arc id="1305274463">
+<flow source="1920768867" target="418595445"/>
+</arc>
+<arc id="1168452104">
+<flow source="1808630826" target="86176140"/>
+</arc>
+<arc id="175946401">
+<flow source="1350542058" target="364662721"/>
+</arc>
+<arc id="70200743">
+<flow source="1256753513" target="979588170"/>
+</arc>
+<arc id="780907373">
+<flow source="1437055973" target="2066671470"/>
+</arc>
+<arc id="1108486622">
+<flow source="194515304" target="5385180"/>
+</arc>
+<arc id="768883343">
+<flow source="175391846" target="679329946"/>
+</arc>
+<arc id="1357604999">
+<flow source="1865186986" target="1748223552"/>
+</arc>
+<arc id="596158764">
+<flow source="7006416" target="1623823836"/>
+</arc>
+<arc id="1999602897">
+<flow source="160328511" target="1045478573"/>
+</arc>
+<arc id="294159057">
+<flow source="1485836997" target="1822098063"/>
+</arc>
+<arc id="1476672834">
+<flow source="2078239321" target="1822098063"/>
+</arc>
+<arc id="2089514135">
+<flow source="1623823836" target="1879517274"/>
+</arc>
+<arc id="566580607">
+<flow source="1045478573" target="2131543321"/>
+</arc>
+<arc id="1490190888">
+<flow source="1822098063" target="2131543321"/>
+</arc>
+<arc id="1097834534">
+<flow source="1822098063" target="2131543321"/>
+</arc>
+<arc id="1947131685">
+<flow source="1988353217" target="1333665511"/>
+</arc>
+<arc id="1125824729">
+<flow source="1333665511" target="1632613109"/>
+</arc>
+<arc id="941790645">
+<flow source="1224700776" target="443466484"/>
+</arc>
+<arc id="778579480">
+<flow source="1721406357" target="1136810714"/>
+</arc>
+<arc id="82865053">
+<flow source="1632613109" target="1224700776"/>
+</arc>
+<arc id="490699918">
+<flow source="443466484" target="1392080189"/>
+</arc>
+<arc id="1497366989">
+<flow source="437538871" target="449190740"/>
+</arc>
+<arc id="1065213287">
+<flow source="437538871" target="1196935138"/>
+</arc>
+<arc id="909636093">
+<flow source="1136810714" target="437538871"/>
+</arc>
+<arc id="1475747889">
+<flow source="449190740" target="131118935"/>
+</arc>
+<arc id="103897421">
+<flow source="1196935138" target="131118935"/>
+</arc>
+<arc id="72957139">
+<flow source="1392080189" target="131118935"/>
+</arc>
+<arc id="249628233">
+<flow source="1327793566" target="1000113224"/>
+</arc>
+<arc id="1760176248">
+<flow source="42770783" target="272560722"/>
+</arc>
+<arc id="630734354">
+<flow source="42770783" target="1898626620"/>
+</arc>
+<arc id="1688075927">
+<flow source="1000113224" target="42770783"/>
+</arc>
+<arc id="1888197258">
+<flow source="2070738899" target="1115288999"/>
+</arc>
+<arc id="344408615">
+<flow source="272560722" target="1115288999"/>
+</arc>
+<arc id="1226555961">
+<flow source="643391925" target="1111338984"/>
+</arc>
+<arc id="582016589">
+<flow source="425609693" target="1269967777"/>
+</arc>
+<arc id="239295173">
+<flow source="1898626620" target="425609693"/>
+</arc>
+<arc id="210253382">
+<flow source="1269967777" target="33879007"/>
+</arc>
+<arc id="1744017067">
+<flow source="603913000" target="529868053"/>
+</arc>
+<arc id="1945267682">
+<flow source="807444064" target="380787971"/>
+</arc>
+<arc id="1460967271">
+<flow source="1083505188" target="1342553191"/>
+</arc>
+<arc id="451129797">
+<flow source="1639582124" target="992449234"/>
+</arc>
+<arc id="1920976548">
+<flow source="703687096" target="662204305"/>
+</arc>
+<arc id="1964321975">
+<flow source="664980576" target="1647138512"/>
+</arc>
+<arc id="27514456">
+<flow source="992449234" target="1641954044"/>
+</arc>
+<arc id="1984190926">
+<flow source="662204305" target="1703731507"/>
+</arc>
+<arc id="711500581">
+<flow source="1647138512" target="1703731507"/>
+</arc>
+<arc id="2047011532">
+<flow source="1413673805" target="101095758"/>
+</arc>
+<arc id="686770722">
+<flow source="101095758" target="1296913845"/>
+</arc>
+<arc id="1163297145">
+<flow source="1373734810" target="1993458771"/>
+</arc>
+<arc id="285747764">
+<flow source="66264618" target="1889918320"/>
+</arc>
+<arc id="2123809467">
+<flow source="851414892" target="2092444303"/>
+</arc>
+<arc id="754592017">
+<flow source="736352764" target="1371077987"/>
+</arc>
+<arc id="1565927614">
+<flow source="1912841724" target="1494269875"/>
+</arc>
+<arc id="1783901924">
+<flow source="293842583" target="880678510"/>
+</arc>
+<arc id="1020480698">
+<flow source="1899537613" target="833021841"/>
+</arc>
+<arc id="867357401">
+<flow source="1107306592" target="2027614248"/>
+</arc>
+<arc id="331222482">
+<flow source="1810202878" target="892215633"/>
+</arc>
+<arc id="432786807">
+<flow source="383392368" target="1011541053"/>
+</arc>
+<arc id="1050150220">
+<flow source="1040415715" target="1571505078"/>
+</arc>
+<arc id="318745103">
+<flow source="1040415715" target="1427666350"/>
+</arc>
+<arc id="1803696277">
+<flow source="623550008" target="357494037"/>
+</arc>
+<arc id="316794663">
+<flow source="860521752" target="2107737422"/>
+</arc>
+<arc id="177823290">
+<flow source="1026095864" target="1889895979"/>
+</arc>
+<arc id="1713781078">
+<flow source="145617607" target="2078482898"/>
+</arc>
+<arc id="2051448462">
+<flow source="725832397" target="988704615"/>
+</arc>
+<arc id="1332919155">
+<flow source="1987345361" target="407489957"/>
+</arc>
+<arc id="1221737480">
+<flow source="584749597" target="103706797"/>
+</arc>
+<arc id="1146318278">
+<flow source="1111338984" target="505472082"/>
+</arc>
+<arc id="1751551660">
+<flow source="1180232694" target="822986489"/>
+</arc>
+<arc id="773823282">
+<flow source="201699231" target="1904080262"/>
+</arc>
+<arc id="758471019">
+<flow source="1777551431" target="1903864326"/>
+</arc>
+<arc id="1634636760">
+<flow source="1845995931" target="863651982"/>
+</arc>
+<arc id="1117374655">
+<flow source="264347180" target="1172320105"/>
+</arc>
+<arc id="908288425">
+<flow source="1874875987" target="600229466"/>
+</arc>
+<arc id="2116839843">
+<flow source="177347550" target="1920768867"/>
+</arc>
+<arc id="1187942099">
+<flow source="418595445" target="1808630826"/>
+</arc>
+<arc id="1292089399">
+<flow source="86176140" target="1350542058"/>
+</arc>
+<arc id="2019700465">
+<flow source="364662721" target="1256753513"/>
+</arc>
+<arc id="87384934">
+<flow source="979588170" target="1437055973"/>
+</arc>
+<arc id="1659155276">
+<flow source="2066671470" target="194515304"/>
+</arc>
+<arc id="611596317">
+<flow source="5385180" target="175391846"/>
+</arc>
+<arc id="680910544">
+<flow source="679329946" target="1865186986"/>
+</arc>
+<arc id="89885712">
+<flow source="1748223552" target="7006416"/>
+</arc>
+<arc id="267077504">
+<flow source="1879517274" target="160328511"/>
+</arc>
+<arc id="32653003">
+<flow source="1879517274" target="1485836997"/>
+</arc>
+<arc id="786298341">
+<flow source="1879517274" target="2078239321"/>
+</arc>
+<arc id="1721213116">
+<flow source="2131543321" target="1988353217"/>
+</arc>
+<arc id="665399422">
+<flow source="1224700776" target="1721406357"/>
+</arc>
+<arc id="351096454">
+<flow source="131118935" target="1327793566"/>
+</arc>
+<arc id="1209896896">
+<flow source="1115288999" target="643391925"/>
+</arc>
+<arc id="1570310319">
+<flow source="33879007" target="603913000"/>
+</arc>
+<arc id="350708779">
+<flow source="529868053" target="807444064"/>
+</arc>
+<arc id="1440571113">
+<flow source="380787971" target="1083505188"/>
+</arc>
+<arc id="1314127756">
+<flow source="1342553191" target="1639582124"/>
+</arc>
+<arc id="384057465">
+<flow source="1641954044" target="703687096"/>
+</arc>
+<arc id="1994193031">
+<flow source="1641954044" target="664980576"/>
+</arc>
+<arc id="1611761204">
+<flow source="1703731507" target="1413673805"/>
+</arc>
+<arc id="1088968161">
+<flow source="1296913845" target="1373734810"/>
+</arc>
+<arc id="1866401862">
+<flow source="1993458771" target="66264618"/>
+</arc>
+<arc id="821728135">
+<flow source="1889918320" target="851414892"/>
+</arc>
+<arc id="1007262206">
+<flow source="2092444303" target="736352764"/>
+</arc>
+<arc id="377579152">
+<flow source="1371077987" target="1912841724"/>
+</arc>
+<arc id="1403968097">
+<flow source="1494269875" target="597188997"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

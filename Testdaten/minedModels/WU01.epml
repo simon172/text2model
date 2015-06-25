@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="619430673">
+<name>verify </name>
+<relation from ="619430673" to ="1707788226"/>
+</function>
+<function id="225333489">
+<name>abort customer creation</name>
+<relation from ="225333489" to ="1707788226"/>
+</function>
+<function id="1477969748">
+<name>enter sales</name>
+<relation from ="1477969748" to ="1707788226"/>
+</function>
+<event id="1754855994">
+<name>creates the customer </name>
+</event>
+<event id="524509985">
+<name>creates the customer </name>
+</event>
+<event id="989287622">
+<name>does not create  the customer </name>
+</event>
+<event id="1654046126">
+<name>end</name>
+</event>
+<event id="222670192">
+<name>end</name>
+</event>
+<xor id="1676798552"/>
+<xor id="638314697"/>
+<arc id="1781127316">
+<flow source="1676798552" target="1754855994"/>
+</arc>
+<arc id="2127783103">
+<flow source="755445052" target="1676798552"/>
+</arc>
+<arc id="1254389987">
+<flow source="1754855994" target="619430673"/>
+</arc>
+<arc id="1733368756">
+<flow source="638314697" target="524509985"/>
+</arc>
+<arc id="247162077">
+<flow source="638314697" target="989287622"/>
+</arc>
+<arc id="1134073387">
+<flow source="619430673" target="638314697"/>
+</arc>
+<arc id="1997506659">
+<flow source="524509985" target="225333489"/>
+</arc>
+<arc id="1881239911">
+<flow source="989287622" target="1477969748"/>
+</arc>
+<arc id="529856706">
+<flow source="225333489" target="1654046126"/>
+</arc>
+<arc id="464609618">
+<flow source="1477969748" target="222670192"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>
