@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import nodes.ProcessNode;
 import models.EPCModel;
+import epc.Connector;
 import epc.ConnectorAND;
 import epc.ConnectorOR;
 import epc.ConnectorXOR;
@@ -46,7 +47,6 @@ public class EPCExporter extends Exporter{
 	}
 	
 	public void export(){
-		System.out.println(epml);
 		try {
 			  BufferedWriter out = new BufferedWriter(
 			                       new FileWriter(file));
@@ -109,16 +109,16 @@ public class EPCExporter extends Exporter{
 		}
 	}
 	
-	public void addConnectors(ArrayList<ConnectorAND> ca, ArrayList<ConnectorOR> co, ArrayList<ConnectorXOR> cx){
-		for (ConnectorAND and : ca){
+	public void addConnectors(ArrayList<Connector> ca, ArrayList<Connector> co, ArrayList<Connector> cx){
+		for (Connector and : ca){
 			String id = and.getId();
 			epml.append("\n<and id=\"" + id + "\"/>");
 		}
-		for (ConnectorOR or : co){
+		for (Connector or : co){
 			String id = or.getId();
 			epml.append("\n<or id=\"" + id + "\"/>");
 		}
-		for (ConnectorXOR xor : cx){
+		for (Connector xor : cx){
 			String id = xor.getId();
 			epml.append("\n<xor id=\"" + id + "\"/>");
 		}

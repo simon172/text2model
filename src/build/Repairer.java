@@ -22,12 +22,12 @@ public class Repairer {
 	private ArrayList<Event> events = new ArrayList<Event>();
 	private ArrayList<Connector> connBuffer = new ArrayList<Connector>();
 	private ArrayList<SequenceFlow> flows = new ArrayList<SequenceFlow>();
-	private ArrayList<ConnectorAND> andSplits = new ArrayList<ConnectorAND>();
-	private ArrayList<ConnectorAND> andJoins = new ArrayList<ConnectorAND>();
-	private ArrayList<ConnectorOR> orSplits = new ArrayList<ConnectorOR>();
-	private ArrayList<ConnectorOR> orJoins = new ArrayList<ConnectorOR>();
-	private ArrayList<ConnectorXOR> xorSplits = new ArrayList<ConnectorXOR>();
-	private ArrayList<ConnectorXOR> xorJoins = new ArrayList<ConnectorXOR>();
+	private ArrayList<Connector> andSplits = new ArrayList<Connector>();
+	private ArrayList<Connector> andJoins = new ArrayList<Connector>();
+	private ArrayList<Connector> orSplits = new ArrayList<Connector>();
+	private ArrayList<Connector> orJoins = new ArrayList<Connector>();
+	private ArrayList<Connector> xorSplits = new ArrayList<Connector>();
+	private ArrayList<Connector> xorJoins = new ArrayList<Connector>();
 	
 	private EPCModel model = null;
 	
@@ -38,13 +38,19 @@ public class Repairer {
 	public void repairModel(){
 		this.getIncomingOutgoingFlows();
 		this.extractElements();
-		this.checkConnectorIO();
+		this.checkConnectorIO(connBuffer);
 		this.specifyConnectors();
 		this.eventsCannotDecide();
 		this.checkEvents();
 		this.checkFunctions();
+		this.checkConnectorIO(andJoins);
+		this.checkConnectorIO(andSplits);
+		this.checkConnectorIO(orJoins);
+		this.checkConnectorIO(orSplits);
+		this.checkConnectorIO(xorJoins);
+		this.checkConnectorIO(xorSplits);
 	}
-	
+
 	public ArrayList<Organisation> getOrgs() {
 		return orgs;
 	}
@@ -65,27 +71,27 @@ public class Repairer {
 		return flows;
 	}
 
-	public ArrayList<ConnectorAND> getAndSplits() {
+	public ArrayList<Connector> getAndSplits() {
 		return andSplits;
 	}
 
-	public ArrayList<ConnectorAND> getAndJoins() {
+	public ArrayList<Connector> getAndJoins() {
 		return andJoins;
 	}
 
-	public ArrayList<ConnectorOR> getOrSplits() {
+	public ArrayList<Connector> getOrSplits() {
 		return orSplits;
 	}
 
-	public ArrayList<ConnectorOR> getOrJoins() {
+	public ArrayList<Connector> getOrJoins() {
 		return orJoins;
 	}
 
-	public ArrayList<ConnectorXOR> getXorSplits() {
+	public ArrayList<Connector> getXorSplits() {
 		return xorSplits;
 	}
 
-	public ArrayList<ConnectorXOR> getXorJoins() {
+	public ArrayList<Connector> getXorJoins() {
 		return xorJoins;
 	}
 
@@ -109,27 +115,27 @@ public class Repairer {
 		this.flows = flows;
 	}
 
-	public void setAndSplits(ArrayList<ConnectorAND> andSplits) {
+	public void setAndSplits(ArrayList<Connector> andSplits) {
 		this.andSplits = andSplits;
 	}
 
-	public void setAndJoins(ArrayList<ConnectorAND> andJoins) {
+	public void setAndJoins(ArrayList<Connector> andJoins) {
 		this.andJoins = andJoins;
 	}
 
-	public void setOrSplits(ArrayList<ConnectorOR> orSplits) {
+	public void setOrSplits(ArrayList<Connector> orSplits) {
 		this.orSplits = orSplits;
 	}
 
-	public void setOrJoins(ArrayList<ConnectorOR> orJoins) {
+	public void setOrJoins(ArrayList<Connector> orJoins) {
 		this.orJoins = orJoins;
 	}
 
-	public void setXorSplits(ArrayList<ConnectorXOR> xorSplits) {
+	public void setXorSplits(ArrayList<Connector> xorSplits) {
 		this.xorSplits = xorSplits;
 	}
 
-	public void setXorJoins(ArrayList<ConnectorXOR> xorJoins) {
+	public void setXorJoins(ArrayList<Connector> xorJoins) {
 		this.xorJoins = xorJoins;
 	}
 
@@ -171,9 +177,9 @@ public class Repairer {
     	}
 	}
 	
-	private void checkConnectorIO(){
+	private void checkConnectorIO(ArrayList<Connector> conns){
 		ArrayList<Connector> newCon = new ArrayList<Connector>();
-		for (Connector con : connBuffer){
+		for (Connector con : conns){
 			if (con.getIncoming().size()>1 && con.getOutgoing().size()>1){
 				Connector first = Connector.class.cast(con);
 				Connector sec = Connector.class.cast(con);
@@ -195,7 +201,7 @@ public class Repairer {
 				newCon.add(con);
 			}
 		}
-		connBuffer=newCon;
+		conns=newCon;
 	}
 	
 	private void specifyConnectors(){
@@ -317,14 +323,19 @@ public class Repairer {
 					String text= f.getName()+" is done";
 					Event e = new Event(text);
 					f.getOutgoing().setSource(e);
+					e.setOutgoing(f.getOutgoing());
+					e.getOutgoing().getTarget().setIncoming(e.getOutgoing());
 					SequenceFlow sf = new SequenceFlow(f,e);
 					sf.setSource(f);
 					sf.setTarget(e);
+					f.setOutgoing(sf);
+					e.setIncoming(sf);
 					events.add(e);
 					flows.add(sf);
 				} else {
 					if (f.getOutgoing().getTarget() instanceof Connector){
 						Connector c = (Connector) f.getOutgoing().getTarget();
+						ArrayList<SequenceFlow> newOuts = new ArrayList<SequenceFlow>();
 						for (SequenceFlow sf:c.getOutgoing()){
 							if (sf.getTarget() instanceof Function){
 								String text= f.getName()+" is done";
@@ -333,10 +344,16 @@ public class Repairer {
 								SequenceFlow seq = new SequenceFlow(c,e);
 								seq.setSource(c);
 								seq.setTarget(e);
+								newOuts.add(seq);
+								e.setIncoming(seq);
+								e.setOutgoing(sf);
 								events.add(e);
 								flows.add(seq);
+							} else {
+								newOuts.add(sf);
 							}
 						}
+						c.overrideOutgoing(newOuts);
 					}
 				}
 			}

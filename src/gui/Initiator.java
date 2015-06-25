@@ -23,6 +23,10 @@ public class Initiator {
 		t2p.parseText(file);
 	   }
 	
+	public void convert (File file){
+		t2p.parseText(file);
+	}
+	
 	public TextToProcess getT2P (){
 		return t2p;
 	}

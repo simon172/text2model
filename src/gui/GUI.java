@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.BoxLayout;
 
 import java.awt.Component;
+import java.io.File;
 import java.io.FileNotFoundException;
 
 public class GUI extends JFrame {
@@ -22,22 +23,33 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 	private JTextField processDescription;
 	private JButton btnTransform;
-	private Initiator init;
+	private static Initiator init;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI frame = new GUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
+		if (args.length<1){
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						GUI frame = new GUI();
+						frame.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
-			}
-		});
+			});
+		} else {
+			String fileName = args[0];
+			File file = new File(fileName);
+			convertFromConsole(file);
+		}
+	}
+	
+	public static void convertFromConsole(File file){
+		init = new Initiator();
+		init.convert(file);
 	}
 
 	/**
