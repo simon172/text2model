@@ -1,2 +1,2 @@
 # text2epc
-dsfsdgf
+automated generation of event-driven process chains from natural language text
