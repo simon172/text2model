@@ -6,11 +6,11 @@ import java.io.PrintWriter;
 
 import processing.FrameNetWrapper;
 import processing.WordNetWrapper;
-import etc.TextToProcess;
+import etc.TextToEPC;
 
 public class Initiator {
 	
-	private TextToProcess t2p = new TextToProcess();
+	private TextToEPC t2p = new TextToEPC();
 	private File file = new File("data.txt");
 	
 	public Initiator(){
@@ -29,7 +29,7 @@ public class Initiator {
 	}
 	
 	//for GUI
-	public TextToProcess getT2P (){
+	public TextToEPC getT2P (){
 		return t2p;
 	}
 	

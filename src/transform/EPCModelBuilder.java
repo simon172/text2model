@@ -38,7 +38,7 @@ import epc.Organisation;
 import epc.OrganisationCluster;
 import epc.SequenceFlow;
 import etc.Constants;
-import etc.TextToProcess;
+import etc.TextToEPC;
 
 public class EPCModelBuilder extends ProcessModelBuilder {
 	
@@ -54,7 +54,7 @@ private Configuration f_config = Configuration.getInstance();
 	//Model in General
 	private final boolean BUILD_DATA_OBJECTS = "1".equals(f_config.getProperty(Constants.CONF_GENERATE_DATA_OBJECTS));
 	
-	private TextToProcess f_parent;
+	private TextToEPC f_parent;
 	
 	private EPCModel f_model = new EPCModel("generated Model");
 	
@@ -71,7 +71,7 @@ private Configuration f_config = Configuration.getInstance();
 	private HashMap<ProcessNode,String> f_CommLinks = new HashMap<ProcessNode, String>();
 	private HashMap<String, OrgCollection> f_bbOrgcache = new HashMap<String, OrgCollection>();
 
-	public EPCModelBuilder(TextToProcess parent) {
+	public EPCModelBuilder(TextToEPC parent) {
 		f_parent = parent;
 	}
 

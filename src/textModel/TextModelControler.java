@@ -13,7 +13,7 @@ import nodes.ProcessObject;
 import models.ProcessModel;
 import processing.ProcessUtils;
 import etc.SentenceWordID;
-import etc.TextToProcess;
+import etc.TextToEPC;
 import transform.AnalyzedSentence;
 import transform.DummyAction;
 import transform.TextAnalyzer;
@@ -39,13 +39,13 @@ public class TextModelControler extends ProcessUtils {
 	
 	private ArrayList<ProcessNode> f_highlightCache = new ArrayList<ProcessNode>();
 	private TextEdge f_edge;
-	private TextToProcess f_parent;
-	private TextToProcess f_processor;
+	private TextToEPC f_parent;
+	private TextToEPC f_processor;
 	private boolean f_showRefs = true;
 	private boolean f_showLinks = true;
 	
 	
-	public void setTextToprocess(TextToProcess parent) {
+	public void setTextToprocess(TextToEPC parent) {
 		f_parent = parent;	
 	}
 
@@ -272,7 +272,7 @@ public class TextModelControler extends ProcessUtils {
 	 * @param world
 	 * @param _model
 	 */
-	public void setModels(TextToProcess processor,TextAnalyzer analyzer, TextModelBuilder builder, TextModel model) {
+	public void setModels(TextToEPC processor,TextAnalyzer analyzer, TextModelBuilder builder, TextModel model) {
 		f_analyzer = analyzer;
 		f_builder = builder;
 		f_model = model;

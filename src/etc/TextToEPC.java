@@ -31,7 +31,7 @@ import epc.ConnectorAND;
 import epc.ConnectorOR;
 import epc.ConnectorXOR;
 
-public class TextToProcess {
+public class TextToEPC {
 	
 private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
 	
@@ -49,14 +49,14 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
 	/**
 	 * 
 	 */
-	public TextToProcess() {
+	public TextToEPC() {
 		
 	}
 	
 	/**
 	 * 
 	 */
-	public TextToProcess(TextModelControler tmControler) {
+	public TextToEPC(TextModelControler tmControler) {
 		 f_textModelControler = tmControler;
 	}
 	

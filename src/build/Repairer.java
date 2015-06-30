@@ -2,6 +2,7 @@ package build;
 
 import java.util.ArrayList;
 
+import transform.DummyAction;
 import nodes.Cluster;
 import nodes.ProcessEdge;
 import nodes.ProcessNode;
@@ -302,14 +303,20 @@ public class Repairer {
 	}
 	
 	private void checkFunctions(){
+		ArrayList<Function> toDelete = new ArrayList<Function>();
 		for (Function f:functions){
 			if (f.getIncoming()==null){
-				Event e = new Event("start");
-				SequenceFlow sf = new SequenceFlow(e,f);
-				sf.setSource(e);
-				sf.setTarget(f);
-				events.add(e);
-				flows.add(sf);
+				addStartEvent(f);
+			} else {
+				if(f.getIncoming().getSource()==null){
+					flows.remove(f.getIncoming());
+					addStartEvent(f);
+				} else {
+					if (f.getIncoming().getSource().getText().contains("Dummy")){
+						toDelete.add((Function) f.getIncoming().getSource());
+						addStartFromDummy(f);
+					}
+				}
 			}
 			if (f.getOutgoing()==null){
 				Event e = new Event("end");
@@ -358,6 +365,7 @@ public class Repairer {
 				}
 			}
 		}
+		functions.removeAll(toDelete);
 	}
 	
 	private void checkEvents(){
@@ -382,5 +390,32 @@ public class Repairer {
 		}
 		events.removeAll(toDelete);
 	}
-
+	
+	private void addStartFromDummy(Function f){
+		if(f.getIncoming().getSource() instanceof Event){
+			events.remove(f.getIncoming().getSource());
+		}
+		if(f.getIncoming().getSource() instanceof Connector){
+			andJoins.remove(f.getIncoming().getSource());
+			andSplits.remove(f.getIncoming().getSource());
+			orJoins.remove(f.getIncoming().getSource());
+			orSplits.remove(f.getIncoming().getSource());
+			xorJoins.remove(f.getIncoming().getSource());
+			xorSplits.remove(f.getIncoming().getSource());
+		}
+		flows.remove(f.getIncoming());
+		addStartEvent(f);
+	}
+	
+	private void addStartEvent(Function f){
+		Event e = new Event("start");
+		SequenceFlow sf = new SequenceFlow(e,f);
+		sf.setSource(e);
+		sf.setTarget(f);
+		e.setOutgoing(sf);
+		f.setIncoming(sf);
+		events.add(e);
+		flows.add(sf);
+	}
+	
 }
