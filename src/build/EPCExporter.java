@@ -66,11 +66,11 @@ public class EPCExporter extends Exporter{
 			String text = f.getText();
 			epml.append("\n<function id=\"" + id + "\">"
 					+ "\n<name>" + text + "</name>");
-			if (model.getClusterForNode(f) != null){
-				String refID = model.getClusterForNode(f).getId();
-				epml.append("\n<relation from =\"" + id +
-						"\" to =\"" + refID + "\"/>");
-			}
+//			if (model.getClusterForNode(f) != null){
+//				String refID = model.getClusterForNode(f).getId();
+//				epml.append("\n<relation from =\"" + id +
+//						"\" to =\"" + refID + "\"/>");
+//			}
 			epml.append("\n</function>");
 		}
 	}
