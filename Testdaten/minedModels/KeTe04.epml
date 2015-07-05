@@ -2,174 +2,372 @@
 <epml:epml xmlns:epml="http://www.epml.de">
 <directory name="Root">
 <epc epcId="1" name="generated Model">
-<function id="1468369324">
-<name>create a work center</name>
-<relation from ="1468369324" to ="1017634801"/>
+<function id="1247169341">
+<name>create a new bom</name>
+<relation from ="1247169341" to ="370443289"/>
 </function>
-<function id="897503336">
+<function id="1851992645">
+<name>specify the material number</name>
+<relation from ="1851992645" to ="370443289"/>
+</function>
+<function id="1773283778">
+<name>enter the bom components</name>
+<relation from ="1773283778" to ="370443289"/>
+</function>
+<function id="1738615050">
+<name>give an item number</name>
+<relation from ="1738615050" to ="370443289"/>
+</function>
+<function id="1712158212">
+<name>give a component number</name>
+<relation from ="1712158212" to ="370443289"/>
+</function>
+<function id="929252222">
+<name>give a quantity</name>
+<relation from ="929252222" to ="370443289"/>
+</function>
+<function id="172413923">
+<name>give a validity date</name>
+<relation from ="172413923" to ="370443289"/>
+</function>
+<function id="1489625780">
+<name>assign components to the bom</name>
+<relation from ="1489625780" to ="370443289"/>
+</function>
+<function id="1387172547">
+<name>is assign </name>
+<relation from ="1387172547" to ="370443289"/>
+</function>
+<function id="1364446094">
+<name>enter the object dependencies</name>
+<relation from ="1364446094" to ="370443289"/>
+</function>
+<function id="1163772090">
+<name>is classify </name>
+<relation from ="1163772090" to ="370443289"/>
+</function>
+<function id="241964095">
+<name>assignments </name>
+<relation from ="241964095" to ="370443289"/>
+</function>
+<function id="1573962273">
+<name>maintain the assignment for the bom items</name>
+<relation from ="1573962273" to ="370443289"/>
+</function>
+<function id="398121620">
+<name>enter the bom header data</name>
+<relation from ="398121620" to ="281500520"/>
+</function>
+<function id="1374178718">
+<name>save the bom and</name>
+<relation from ="1374178718" to ="281500520"/>
+</function>
+<function id="1515972562">
 <name>specify the plant</name>
-<relation from ="897503336" to ="1017634801"/>
+<relation from ="1515972562" to ="281500520"/>
 </function>
-<function id="2140779933">
+<function id="1515122880">
 <name>specify the work center category</name>
-<relation from ="2140779933" to ="1017634801"/>
+<relation from ="1515122880" to ="281500520"/>
 </function>
-<function id="499509011">
+<function id="1074002824">
 <name>specify the basic data of the work center</name>
-<relation from ="499509011" to ="1017634801"/>
+<relation from ="1074002824" to ="281500520"/>
 </function>
-<function id="571984048">
+<function id="1879064729">
 <name>enter responsible\/usage</name>
-<relation from ="571984048" to ="1017634801"/>
+<relation from ="1879064729" to ="281500520"/>
 </function>
-<function id="1887406091">
+<function id="168954745">
 <name>enter key</name>
-<relation from ="1887406091" to ="1017634801"/>
+<relation from ="168954745" to ="281500520"/>
 </function>
-<function id="88176259">
+<function id="1503918200">
 <name>specify e ciency rate</name>
-<relation from ="88176259" to ="1017634801"/>
+<relation from ="1503918200" to ="281500520"/>
 </function>
-<function id="1527513399">
+<function id="1837881549">
 <name>specify rules for maintenance</name>
-<relation from ="1527513399" to ="1017634801"/>
+<relation from ="1837881549" to ="281500520"/>
 </function>
-<function id="929094893">
+<function id="737191036">
 <name>edit the capacity data in the next step</name>
-<relation from ="929094893" to ="1017634801"/>
+<relation from ="737191036" to ="281500520"/>
 </function>
-<function id="619304642">
+<function id="763875216">
 <name>specify the formula in one step</name>
-<relation from ="619304642" to ="1017634801"/>
+<relation from ="763875216" to ="281500520"/>
 </function>
-<function id="1385719476">
+<function id="249402003">
 <name>specify distribution keys in one step</name>
-<relation from ="1385719476" to ="1017634801"/>
+<relation from ="249402003" to ="281500520"/>
 </function>
-<function id="2147436402">
+<function id="1349535023">
 <name>save the work center</name>
-<relation from ="2147436402" to ="2117071770"/>
+<relation from ="1349535023" to ="156405242"/>
 </function>
-<function id="2079260666">
+<function id="1532623042">
 <name>create the work center</name>
-<relation from ="2079260666" to ="2117071770"/>
+<relation from ="1532623042" to ="156405242"/>
 </function>
-<event id="81155803">
-<name>create a work center is done</name>
+<function id="1661591376">
+<name>is process </name>
+<relation from ="1661591376" to ="156405242"/>
+</function>
+<event id="181946834">
+<name>start</name>
 </event>
-<event id="375256671">
+<event id="390998502">
+<name>create a new bom is done</name>
+</event>
+<event id="1030984650">
+<name>specify the material number is done</name>
+</event>
+<event id="1761994947">
+<name>enter the bom components is done</name>
+</event>
+<event id="1399621928">
+<name>give an item number is done</name>
+</event>
+<event id="228435108">
+<name>give a component number is done</name>
+</event>
+<event id="1293135042">
+<name>give a quantity is done</name>
+</event>
+<event id="649056324">
+<name>give a validity date is done</name>
+</event>
+<event id="100678159">
+<name>assign components to the bom is done</name>
+</event>
+<event id="660512256">
+<name>is assign  is done</name>
+</event>
+<event id="1494792731">
+<name>enter the object dependencies is done</name>
+</event>
+<event id="797541293">
+<name>is classify  is done</name>
+</event>
+<event id="346629486">
+<name>assignments  is done</name>
+</event>
+<event id="781583608">
+<name>maintain the assignment for the bom items is done</name>
+</event>
+<event id="396397704">
+<name>enter the bom header data is done</name>
+</event>
+<event id="1337483778">
+<name>save the bom and is done</name>
+</event>
+<event id="1823975059">
 <name>specify the plant is done</name>
 </event>
-<event id="1208422117">
+<event id="151380912">
 <name>specify the work center category is done</name>
 </event>
-<event id="747708544">
+<event id="574898461">
 <name>specify the basic data of the work center is done</name>
 </event>
-<event id="759856445">
+<event id="136103983">
 <name>enter responsible\/usage is done</name>
 </event>
-<event id="1666046537">
+<event id="1276401587">
 <name>enter key is done</name>
 </event>
-<event id="299122086">
+<event id="420436119">
 <name>specify e ciency rate is done</name>
 </event>
-<event id="825177649">
+<event id="2126901389">
 <name>specify rules for maintenance is done</name>
 </event>
-<event id="650069736">
+<event id="261908872">
 <name>edit the capacity data in the next step is done</name>
 </event>
-<event id="996308591">
+<event id="1521322484">
 <name>specify the formula in one step is done</name>
 </event>
-<event id="1109493486">
+<event id="2022711787">
 <name>specify distribution keys in one step is done</name>
 </event>
-<event id="997841733">
+<event id="789882603">
 <name>save the work center is done</name>
 </event>
-<event id="1136459051">
+<event id="620369605">
+<name>create the work center is done</name>
+</event>
+<event id="880404101">
 <name>end</name>
 </event>
-<arc id="74228506">
-<flow source="163781968" target="1468369324"/>
+<arc id="2074452741">
+<flow source="390998502" target="1851992645"/>
 </arc>
-<arc id="458729985">
-<flow source="81155803" target="897503336"/>
+<arc id="119555595">
+<flow source="1030984650" target="1773283778"/>
 </arc>
-<arc id="183442854">
-<flow source="375256671" target="2140779933"/>
+<arc id="255120983">
+<flow source="1761994947" target="1738615050"/>
 </arc>
-<arc id="243011390">
-<flow source="1208422117" target="499509011"/>
+<arc id="1604529289">
+<flow source="1399621928" target="1712158212"/>
 </arc>
-<arc id="1877543320">
-<flow source="747708544" target="571984048"/>
+<arc id="164106739">
+<flow source="228435108" target="929252222"/>
 </arc>
-<arc id="1229500870">
-<flow source="759856445" target="1887406091"/>
+<arc id="207425247">
+<flow source="1293135042" target="172413923"/>
 </arc>
-<arc id="1001953124">
-<flow source="1666046537" target="88176259"/>
+<arc id="636675949">
+<flow source="649056324" target="1489625780"/>
 </arc>
-<arc id="1431534290">
-<flow source="299122086" target="1527513399"/>
+<arc id="1668497470">
+<flow source="100678159" target="1387172547"/>
 </arc>
-<arc id="1917918249">
-<flow source="825177649" target="929094893"/>
+<arc id="721257002">
+<flow source="660512256" target="1364446094"/>
 </arc>
-<arc id="2124104996">
-<flow source="650069736" target="619304642"/>
+<arc id="1311918684">
+<flow source="1494792731" target="1163772090"/>
 </arc>
-<arc id="31976996">
-<flow source="996308591" target="1385719476"/>
+<arc id="2085160312">
+<flow source="797541293" target="241964095"/>
 </arc>
-<arc id="1336709408">
-<flow source="1109493486" target="2147436402"/>
+<arc id="96655487">
+<flow source="346629486" target="1573962273"/>
 </arc>
-<arc id="895909032">
-<flow source="997841733" target="2079260666"/>
+<arc id="1130948159">
+<flow source="781583608" target="398121620"/>
 </arc>
-<arc id="39057877">
-<flow source="1468369324" target="81155803"/>
+<arc id="533996708">
+<flow source="396397704" target="1374178718"/>
 </arc>
-<arc id="2119298938">
-<flow source="897503336" target="375256671"/>
+<arc id="721588451">
+<flow source="1337483778" target="1515972562"/>
 </arc>
-<arc id="1434962785">
-<flow source="2140779933" target="1208422117"/>
+<arc id="940618972">
+<flow source="1823975059" target="1515122880"/>
 </arc>
-<arc id="1565139031">
-<flow source="499509011" target="747708544"/>
+<arc id="1011741951">
+<flow source="151380912" target="1074002824"/>
 </arc>
-<arc id="1191012150">
-<flow source="571984048" target="759856445"/>
+<arc id="42075862">
+<flow source="574898461" target="1879064729"/>
 </arc>
-<arc id="1862862575">
-<flow source="1887406091" target="1666046537"/>
+<arc id="1027083245">
+<flow source="136103983" target="168954745"/>
 </arc>
-<arc id="1019030653">
-<flow source="88176259" target="299122086"/>
+<arc id="3403458">
+<flow source="1276401587" target="1503918200"/>
 </arc>
-<arc id="372662405">
-<flow source="1527513399" target="825177649"/>
+<arc id="1401559095">
+<flow source="420436119" target="1837881549"/>
 </arc>
-<arc id="1932810374">
-<flow source="929094893" target="650069736"/>
+<arc id="1093402662">
+<flow source="2126901389" target="737191036"/>
 </arc>
-<arc id="510991310">
-<flow source="619304642" target="996308591"/>
+<arc id="1018567821">
+<flow source="261908872" target="763875216"/>
 </arc>
-<arc id="318772804">
-<flow source="1385719476" target="1109493486"/>
+<arc id="602710055">
+<flow source="1521322484" target="249402003"/>
 </arc>
-<arc id="233053327">
-<flow source="2147436402" target="997841733"/>
+<arc id="539250637">
+<flow source="2022711787" target="1349535023"/>
 </arc>
-<arc id="1352495406">
-<flow source="2079260666" target="1136459051"/>
+<arc id="27805407">
+<flow source="789882603" target="1532623042"/>
+</arc>
+<arc id="225861651">
+<flow source="620369605" target="1661591376"/>
+</arc>
+<arc id="881903202">
+<flow source="181946834" target="1247169341"/>
+</arc>
+<arc id="1965937252">
+<flow source="1247169341" target="390998502"/>
+</arc>
+<arc id="258142672">
+<flow source="1851992645" target="1030984650"/>
+</arc>
+<arc id="1923131765">
+<flow source="1773283778" target="1761994947"/>
+</arc>
+<arc id="1268260580">
+<flow source="1738615050" target="1399621928"/>
+</arc>
+<arc id="2046906211">
+<flow source="1712158212" target="228435108"/>
+</arc>
+<arc id="1190655162">
+<flow source="929252222" target="1293135042"/>
+</arc>
+<arc id="1453717925">
+<flow source="172413923" target="649056324"/>
+</arc>
+<arc id="2133548113">
+<flow source="1489625780" target="100678159"/>
+</arc>
+<arc id="1582248863">
+<flow source="1387172547" target="660512256"/>
+</arc>
+<arc id="2088021181">
+<flow source="1364446094" target="1494792731"/>
+</arc>
+<arc id="150834696">
+<flow source="1163772090" target="797541293"/>
+</arc>
+<arc id="1306616322">
+<flow source="241964095" target="346629486"/>
+</arc>
+<arc id="1258242796">
+<flow source="1573962273" target="781583608"/>
+</arc>
+<arc id="1368853772">
+<flow source="398121620" target="396397704"/>
+</arc>
+<arc id="2137039163">
+<flow source="1374178718" target="1337483778"/>
+</arc>
+<arc id="86063460">
+<flow source="1515972562" target="1823975059"/>
+</arc>
+<arc id="1930879698">
+<flow source="1515122880" target="151380912"/>
+</arc>
+<arc id="782415400">
+<flow source="1074002824" target="574898461"/>
+</arc>
+<arc id="1280879500">
+<flow source="1879064729" target="136103983"/>
+</arc>
+<arc id="2000464879">
+<flow source="168954745" target="1276401587"/>
+</arc>
+<arc id="268600561">
+<flow source="1503918200" target="420436119"/>
+</arc>
+<arc id="1823760233">
+<flow source="1837881549" target="2126901389"/>
+</arc>
+<arc id="188563846">
+<flow source="737191036" target="261908872"/>
+</arc>
+<arc id="346872543">
+<flow source="763875216" target="1521322484"/>
+</arc>
+<arc id="432045582">
+<flow source="249402003" target="2022711787"/>
+</arc>
+<arc id="1562176500">
+<flow source="1349535023" target="789882603"/>
+</arc>
+<arc id="1045445722">
+<flow source="1532623042" target="620369605"/>
+</arc>
+<arc id="234940597">
+<flow source="1661591376" target="880404101"/>
 </arc>
 </epc>
 </directory>

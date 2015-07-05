@@ -2,35 +2,35 @@
 <epml:epml xmlns:epml="http://www.epml.de">
 <directory name="Root">
 <epc epcId="1" name="generated Model">
-<function id="1480569067">
+<function id="1725837334">
 <name>use the sales information system</name>
 </function>
-<function id="674542540">
+<function id="962997992">
 <name>o er can be with or without reference to an inquiry</name>
 </function>
-<event id="91312932">
+<event id="1118560175">
 <name>start</name>
 </event>
-<event id="1171670075">
+<event id="899785939">
 <name>end</name>
 </event>
-<event id="276046126">
+<event id="1882685757">
 <name>start</name>
 </event>
-<event id="2102783670">
+<event id="355843753">
 <name>end</name>
 </event>
-<arc id="1603839095">
-<flow source="91312932" target="1480569067"/>
+<arc id="920479651">
+<flow source="1118560175" target="1725837334"/>
 </arc>
-<arc id="529770891">
-<flow source="1480569067" target="1171670075"/>
+<arc id="1820159418">
+<flow source="1725837334" target="899785939"/>
 </arc>
-<arc id="181769291">
-<flow source="276046126" target="674542540"/>
+<arc id="755630311">
+<flow source="1882685757" target="962997992"/>
 </arc>
-<arc id="2139676518">
-<flow source="674542540" target="2102783670"/>
+<arc id="304218376">
+<flow source="962997992" target="355843753"/>
 </arc>
 </epc>
 </directory>
