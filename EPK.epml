@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de">
+<directory name="Root">
+<epc epcId="1" name="generated Model">
+<function id="1830997528">
+<name>call the customer</name>
+</function>
+<function id="1683798645">
+<name>reject the customer</name>
+</function>
+<arc id="1861326131">
+<flow source="464214709" target="1830997528"/>
+</arc>
+<arc id="509005260">
+<flow source="1830997528" target="1683798645"/>
+</arc>
+</epc>
+</directory>
+</epml:epml>

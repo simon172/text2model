@@ -1,0 +1,21 @@
+<definitions id="Definition"
+targetNamespace="http://www.example.org/MinimalExample"
+typeLanguage="http://www.java.com/javaTypes"
+expressionLanguage="http://www.mvel.org/2.0"
+xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+xs:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
+xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+xmlns:tns="http://www.jboss.org/drools">
+
+<process processType="Private" isExecutable="true" id="468794496" name="generated Model">
+<task id="809489246" name="this be a test"/>
+<task id="1952622696" name="call the customer"/>
+<task id="342077220" name="reject the customer"/>
+<sequenceFlow id="2143675721" sourceRef="1598723024" targetRef="809489246"/>
+<sequenceFlow id="745696368" sourceRef="118853095" targetRef="1952622696"/>
+<sequenceFlow id="1613679091" sourceRef="1952622696" targetRef="342077220"/>
+</process>
+</definitions>
