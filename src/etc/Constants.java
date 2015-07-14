@@ -1,19 +1,11 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package etc;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * @author ff
- *
- */
 public class Constants {
 	
 	public static final String CONF_GENERATE_BB_POOLS = "T2P_GenerateBBPools";

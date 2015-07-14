@@ -40,7 +40,6 @@ public class EPCExporter extends Exporter{
 	}
 	
 	public void export(){
-		System.out.println(epml);
 		try {
 			  BufferedWriter out = new BufferedWriter(
 			                       new FileWriter(file));

@@ -61,7 +61,7 @@ public class GUI extends JFrame {
 	public GUI() {
 		init = new Initiator();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setTitle("Text2EPC");
+		this.setTitle("Text2Model");
 		setBounds(100, 100, 720, 480);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

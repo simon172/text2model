@@ -1,19 +1,10 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package textModel;
 
 import nodes.ProcessEdge;
 
-
-/**
- * @author ff
- *
- */
 public class TextEdge extends ProcessEdge {
 
 	

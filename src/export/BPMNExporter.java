@@ -73,7 +73,6 @@ public class BPMNExporter extends Exporter{
 	}
 	
 	public void export(){
-		System.out.println(bpmn);
 		try {
 			  BufferedWriter out = new BufferedWriter(
 			                       new FileWriter(file));

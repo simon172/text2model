@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package worldModel;
 
@@ -12,10 +8,6 @@ import text.T2PSentence;
 
 import de.saar.coli.salsa.reiter.framenet.FrameElement;
 
-/**
- * @author ff
- *
- */
 public class Specifier extends SpecifiedElement{
 	
 	public enum SpecifierType{

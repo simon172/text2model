@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package transform;
 
@@ -13,10 +9,6 @@ import java.util.List;
 import worldModel.Actor;
 import worldModel.ExtractedObject;
 
-/**
- * @author ff
- *
- */
 public class ListUtils {
 	
 	/**

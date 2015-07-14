@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package orgChart;
 
@@ -15,11 +11,6 @@ import nodes.ProcessNode;
 import models.ProcessModel;
 import processing.ProcessUtils;
 
-
-/**
- * @author ff
- *
- */
 public class OrgChartUtils extends ProcessUtils {
 
     @Override

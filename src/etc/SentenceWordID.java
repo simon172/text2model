@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package etc;
 
@@ -12,7 +8,6 @@ import worldModel.SpecifiedElement;
 /**
  * An object to store the reference to a particular word in a particular sentence
  * e.g. for manual reference resolution
- * @author ff
  *
  */
 public class SentenceWordID {

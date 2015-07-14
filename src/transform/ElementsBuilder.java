@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package transform;
 
@@ -27,10 +23,6 @@ import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.trees.TreeGraphNode;
 import edu.stanford.nlp.trees.TypedDependency;
 
-/**
- * @author ff
- *
- */
 public class ElementsBuilder {
 	
 	public static Actor createActor(T2PSentence origin, List<Tree> fullSentence, TreeGraphNode node,Collection<TypedDependency> dependencies) {

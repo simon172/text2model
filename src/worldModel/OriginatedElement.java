@@ -1,18 +1,10 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package worldModel;
 
 import text.T2PSentence;
 
-/**
- * @author ff
- *
- */
 public class OriginatedElement {
 	
 	private T2PSentence f_origin;

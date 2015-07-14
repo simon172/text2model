@@ -1,11 +1,5 @@
 /**
- *
- * Process Editor - Editor Package
- *
- * (C) 2008-2010 Frank Puhlmann
- *
- * http://frapu.net
- *
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package tools;
 
@@ -19,7 +13,6 @@ import nodes.ProcessObject;
  *
  * This class capsulates restrictions for the ReferencePropertyEditor
  *
- * @author fpu
  */
 public class ReferenceChooserRestriction {
 

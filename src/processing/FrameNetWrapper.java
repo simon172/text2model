@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package processing;
 
@@ -34,10 +30,6 @@ import de.saar.coli.salsa.reiter.framenet.fncorpus.FEGroupRealization;
 import de.saar.coli.salsa.reiter.framenet.fncorpus.ValencePattern;
 import de.saar.coli.salsa.reiter.framenet.fncorpus.ValenceUnit;
 
-/**
- * @author ff
- *
- */
 public class FrameNetWrapper {
 	
 	public enum PhraseType{

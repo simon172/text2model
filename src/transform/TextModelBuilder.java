@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package transform;
 
@@ -24,25 +20,10 @@ import worldModel.Action;
 import worldModel.ExtractedObject;
 import worldModel.SpecifiedElement;
 
-/**
- * @author ff
- *
- */
 public class TextModelBuilder {
 	
 
-	
-	/**
-	 * 
-	 */
-//	public static final Color COLOR_REFERENCE_EDGES = Color.BLACK;
-	/**
-	 * 
-	 */
-//	public static final Color COLOR_LINK_EDGES = Color.class;
-	/**
-	 * 
-	 */
+
 	public static final float DEFAULT_EDGE_ALPHA = 0.5f;
 	private TextAnalyzer f_analyzer;
 	private HashMap<T2PSentence, SentenceNode> f_sentenceMap = new HashMap<T2PSentence, SentenceNode>();

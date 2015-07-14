@@ -1,17 +1,9 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package orgChart;
 
 
-/**
- * @author ff
- *
- */
 public class Role extends OrgChartElement {
 
 

@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package worldModel;
 
@@ -15,7 +11,6 @@ import text.T2PSentence;
 /**
  * The super-structure which holds all elements
  * which were extracted during the transformation phase
- * @author ff
  *
  */
 public class WorldModel {

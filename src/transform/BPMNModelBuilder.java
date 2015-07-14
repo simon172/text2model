@@ -1,10 +1,3 @@
-/**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
- */
 package transform;
 
 
@@ -55,10 +48,7 @@ import worldModel.Flow.FlowDirection;
 import worldModel.Flow.FlowType;
 import worldModel.Specifier.SpecifierType;
 
-/**
- * @author ff
- *
- */
+
 public class BPMNModelBuilder extends ProcessModelBuilder {
 	
 	private Configuration f_config = Configuration.getInstance();

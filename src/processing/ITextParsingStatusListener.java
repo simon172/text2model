@@ -1,16 +1,8 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package processing;
 
-/**
- * @author ff
- *
- */
 public interface ITextParsingStatusListener {
 	
 	public void setNumberOfSentences(int number);

@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package etc;
 
@@ -48,9 +44,6 @@ import export.EPCExporter;
  * wraps all of the functionality to create processes from text.
  * Load and analyze a text using "parseText".
  * To reanalyze a text simple use "analyzeText".
- * All information (created Text Model after parsing or generated BPMN model) is
- * returned to the TextToProcessListener.
- * @author ff
  *
  */
 public class TextToProcess {
@@ -68,9 +61,6 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
 	private HashMap<Action, FlowObject> f_elementsMap = new HashMap<Action, FlowObject>();
 	private HashMap<FlowObject, Action> f_elementsMapInv = new HashMap<FlowObject, Action>();
 	
-	private TextToProcessListener f_listener = null;
-	//private LaneSplitOffControler f_lsoControler;
-	
 	//for EPC export
 	private ArrayList<Function> f_functions = new ArrayList<Function>();
 	private ArrayList<SequenceFlow> f_flows = new ArrayList<SequenceFlow>();
@@ -84,9 +74,6 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
 	private ArrayList<bpmn.SequenceFlow> f_bflows = new ArrayList<bpmn.SequenceFlow>();
 	private ArrayList<bpmn.Message> f_messages = new ArrayList<bpmn.Message>();
 	private ArrayList<bpmn.MessageFlow> f_messageFlows = new ArrayList<bpmn.MessageFlow>();
-	private ArrayList<bpmn.Event> f_BPMNevents = new ArrayList<bpmn.Event>();
-	
-	
 	/**
 	 * 
 	 */
@@ -97,22 +84,9 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
 	/**
 	 * 
 	 */
-	public TextToProcess(TextToProcessListener listener) {
-		 f_listener = listener;		 
-	}
-	
-	/**
-	 * 
-	 */
-	public TextToProcess(TextToProcessListener listener,TextModelControler tmControler) { //deleted argument: LaneSplitOffControler lsoControler
-		 f_listener = listener;
+	public TextToProcess(TextModelControler tmControler) {
 		 f_textModelControler = tmControler;
-		 //f_lsoControler = lsoControler;
 	}
-	
-	/*public void setLaneSplitOffContoler(LaneSplitOffControler lsoControler) {
-		f_lsoControler = lsoControler;
-	}*/
 	
 	
 	 /**
@@ -122,8 +96,7 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
 		boolean f_bpmn = bpmn;
 		f_analyzer.analyze(f_text);
         if(rebuildTextModel) {
-			TextModel _model = f_builder.createModel(f_analyzer);
-			//f_listener.textModelChanged(_model);			
+			TextModel _model = f_builder.createModel(f_analyzer);		
 			if(f_textModelControler != null)
 				f_textModelControler.setModels(this, f_analyzer,f_builder,_model);
         }
@@ -141,7 +114,7 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
         			f_lanes.add(lane);
         		}
         	}
-        	f_BPMNevents = f_generatedModelBPMN.getEvents();
+        	f_generatedModelBPMN.getEvents();
         	extractBPMNFlowObjects(f_generatedModelBPMN);
         	extractBPMNFlows(f_generatedModelBPMN);
         	f_generatedModelBPMN.extractGateways();
@@ -244,7 +217,6 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
     		SentenceNode n = (SentenceNode) o;
 	    	T2PSentence _sentence = f_text.getSentences().get(n.getIndex());
 	       	if(_sentence != null) {
-	       		//f_listener.displayTree(_sentence.getTree());
 	    		
 	    		Collection<TypedDependency> _list = _sentence.getGrammaticalStructure().typedDependenciesCollapsed();
 	    		
@@ -252,7 +224,6 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
 	    		for(TypedDependency td:_list) {
 	    			_depText.append(td.toString());
 	    		}
-	    		//f_listener.displayDependencies(_depText.toString());
 	    		
 	    		f_analyzer.analyzeSentence(_sentence,1,true);
 	    	}
@@ -291,8 +262,7 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
 	public void textElementClicked(SpecifiedElement _element) {
 		if(_element instanceof Action) {
 			FlowObject _corr = f_elementsMap.get(_element);
-			if(_corr != null) {
-				//f_listener.textElementClicked(_element,_corr);							
+			if(_corr != null) {							
 			}
 		}
 	}

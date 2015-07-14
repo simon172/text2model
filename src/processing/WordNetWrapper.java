@@ -1,9 +1,5 @@
 /**
- * copyright
- * Inubit AG
- * Schoeneberger Ufer 89
- * 10785 Berlin
- * Germany
+ * modified taken from https://github.com/FabianFriedrich/Text2Process
  */
 package processing;
 
@@ -28,10 +24,6 @@ import etc.Constants;
 import transform.ListUtils;
 import worldModel.Action;
 
-/**
- * @author ff
- *
- */
 public class WordNetWrapper {
 	private static ArrayList<String> f_acceptedAMODList = new ArrayList<String>();
 	private static ArrayList<String> acceptedForwardLinkList = new ArrayList<String>();

@@ -22,8 +22,6 @@ import javax.xml.xpath.XPathConstants;
 /**
  * 
  * This class provides static methods for drawing process elements.
- * 
- * @author frank
  */
 public abstract class ProcessUtils {
 

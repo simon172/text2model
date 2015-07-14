@@ -8,10 +8,6 @@ import nodes.ProcessNode;
 import models.ProcessModel;
 import processing.ProcessUtils;
 
-/**
- * @author ff
- *
- */
 public class TextModel extends ProcessModel {
 	
 	private LegendNode f_legend = new LegendNode();
