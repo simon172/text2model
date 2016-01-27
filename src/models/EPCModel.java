@@ -122,7 +122,7 @@ public class EPCModel extends ProcessModel {
 	}
 	
 	public void extractConnectors(){
-		for (ProcessNode pn:super.getNodes()){
+		for (ProcessNode pn : super.getNodes()){
 			if (pn instanceof ConnectorAND){
 				ConnectorAND ca = (ConnectorAND) pn;
 				connsAND.add(ca);

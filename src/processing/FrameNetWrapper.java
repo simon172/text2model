@@ -4,6 +4,8 @@
 package processing;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -13,6 +15,7 @@ import java.util.logging.Logger;
 import net.didion.jwnl.data.POS;
 
 import etc.Constants;
+import gui.GUI;
 import transform.SearchUtils;
 import worldModel.Action;
 import worldModel.SpecifiedElement;
@@ -49,13 +52,25 @@ public class FrameNetWrapper {
 		try {
 			
 			long _start = System.currentTimeMillis();
+			
+			String path = GUI.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+			path = (new File(path)).getParentFile().getPath();
+			try {
+				path = URLDecoder.decode(path, "UTF-8");
+			} catch (UnsupportedEncodingException e2) {
+				e2.printStackTrace();
+			}
+			f_frameNetHome = path + f_frameNetHome;
+			
 			// Create a new FrameNet object
 			f_frameNet = new FrameNet();
 			//f_frameNet.getLexicalUnits(lemma, PartOfSpeech.Verb)
 			// Create a new DatabaseReader
 			
-			System.out.println(FrameNetWrapper.class.getResource(f_frameNetHome).toURI());
-			DatabaseReader reader = new FNDatabaseReader(new File(FrameNetWrapper.class.getResource(f_frameNetHome).toURI()), false);
+			
+//			System.out.println(f_frameNetHome);
+			DatabaseReader reader = new FNDatabaseReader(new File(f_frameNetHome), false);
+			
 			
 			// Reading FrameNet
 			f_frameNet.readData(reader);			
@@ -69,7 +84,8 @@ public class FrameNetWrapper {
 			//reading valence patterns from reduced corpus
 			f_corpus = new AnnotationCorpus(f_frameNet,_l);
 			f_corpus.setScanSubCorpuses(false);
-			f_corpus.parse(new File(FrameNetWrapper.class.getResource(f_frameNetHome+"/lu").getFile()));
+//			System.out.println((FrameNetWrapper.class.getResource("/" + f_frameNetHome+"/lu")));
+			f_corpus.parse(new File(f_frameNetHome+"lu"));
 			
 			//logging loading time
 			System.out.println("Loaded FrameNet-Annotations in: "+(System.currentTimeMillis()-_annoStart)+"ms");			

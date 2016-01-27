@@ -1,5 +1,7 @@
 package bpmn;
 
+import epc.SequenceFlow;
+
 public class Pool extends LaneableCluster {
 
 	/** Property if the Pool is a Black Box Pool */
@@ -41,5 +43,15 @@ public class Pool extends LaneableCluster {
     public String toString() {
         return "BPMN Pool ("+getName()+")";
     }
+
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
 	
 }

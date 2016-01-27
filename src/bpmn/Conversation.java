@@ -1,5 +1,6 @@
 package bpmn;
 
+import epc.SequenceFlow;
 import nodes.FlowObject;
 
 public class Conversation extends FlowObject{
@@ -22,5 +23,15 @@ public class Conversation extends FlowObject{
     public String toString() {
         return "BPMN conversation";
     }
+
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
 
 }

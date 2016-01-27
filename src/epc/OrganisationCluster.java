@@ -66,4 +66,16 @@ public class OrganisationCluster extends Cluster{
         }
     }
 
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

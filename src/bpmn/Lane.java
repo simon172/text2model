@@ -2,6 +2,7 @@ package bpmn;
 
 import java.util.LinkedList;
 
+import epc.SequenceFlow;
 import orgChart.ManagerialRole;
 import orgChart.Person;
 import orgChart.Role;
@@ -80,5 +81,15 @@ public class Lane extends LaneableCluster implements Linkable {
 
         return restrictions;
     }
+
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
     
 }

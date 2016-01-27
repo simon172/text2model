@@ -8,9 +8,7 @@ import java.util.ArrayList;
 
 import nodes.ProcessNode;
 import models.EPCModel;
-import epc.ConnectorAND;
-import epc.ConnectorOR;
-import epc.ConnectorXOR;
+import epc.Connector;
 import epc.Event;
 import epc.Function;
 import epc.Organisation;
@@ -26,23 +24,28 @@ public class EPCExporter extends Exporter{
 	
 	private EPCModel model = null;
 	
-	private File file = new File("EPK.epml");
+	private File outputFile;
 	
 	public EPCExporter (EPCModel epcm){
 		model = epcm;
-		init(model);
+		init();
 	}
 	
-	private void init (EPCModel epcm){
-		String name = epcm.getProcessName();
+	public void init (){
+		String name = model.getProcessName();
 		epml.append("\n<directory name=\"Root\">"
 				+ "\n<epc epcId=\"1\" name=\"" + name + "\">");
 	}
 	
-	public void export(){
+	public void export(File outputFile){
+		if (outputFile == null){
+			this.outputFile = new File("EPK.epml");
+		} else {
+			this.outputFile = outputFile;
+		}
 		try {
 			  BufferedWriter out = new BufferedWriter(
-			                       new FileWriter(file));
+			                       new FileWriter(this.outputFile));
 			  String outText = epml.toString();
 			  out.write(outText);
 			  out.close();
@@ -102,16 +105,16 @@ public class EPCExporter extends Exporter{
 		}
 	}
 	
-	public void addConnectors(ArrayList<ConnectorAND> ca, ArrayList<ConnectorOR> co, ArrayList<ConnectorXOR> cx){
-		for (ConnectorAND and : ca){
+	public void addConnectors(ArrayList<Connector> ca, ArrayList<Connector> co, ArrayList<Connector> cx){
+		for (Connector and : ca){
 			String id = and.getId();
 			epml.append("\n<and id=\"" + id + "\"/>");
 		}
-		for (ConnectorOR or : co){
+		for (Connector or : co){
 			String id = or.getId();
 			epml.append("\n<or id=\"" + id + "\"/>");
 		}
-		for (ConnectorXOR xor : cx){
+		for (Connector xor : cx){
 			String id = xor.getId();
 			epml.append("\n<xor id=\"" + id + "\"/>");
 		}

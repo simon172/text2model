@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import epc.SequenceFlow;
 import models.ProcessModel;
 
 public abstract class ProcessNode extends ProcessObject {
@@ -15,6 +16,9 @@ public abstract class ProcessNode extends ProcessObject {
 	 public final static String PROP_LABEL = "label";
 	 public final static String PROP_STEREOTYPE = "stereotype";
 
+	 public abstract void setIncoming(SequenceFlow flow);
+	 public abstract void setOutgoing(SequenceFlow flow);
+	 
 	 public ProcessNode() {
 	    	super();
 	        setProperty(PROP_TEXT, "");

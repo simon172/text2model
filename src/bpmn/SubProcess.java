@@ -3,6 +3,7 @@ package bpmn;
 import java.util.LinkedList;
 import java.util.List;
 
+import epc.SequenceFlow;
 import nodes.Cluster;
 import nodes.ProcessNode;
 
@@ -121,5 +122,15 @@ public class SubProcess extends Cluster{
         result.add(CallActivity.class);
         return result;
     }
+
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
 
 }

@@ -26,6 +26,11 @@ public class Function extends FlowObject{
   //** The property for compensation (0=FALSE;1=TRUE) */
     public final static String PROP_COMPENSATION = "compensation";
     public final static String PROP_IMPLEMENTATION = "implementation";
+    
+    private SequenceFlow incoming = null;
+    private SequenceFlow outgoing = null;
+    
+    private String advMod;
 
     public Function() {
         super();
@@ -37,8 +42,23 @@ public class Function extends FlowObject{
         setText(label);
         initializeProperties();
     }
+    
+    
+    /**
+	 * @return the advMod
+	 */
+	public String getAdvMod() {
+		return advMod;
+	}
 
-    protected void initializeProperties() {
+	/**
+	 * @param advMod the advMod to set
+	 */
+	public void setAdvMod(String advMod) {
+		this.advMod = advMod;
+	}
+
+	protected void initializeProperties() {
         setProperty(PROP_LOOP_TYPE, LOOP_NONE);
  //       String[] type = { Activity.LOOP_NONE, Activity.LOOP_STANDARD, Activity.LOOP_MULTI_SEQUENCE, Activity.LOOP_MULTI_PARALLEL };
 
@@ -55,5 +75,22 @@ public class Function extends FlowObject{
     public void setProperty(String key, String value) {
         super.setProperty(key, value);
     }
+
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		incoming = flow;		
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		outgoing = flow;		
+	}
 	
+	public SequenceFlow getIncoming(){
+		return incoming;
+	}
+	
+	public SequenceFlow getOutgoing(){
+		return outgoing;
+	}
 }

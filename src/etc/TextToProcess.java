@@ -4,6 +4,7 @@
 package etc;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -34,6 +35,8 @@ import transform.TextModelBuilder;
 import worldModel.Action;
 import worldModel.SpecifiedElement;
 import edu.stanford.nlp.trees.TypedDependency;
+import epc.Connector;
+import epc.EPCRepairer;
 import epc.Function;
 import epc.Organisation;
 import epc.SequenceFlow;
@@ -92,7 +95,7 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
 	 /**
      * (Re-)starts analyzing the loaded text and creates a process model
      */
-	public void analyzeText(boolean rebuildTextModel, boolean bpmn) {
+	public void analyzeText(boolean rebuildTextModel, boolean bpmn, File outputFile) {
 		boolean f_bpmn = bpmn;
 		f_analyzer.analyze(f_text);
         if(rebuildTextModel) {
@@ -127,39 +130,30 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
         	
         	exp.addPools(f_pools);
         	exp.end();
-        	exp.export();
+        	exp.export(outputFile);
         } else {
-        	
+        	// epc: new (Text2EPC)
         	EPCModelBuilder _builder = new EPCModelBuilder(this);
         	f_generatedModelEPC = (EPCModel) _builder.createProcessModel(f_analyzer.getWorld());
-        	for (Cluster c : new ArrayList<Cluster>(f_generatedModelEPC.getClusters())){
-        		if (c instanceof Organisation){
-        			Organisation org = (Organisation) c;
-        			f_orgs.add(org);
-        		}
-        	}
-        	EPCExporter exp = new EPCExporter(f_generatedModelEPC);
-        	for (ProcessNode a : new ArrayList<ProcessNode>(f_generatedModelEPC.getFlowObjects())){
-        		if (a instanceof Function){
-        			Function f = (Function) a;
-        			f_functions.add(f);
-        		}
-        	}
-        	f_events = f_generatedModelEPC.getEvents();
-        	f_generatedModelEPC.extractConnectors();
-        	for (ProcessEdge a : new ArrayList<ProcessEdge>(f_generatedModelEPC.getFlows())){
-        		if (a instanceof epc.SequenceFlow){
-        			SequenceFlow f = (epc.SequenceFlow) a;
-        			f_flows.add(f);
-        		}
-        	}
-        	exp.addFunctions(f_functions);
-        	exp.addOrgs(f_orgs);
-        	exp.addEvents(f_events);
-        	exp.addConnectors(f_generatedModelEPC.getConnectorAND(), f_generatedModelEPC.getConnectorOR(), f_generatedModelEPC.getConnectorXOR());
-        	exp.addFlows(f_flows);
-        	exp.end();
-        	exp.export();
+        	EPCRepairer rep = new EPCRepairer(f_generatedModelEPC);
+            rep.repairModel();
+            EPCExporter exp = new EPCExporter(f_generatedModelEPC);
+            exp.addFunctions(rep.getFunctions());
+            exp.addEvents(rep.getEvents());
+            exp.addOrgs(rep.getOrgs());
+            ArrayList<Connector> and = new ArrayList<Connector>();
+            ArrayList<Connector> or = new ArrayList<Connector>();
+            ArrayList<Connector> xor = new ArrayList<Connector>();
+            and.addAll(rep.getAndJoins());
+            and.addAll(rep.getAndSplits());
+            or.addAll(rep.getOrJoins());
+            or.addAll(rep.getOrSplits());
+            xor.addAll(rep.getXorJoins());
+            xor.addAll(rep.getXorSplits());
+            exp.addConnectors(and, or, xor);
+            exp.addFlows(rep.getFlows());
+            exp.end();
+            exp.export(outputFile);
         }
         
 	}
@@ -190,11 +184,18 @@ private T2PStanfordWrapper f_stanford = new T2PStanfordWrapper();
     	}
 	}
 	
-	public void parseText(File file, boolean bpmn) {
+	public void parseText(String text, boolean bpmn, File outputFile) {
+		f_text = f_stanford.createText(text);
+		f_analyzer.clear();
+		analyzeText(true, bpmn, outputFile);
+	}
+	
+	public void parseFile(File file, boolean bpmn, File outputFile) throws IOException {
 		f_text = f_stanford.createText(file);
 		f_analyzer.clear();
-		analyzeText(true, bpmn);
+		analyzeText(true, bpmn, outputFile);
 	}
+	
 	
 	/**
 	 * Sets the element map which comes from the ProcessModelBuilder

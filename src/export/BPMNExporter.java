@@ -39,7 +39,7 @@ public class BPMNExporter extends Exporter{
 	
 	private BPMNModel model = null;
 	
-	private File file = new File("BPMN.bpmn");
+	private File outputFile;
 	
 	public BPMNExporter (BPMNModel bpmnm){
 		model = bpmnm;
@@ -72,10 +72,15 @@ public class BPMNExporter extends Exporter{
 		}
 	}
 	
-	public void export(){
+	public void export(File outputFile){
+		if (outputFile == null){
+			this.outputFile = new File("BPMN.bpmn");
+		} else {
+			this.outputFile = outputFile;
+		}
 		try {
 			  BufferedWriter out = new BufferedWriter(
-			                       new FileWriter(file));
+			                       new FileWriter(this.outputFile));
 			  String outText = bpmn.toString();
 			  out.write(outText);
 			  out.close();

@@ -3,6 +3,7 @@ package bpmn;
 import java.util.LinkedList;
 import java.util.List;
 
+import epc.SequenceFlow;
 import nodes.ProcessNode;
 
 public class EndEvent extends Event {
@@ -37,6 +38,16 @@ public class EndEvent extends Event {
     public String toString() {
         return "End Event ("+getText()+")";
     }
+
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
     
 }
 

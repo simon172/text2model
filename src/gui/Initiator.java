@@ -2,6 +2,7 @@ package gui;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 import processing.FrameNetWrapper;
@@ -11,21 +12,19 @@ import etc.TextToProcess;
 public class Initiator {
 	
 	private TextToProcess t2p = new TextToProcess();
-	private File file = new File("data.txt");
+//	private File file = new File("data.txt");
 	
 	public Initiator(){
 		WordNetWrapper.init();
 		FrameNetWrapper.init();
 	}
 	
-	public void convert (String input, boolean bpmn) throws FileNotFoundException{
-		saveInput(input);
-		t2p.parseText(file, bpmn);
+	public void convert (String input, boolean bpmn, File outputFile){
+		t2p.parseText(input, bpmn, outputFile);
 	   }
 	
-	//for CLI
-	public void convert (File file, boolean bpmn){
-		t2p.parseText(file, bpmn);
+	public void convert (File file, boolean bpmn, File outputFile) throws IOException{
+		t2p.parseFile(file, bpmn, outputFile);
 	}
 	
 	//for GUI
@@ -33,11 +32,11 @@ public class Initiator {
 		return t2p;
 	}
 	
-	public void saveInput (String input) throws FileNotFoundException{
-		   PrintWriter out = new PrintWriter(file);
-		   out.println(input);
-		   out.close();
-	   }
+//	public void saveInput (String input) throws FileNotFoundException{
+//		   PrintWriter out = new PrintWriter(file);
+//		   out.println(input);
+//		   out.close();
+//	}
 	
 	
 

@@ -5,6 +5,7 @@ package textModel;
 
 import java.util.ArrayList;
 
+import epc.SequenceFlow;
 import nodes.Cluster;
 import nodes.ProcessNode;
 
@@ -44,6 +45,16 @@ public class SentenceNode extends Cluster {
 	@Override
 	public void removeProcessNode(ProcessNode n) {
 		//not possible its a build only model
+	}
+
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
 	}
 
 }

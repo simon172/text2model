@@ -3,6 +3,7 @@ package bpmn;
 import java.util.LinkedList;
 import java.util.List;
 
+import epc.SequenceFlow;
 import nodes.FlowObject;
 import nodes.ProcessNode;
 
@@ -46,4 +47,14 @@ public class Gateway extends FlowObject {
 	    public String toString() {
 	        return "BPMN Gateway ("+getText()+")";
 	    }
+
+		@Override
+		public void setIncoming(SequenceFlow flow) {
+			throw new IllegalArgumentException("not implemented yet!");
+		}
+
+		@Override
+		public void setOutgoing(SequenceFlow flow) {
+			throw new IllegalArgumentException("not implemented yet!");
+		}
 }

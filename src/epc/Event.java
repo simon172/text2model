@@ -23,6 +23,9 @@ public class Event extends FlowObject implements AttachedNode {
     /** The parent node */
     public final static String PROP_SOURCE_NODE = "#source";
     
+    private SequenceFlow incoming = null;
+    private SequenceFlow outgoing = null;
+    
     private boolean isThrowable = false;
 	
     public Event() {
@@ -38,7 +41,6 @@ public class Event extends FlowObject implements AttachedNode {
 
     protected void initializeProperties() {
         setProperty(PROP_EVENT_SUBTYPE, EVENT_SUBTYPE_CATCHING);
-        String[] subtype = { EVENT_SUBTYPE_CATCHING , EVENT_SUBTYPE_THROWING };
         setProperty(PROP_NON_INTERRUPTING, EVENT_NON_INTERRUPTING_FALSE);
         setProperty(PROP_SOURCE_NODE, "");
     }
@@ -90,5 +92,25 @@ public class Event extends FlowObject implements AttachedNode {
     public String toString() {
         return "Event ("+getText()+")";
     }
+
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		incoming = flow;
+		
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		outgoing = flow;
+		
+	}
+	
+	public SequenceFlow getIncoming(){
+		return incoming;
+	}
+	
+	public SequenceFlow getOutgoing(){
+		return outgoing;
+	}
 
 }

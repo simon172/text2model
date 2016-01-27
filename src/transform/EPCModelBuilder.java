@@ -2,8 +2,6 @@ package transform;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -14,11 +12,6 @@ import nodes.ProcessEdge;
 import nodes.ProcessNode;
 import models.EPCModel;
 import models.ProcessModel;
-import bpmn.IntermediateEvent;
-import bpmn.MessageFlow;
-import bpmn.MessageIntermediateEvent;
-import bpmn.Pool;
-import bpmn.Task;
 import processing.WordNetWrapper;
 import processing.FrameNetWrapper.PhraseType;
 import tools.Configuration;
@@ -27,7 +20,6 @@ import worldModel.Actor;
 import worldModel.ExtractedObject;
 import worldModel.Flow;
 import worldModel.Resource;
-import worldModel.SpecifiedElement;
 import worldModel.Specifier;
 import worldModel.WorldModel;
 import worldModel.Flow.FlowDirection;
@@ -60,7 +52,6 @@ private Configuration f_config = Configuration.getInstance();
 	private final boolean ADD_UNKNOWN_PHRASETYPES = "1".equals(f_config.getProperty(Constants.CONF_GENERATE_ADD_UNKNOWN_PT));
 	private final int MAX_NAME_DEPTH = 3;
 	//Model in General
-	private final boolean BUILD_BLACK_BOX_ORGCOLLECTION_COMMUNICATION = "1".equals(f_config.getProperty(Constants.CONF_GENERATE_BB_POOLS));
 	private final boolean BUILD_DATA_OBJECTS = "1".equals(f_config.getProperty(Constants.CONF_GENERATE_DATA_OBJECTS));
 	
 	private TextToProcess f_parent;
@@ -77,8 +68,6 @@ private Configuration f_config = Configuration.getInstance();
 	private Organisation f_lastOrg = null;
 	private OrganisationCluster f_mainOrg;
 	private ArrayList<Event> f_events = new ArrayList<Event>();
-	
-	//for black box pools
 	private HashMap<ProcessNode,String> f_CommLinks = new HashMap<ProcessNode, String>();
 	private HashMap<String, OrgCollection> f_bbOrgcache = new HashMap<String, OrgCollection>();
 
@@ -98,16 +87,12 @@ private Configuration f_config = Configuration.getInstance();
 		if(EVENTS_TO_LABELS) {
 			eventsToLabels();
 		}
-		processMetaActivities(world);		
-		buildBlackBoxOrgCollection(world);
+		processMetaActivities(world);
 		buildDataObjects(world);
 		
 		if(f_mainOrg.getProcessNodes().size() == 0) {
 			f_model.removeNode(f_mainOrg);
-		}		
-		
-		layoutModel(f_model);
-		layoutModel(f_model);
+		}
 		f_parent.setElementMapping(f_elementsMap);
 		return f_model;
 	}
@@ -118,10 +103,10 @@ private Configuration f_config = Configuration.getInstance();
 		HashMap<Action,List<String>> _handeledDOs = new HashMap<Action, List<String>>();
 		
 		if(BUILD_DATA_OBJECTS) {
-			for(ProcessNode a:new ArrayList<ProcessNode>(f_model.getNodes())) {
+			for(ProcessNode a : new ArrayList<ProcessNode>(f_model.getNodes())) {
 				if(!(a instanceof OrgCollection || a instanceof Organisation)) {
 					List<ProcessNode> _succs = f_model.getSuccessors(a);
-					for(ProcessNode n:new ArrayList<ProcessNode>(_succs)) {
+					for(ProcessNode n : new ArrayList<ProcessNode>(_succs)) {
 						if(n instanceof Connector) {
 							_succs.addAll(f_model.getSuccessors(n));
 						}
@@ -243,12 +228,6 @@ private Configuration f_config = Configuration.getInstance();
 	}
 
 	@Override
-	public void layoutModel(ProcessModel _result) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public Map<ProcessNode, String> getCommLinks() {
 		return f_CommLinks;
 	}
@@ -272,20 +251,10 @@ private Configuration f_config = Configuration.getInstance();
 						removeNode(a);
 						if(a.getName().equals("terminate") && _succs.size()==1) {
 							Event _ee = (Event) _succs.get(0);
-//							try {
-//								ProcessUtils.refactorNode(f_model, _ee, TerminateEndEvent.class);
-//							}catch(Exception ex) {
-//								ex.printStackTrace();
-//							}
 						}
 //					}					
 				}else if(WordNetWrapper.isVerbOfType(a.getName(),"start")) {
 					ProcessNode _pnode = f_elementsMap.get(a);
-					List<ProcessNode> _preds = f_model.getPredecessors(_pnode);
-//					if(_preds.size() == 1 && _preds.get(0) instanceof StartEvent) {
-//						//we do not need this node
-//						removeNode(a);
-//					}
 				}
 			}
 		}
@@ -306,7 +275,7 @@ private Configuration f_config = Configuration.getInstance();
 
 	@Override
 	protected void eventsToLabels() {
-		for(ProcessNode node:new ArrayList<ProcessNode>(f_model.getNodes())) {
+		for(ProcessNode node : new ArrayList<ProcessNode>(f_model.getNodes())) {
 			if(node instanceof Connector) {
 				List<ProcessNode> _succs = f_model.getSuccessors(node);
 				for(ProcessNode _succ : _succs) {
@@ -461,7 +430,7 @@ private Configuration f_config = Configuration.getInstance();
 			if(!(a.getObject() == null)) { //otherwise addSpecifiers already did the work!
 				for(Specifier sp:a.getSpecifiers(SpecifierType.PP)) {
 					if((sp.getName().startsWith("to") || sp.getName().startsWith("in") || sp.getName().startsWith("about"))
-							&& !(SearchUtils.startsWithAny(sp.getPhrase(), Constants.f_conditionIndicators))) {
+							&& !(SearchUtils.startsWithAny(sp.getPhrase(), Constants.f_conditionIndicators)) && !(SearchUtils.startsWithAny(sp.getPhrase(), Constants.f_parallelIndicators))) {
 						_b.append(' ');
 						if(sp.getObject() != null) {
 							_b.append(sp.getHeadWord());
@@ -491,7 +460,7 @@ private Configuration f_config = Configuration.getInstance();
 	}
 	
 	private Organisation getOrganisationForNode(ProcessNode node) {
-		for(Cluster c:node.getParentClusters()) {
+		for(Cluster c: node.getParentClusters()) {
 			if(c instanceof Organisation) {
 				return (Organisation)c;
 			}
@@ -510,7 +479,7 @@ private Configuration f_config = Configuration.getInstance();
 				f_elementsMap2.put(_t, a);
 				return _t;
 			}
-			System.out.println("error no flowobject found!");
+			System.out.println("error no FlowObject found!");
 		}
 		return _obj;
 	}
@@ -598,6 +567,7 @@ private Configuration f_config = Configuration.getInstance();
 		Function _result = new Function();		
 		String _name = createFunctionText(a);
 		_result.setText(_name);
+		_result.setAdvMod(a.getPreAdvMod());
 		f_model.addFlowObject(_result);
 		return _result;
 	}
@@ -616,7 +586,7 @@ private Configuration f_config = Configuration.getInstance();
 		if(WordNetWrapper.isVerbOfType(a.getName(), "send") || WordNetWrapper.isVerbOfType(a.getName(), "receive") /*isInteractionVerb(a)*/) {
 			Event _mie = new Event();
 			if(WordNetWrapper.isVerbOfType(a.getName(),"send")) {
-				_mie.setProperty(MessageIntermediateEvent.PROP_EVENT_SUBTYPE, MessageIntermediateEvent.EVENT_SUBTYPE_THROWING);
+				//_mie.setProperty(MessageIntermediateEvent.PROP_EVENT_SUBTYPE, MessageIntermediateEvent.EVENT_SUBTYPE_THROWING);
 			}
 			return _mie;
 		}
@@ -761,7 +731,7 @@ private Configuration f_config = Configuration.getInstance();
 	 * 
 	 */
 	private void finishDanglingEnds() {
-		for(ProcessNode node:new ArrayList<ProcessNode>(f_model.getNodes())) {
+		for(ProcessNode node : new ArrayList<ProcessNode>(f_model.getNodes())) {
 			if(node instanceof Function || node instanceof Connector || node instanceof Event) {
 				//has to be the source somewhere
 				int _inC = 0;
@@ -800,93 +770,10 @@ private Configuration f_config = Configuration.getInstance();
 			}
 		}
 	}
-	
-	private void buildBlackBoxOrgCollection(WorldModel world) {
-		if(BUILD_BLACK_BOX_ORGCOLLECTION_COMMUNICATION) {
-			for(Action a:world.getActions()) {
-				if(WordNetWrapper.isInteractionVerb(a)){
-					checkForBBOrgCollections(a);	
-				}
-				if(a.getXcomp() != null && WordNetWrapper.isInteractionVerb(a.getXcomp())) {
-					checkForBBOrgCollections(a.getXcomp());
-				}
-			}	
-		}
-	}
-	
-	private void checkForBBOrgCollections(Action a) {
-		//candidate
-		Specifier _sender = containedSender(a.getSpecifiers(SpecifierType.PP));
-		Specifier _receiver = containedReceiver(a.getSpecifiers(SpecifierType.PP));
-		ExtractedObject _obj = a.getObject();
-		if(_obj != null && _obj.needsResolve() && _obj.getReference() instanceof ExtractedObject) {
-			_obj = (ExtractedObject) _obj.getReference();
-		}
-		if(_obj != null && !(_obj instanceof Actor)) {
-			//checking genetive 
-			for(Specifier spec:_obj.getSpecifiers(SpecifierType.PP)) {
-				if(spec.getPhraseType().equals(PhraseType.GENITIVE)) {
-					if(spec.getObject() instanceof Actor) {
-						_obj = spec.getObject();
-					}
-				}
-			}
-		}
-		if(_obj != null && _obj instanceof Actor && !((Actor)_obj).isMetaActor()) {
-			String _name = getName(_obj, false,0,true);
-			if(f_NameToOrgCollection.containsKey(_name)){
-				
-				f_CommLinks.put(f_elementsMap.get(a), _name);
-			}else {
-				OrgCollection _bbOC = getBBOrgCollection(_name);
-				ProcessNode _f = ((Function)f_elementsMap.get(a));
-				if(_f instanceof Function) {
-				 _f.setStereotype(Function.TYPE_SEND);
-				}
-//				MessageFlow _msf = new MessageFlow(_f,_bbOC);
-//				f_model.addEdge(_msf);
-			}
-		}else {
-			if(_sender != null && !f_NameToOrgCollection.containsKey(getName(_sender.getObject(), false))) {
-				String _name = getName(_sender.getObject(), false);
-				if(f_NameToOrgCollection.containsKey(_name)){
-					f_CommLinks.put(f_elementsMap.get(a), _name);
-				}else {
-					OrgCollection _bbOC = getBBOrgCollection(_name);
-					Function _f = ((Function)f_elementsMap.get(a));
-					_f.setStereotype(Function.TYPE_SEND);
-//					MessageFlow _msf = new MessageFlow(_f,_bbOC);
-//					f_model.addEdge(_msf);
-				}	
-			}else if(_receiver != null && !f_NameToOrgCollection.containsKey(getName(_receiver.getObject(), false))){
-				String _name = getName(_receiver.getObject(), false);
-				if(f_NameToOrgCollection.containsKey(_name)){
-					f_CommLinks.put(f_elementsMap.get(a), _name);
-				}else {
-					OrgCollection _bbOC = getBBOrgCollection(_name);
-					ProcessNode _rpn = f_elementsMap.get(a);
-					if(_rpn instanceof Task) {
-						Task _t = ((Task)_rpn);
-						_t.setStereotype(Task.TYPE_RECEIVE);
-					}
-//					MessageFlow _msf = new MessageFlow(_bbOC,_rpn);
-//					f_model.addEdge(_msf);
-				}
-			}
-		}
-	}
-	
-	private OrgCollection getBBOrgCollection(String name) {
-		if(f_bbOrgcache.containsKey(name)) {
-			return f_bbOrgcache.get(name);
-		}else {
-			OrgCollection _result = new OrgCollection(0,-100,name);
-			_result.setProperty(Pool.PROP_BLACKBOX_POOL, "TRUE");
-			f_bbOrgcache.put(name, _result);
-			f_model.addNode(_result);
-			return _result;
-		}		 
-	}
-	
 
+	@Override
+	public void layoutModel(ProcessModel _result) {
+		// TODO Auto-generated method stub
+		
+	}
 }

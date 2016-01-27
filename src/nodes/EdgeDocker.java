@@ -1,5 +1,7 @@
 package nodes;
 
+import epc.SequenceFlow;
+
 public class EdgeDocker extends ProcessNode {
 
     public final static String PROP_DOCKED_EDGE = "#docked_edge";
@@ -33,5 +35,15 @@ public class EdgeDocker extends ProcessNode {
     public String toString() {
     	return "EdgeDocker ("+dockedEdge+")";
     }
+
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
 
 }

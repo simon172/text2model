@@ -3,6 +3,7 @@
  */
 package textModel;
 
+import epc.SequenceFlow;
 import nodes.ProcessNode;
 
 
@@ -12,6 +13,16 @@ import nodes.ProcessNode;
 	 * 
 	 */
 	public LegendNode() {
+	}
+
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
 	}
 
 }

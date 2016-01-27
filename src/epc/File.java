@@ -3,8 +3,8 @@ package epc;
 import java.util.LinkedList;
 
 import nodes.Linkable;
-import epc.Artifact;
 import tools.ReferenceChooserRestriction;
+import epc.Artifact;
 
 public class File extends Artifact implements Linkable {
 
@@ -20,8 +20,6 @@ public class File extends Artifact implements Linkable {
     public final static String DATA_INPUT = "INPUT";
     /** DataObject type is Output */
     public final static String DATA_OUTPUT = "OUTPUT";
-
-    public static ReferenceChooserRestriction restrictions;
     
     public File() {
         super();
@@ -54,14 +52,9 @@ public class File extends Artifact implements Linkable {
         return "EPC File ("+getText()+")";
     }
 
-    public ReferenceChooserRestriction getReferenceRestrictions() {
-        if (restrictions == null) {
-            LinkedList<Class> classes = new LinkedList<Class>();
-//            classes.add(DomainClass.class);
-            restrictions = new ReferenceChooserRestriction(null, classes);
-        }
-        return restrictions;
-    }
-
+	@Override
+	public ReferenceChooserRestriction getReferenceRestrictions() {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
 	
 }

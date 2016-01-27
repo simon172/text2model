@@ -15,4 +15,16 @@ public class Artifact extends FlowObject {
         return result;
     }
 
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

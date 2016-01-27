@@ -115,6 +115,7 @@ public class T2PSentence extends Sentence<Word> {
 	 * @param _gs
 	 */
 	public void setGrammaticalStructure(GrammaticalStructure gs) {
+		gs.toString();
 		f_gramStruc = gs;
 	}	
 	

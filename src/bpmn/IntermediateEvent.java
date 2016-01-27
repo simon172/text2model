@@ -2,6 +2,7 @@ package bpmn;
 
 import java.util.Map;
 
+import epc.SequenceFlow;
 import nodes.AttachedNode;
 import nodes.ProcessNode;
 import nodes.ProcessObject;
@@ -108,6 +109,16 @@ public class IntermediateEvent extends Event implements AttachedNode {
     public String toString() {
         return "Intermediate Event ("+getText()+")";
     }
+
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
 
 
 

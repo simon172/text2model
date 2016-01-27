@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import epc.SequenceFlow;
 import nodes.Cluster;
 import nodes.ProcessNode;
 
@@ -78,5 +79,15 @@ public class ChoreographySubProcess extends Cluster {
     public String toString() {
         return "BPMN Choreography Sub Process";
     }
+
+	@Override
+	public void setIncoming(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
+
+	@Override
+	public void setOutgoing(SequenceFlow flow) {
+		throw new IllegalArgumentException("not implemented yet!");
+	}
 	
 }

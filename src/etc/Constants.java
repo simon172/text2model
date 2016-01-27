@@ -24,6 +24,12 @@ public class Constants {
 	public static final boolean DEBUG_EXTRACTION = false;
 	public static final boolean DEBUG_EXTRACTION_FINAL = false;
 	public static final boolean DEBUG_FRAME_ASSIGNMENT = false;
+//	public static final boolean DEBUG_FINAL_ACTIONS_RESULT = true;
+//	public static final boolean DEBUG_MARKING = true;
+//	public static final boolean DEBUG_REFERENCE_RESOLUTION = true;
+//	public static final boolean DEBUG_EXTRACTION = true;
+//	public static final boolean DEBUG_EXTRACTION_FINAL = true;
+//	public static final boolean DEBUG_FRAME_ASSIGNMENT = true;
 	
 	
 	public static ArrayList<String> f_relativeResolutionTags = new ArrayList<String>(2);
@@ -150,6 +156,7 @@ public class Constants {
 		f_weakVerbTo3rdPSing.put("have", "has");
 		f_weakVerbTo3rdPSing.put("do", "does");
 
+		// exclusive gateways (XOR)
 		f_conditionIndicators.add("if");
 		f_conditionIndicators.add("whether");
 		f_conditionIndicators.add("in case of");
@@ -159,14 +166,21 @@ public class Constants {
 		f_conditionIndicators.add("whereas");
 		f_conditionIndicators.add("otherwise");
 		f_conditionIndicators.add("optionally");
+		// Author: Simon
+		f_conditionIndicators.add("else");
 		
+		// parallel gateway (AND)
 		f_parallelIndicators.add("while");
 		f_parallelIndicators.add("meanwhile");
 		f_parallelIndicators.add("in parallel");
 		f_parallelIndicators.add("concurrently");
 		f_parallelIndicators.add("meantime");
 		f_parallelIndicators.add("in the meantime");
-
+		// Author: Simon
+		f_parallelIndicators.add("and");
+		f_parallelIndicators.add("as well as");
+		
+		// for continuation of a branch of a gateway
 		f_sequenceIndicators.add("then");
 		f_sequenceIndicators.add("after");
 		f_sequenceIndicators.add("afterward");
@@ -175,6 +189,7 @@ public class Constants {
 		f_sequenceIndicators.add("based on this");
 		f_sequenceIndicators.add("thus");
 		
+		// for Error Intermediate Event
 		f_exceptionIndicators.add("except");
 		
 		f_exampleIndicators.add("for instance");
